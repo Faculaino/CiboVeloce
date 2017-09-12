@@ -40,6 +40,42 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
+    Sub deleteUsuario(ByVal Query As String, ByVal hdatos As Hashtable)
+        OpenBD()
+
+        Dim Tx As SqlTransaction
+        Tx = cnn.BeginTransaction()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = Query
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Transaction = Tx
+
+            If Not hdatos Is Nothing Then
+
+                For Each dato As String In hdatos.Keys
+                    cmd.Parameters.AddWithValue(dato, hdatos(dato))
+                Next
+            End If
+
+            cmd.ExecuteNonQuery()
+            Tx.Commit()
+            CloseBD()
+
+        Catch ex As SqlException
+            Tx.Rollback()
+            MsgBox(ex.Message)
+        Catch ex As Exception
+            Tx.Rollback()
+            MsgBox(ex)
+        End Try
+    End Sub
+
+
+
     Function buscarUsuario(ByVal Query As String, ByVal hdatos As Hashtable) As UsuarioEntity
         Dim oUsuario As New UsuarioEntity
         OpenBD()
@@ -77,6 +113,32 @@ Public Class UsuarioDAL
 
 
         End Try
+
+    End Function
+
+    Function listarUsuarios(ByVal query As String) As DataTable
+        Dim nuevaLista = New DataTable
+        Dim da As New SqlDataAdapter
+
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = query
+            cmd.CommandType = CommandType.StoredProcedure
+
+            da.SelectCommand = cmd
+            da.Fill(nuevaLista)
+
+            cmd.ExecuteNonQuery()
+
+            Return nuevaLista
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+
 
     End Function
 

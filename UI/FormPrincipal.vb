@@ -27,4 +27,20 @@ Public Class FormPrincipal
 
 
     End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+
+        Dim frmUsuarios = New FormUsuarios
+        frmUsuarios.Parent = Me.MdiParent
+        frmUsuarios.StartPosition = FormStartPosition.CenterScreen
+        frmUsuarios.Show()
+
+    End Sub
+
+    Private Sub SeleccionarIdiomaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeleccionarIdiomaToolStripMenuItem.Click
+        Dim frmIdioma = New FormIdioma
+        frmIdioma.Parent = Me.MdiParent
+        frmIdioma.StartPosition = FormStartPosition.CenterParent
+        frmIdioma.Show()
+    End Sub
 End Class

@@ -23,8 +23,9 @@ Public Class FormNuevoUsuario
             oUsuario.Password = txtPassword.Text
             oUsuario.User = txtUserName.Text
             oUsuario.Activo = 1
-            oUsuario.DVV = 10
-            oUsuario.DVH = 10
+            oUsuario.DVV = txtNombre.Text.Length + txtUserName.Text.Length
+            oUsuario.DVH = txtNombre.Text.Length + txtUserName.Text.Length
+            oUsuario.IDPerfil = 18
 
             Dim oUsuarioBLL As New UsuarioBussines
             oUsuarioBLL.insertUsuario(oUsuario)

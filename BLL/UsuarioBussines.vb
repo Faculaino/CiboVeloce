@@ -20,6 +20,23 @@ Public Class UsuarioBussines
         oHash.Add("@DVV", nuevoUsuario.DVV)
         oHash.Add("@DVH", nuevoUsuario.DVH)
         oHash.Add("@Activo", nuevoUsuario.Activo)
+        oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
+
+        oDatos.insertUsuario(Consulta, oHash)
+
+    End Sub
+
+    Sub deleteUsuario(ByVal nuevoUsuario As UsuarioEntity)
+        Dim oDatos As New UsuarioDAL
+        Dim oHash As New Hashtable
+        Dim Consulta As String = "VER"
+
+        oHash.Add("@Nombre", nuevoUsuario.Nombre)
+        oHash.Add("@Usuario", nuevoUsuario.User)
+        oHash.Add("@DVV", nuevoUsuario.DVV)
+        oHash.Add("@DVH", nuevoUsuario.DVH)
+        oHash.Add("@Activo", nuevoUsuario.Activo)
+        oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
 
         oDatos.insertUsuario(Consulta, oHash)
 
@@ -39,6 +56,18 @@ Public Class UsuarioBussines
         oUsuario = oDatos.buscarUsuario(Consulta, oHash)
 
         Return oUsuario
+    End Function
+
+    Function listarUsuarios() As DataTable
+
+        Dim oDatos As New UsuarioDAL
+        Dim oHash As New Hashtable
+        Dim listaUsuarios As New DataTable
+        Dim Consulta As String = "SP_Select_ListarUsuarios"
+
+        listarUsuarios = oDatos.listarUsuarios(Consulta)
+
+        Return listarUsuarios
     End Function
 
 

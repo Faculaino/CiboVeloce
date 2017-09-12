@@ -9,7 +9,7 @@ Public Class Connection
     Sub OpenBD()
         Try
 
-            cnn = New SqlConnection("Data Source=.\SQL_UAI;Initial Catalog=CiboVeloce;Integrated Security=True")
+            cnn = New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=CiboVeloce;Integrated Security=True")
             cnn.Open()
 
         Catch ex As SqlException

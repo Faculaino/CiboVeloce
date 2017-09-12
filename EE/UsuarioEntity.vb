@@ -9,6 +9,10 @@
     Private _DVV As Integer
     Private _DVH As Integer
     Private _Activo As Boolean
+    Private _IDPerfil As Integer
+
+
+
 
 #End Region
 
@@ -85,6 +89,15 @@
         End Get
         Set(ByVal value As String)
             _Nombre = value
+        End Set
+    End Property
+
+    Public Property IDPerfil() As Integer
+        Get
+            Return _IDPerfil
+        End Get
+        Set(ByVal value As Integer)
+            _IDPerfil = value
         End Set
     End Property
 #End Region

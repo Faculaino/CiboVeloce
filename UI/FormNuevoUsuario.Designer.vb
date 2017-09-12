@@ -36,6 +36,7 @@ Partial Class FormNuevoUsuario
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox1.Controls.Add(Me.btnVerContraseña)
         Me.GroupBox1.Controls.Add(Me.btnNuevoUsuario)
@@ -64,12 +65,14 @@ Partial Class FormNuevoUsuario
         '
         'btnNuevoUsuario
         '
-        Me.btnNuevoUsuario.Location = New System.Drawing.Point(22, 137)
+        Me.btnNuevoUsuario.BackColor = System.Drawing.Color.DarkCyan
+        Me.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnNuevoUsuario.Location = New System.Drawing.Point(22, 126)
         Me.btnNuevoUsuario.Name = "btnNuevoUsuario"
-        Me.btnNuevoUsuario.Size = New System.Drawing.Size(264, 34)
+        Me.btnNuevoUsuario.Size = New System.Drawing.Size(264, 47)
         Me.btnNuevoUsuario.TabIndex = 14
         Me.btnNuevoUsuario.Text = "Crear Usuario"
-        Me.btnNuevoUsuario.UseVisualStyleBackColor = True
+        Me.btnNuevoUsuario.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -124,6 +127,7 @@ Partial Class FormNuevoUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(337, 211)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)

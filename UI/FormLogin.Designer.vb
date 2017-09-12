@@ -34,6 +34,7 @@ Partial Class FormLogin
         '
         'grpLogin
         '
+        Me.grpLogin.BackColor = System.Drawing.SystemColors.Control
         Me.grpLogin.Controls.Add(Me.txtPassword)
         Me.grpLogin.Controls.Add(Me.txtUsername)
         Me.grpLogin.Controls.Add(Me.lnkNuevoUsuario)
@@ -92,18 +93,21 @@ Partial Class FormLogin
         '
         'btnLogin
         '
+        Me.btnLogin.BackColor = System.Drawing.Color.DarkCyan
         Me.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnLogin.Location = New System.Drawing.Point(23, 198)
+        Me.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnLogin.Location = New System.Drawing.Point(23, 190)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(275, 31)
+        Me.btnLogin.Size = New System.Drawing.Size(275, 42)
         Me.btnLogin.TabIndex = 0
         Me.btnLogin.Text = "Acceder"
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(362, 275)
         Me.Controls.Add(Me.grpLogin)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
