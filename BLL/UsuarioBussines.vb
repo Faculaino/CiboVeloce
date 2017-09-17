@@ -58,11 +58,11 @@ Public Class UsuarioBussines
         Return oUsuario
     End Function
 
-    Function listarUsuarios() As DataTable
+    Function listarUsuarios() As List(Of UsuarioEntity)
 
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
-        Dim listaUsuarios As New DataTable
+        Dim listaUsuarios As New List(Of UsuarioEntity)
         Dim Consulta As String = "SP_Select_ListarUsuarios"
 
         listarUsuarios = oDatos.listarUsuarios(Consulta)

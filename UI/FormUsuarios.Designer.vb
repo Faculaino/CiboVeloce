@@ -22,162 +22,69 @@ Partial Class FormUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtBuscarUsuario = New System.Windows.Forms.TextBox()
-        Me.btnBuscarUsuario = New System.Windows.Forms.Button()
-        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnBuscarPermiso = New System.Windows.Forms.Button()
-        Me.txtBuscarPermiso = New System.Windows.Forms.TextBox()
-        Me.dgvPermisos = New System.Windows.Forms.DataGridView()
-        Me.btnAgregarPermiso = New System.Windows.Forms.Button()
-        Me.btnGuardarPermisos = New System.Windows.Forms.Button()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.dgvUsuarios = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.btnPermisosUsuarios = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtBuscarUsuario
+        'MetroLabel1
         '
-        Me.txtBuscarUsuario.Location = New System.Drawing.Point(102, 13)
-        Me.txtBuscarUsuario.Name = "txtBuscarUsuario"
-        Me.txtBuscarUsuario.Size = New System.Drawing.Size(252, 20)
-        Me.txtBuscarUsuario.TabIndex = 0
-        '
-        'btnBuscarUsuario
-        '
-        Me.btnBuscarUsuario.Location = New System.Drawing.Point(457, 10)
-        Me.btnBuscarUsuario.Name = "btnBuscarUsuario"
-        Me.btnBuscarUsuario.Size = New System.Drawing.Size(160, 23)
-        Me.btnBuscarUsuario.TabIndex = 1
-        Me.btnBuscarUsuario.Text = "Buscar Usuario"
-        Me.btnBuscarUsuario.UseVisualStyleBackColor = True
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(13, 13)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(106, 19)
+        Me.MetroLabel1.TabIndex = 0
+        Me.MetroLabel1.Text = "Lista de Usuarios"
+        Me.MetroLabel1.UseCustomBackColor = True
         '
         'dgvUsuarios
         '
-        Me.dgvUsuarios.AllowUserToAddRows = False
-        Me.dgvUsuarios.AllowUserToDeleteRows = False
+        Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Location = New System.Drawing.Point(13, 39)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvUsuarios.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.dgvUsuarios.Location = New System.Drawing.Point(13, 36)
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.RowHeadersVisible = False
-        Me.dgvUsuarios.Size = New System.Drawing.Size(604, 150)
-        Me.dgvUsuarios.TabIndex = 2
+        Me.dgvUsuarios.Size = New System.Drawing.Size(404, 150)
+        Me.dgvUsuarios.TabIndex = 1
         '
-        'Label1
+        'btnPermisosUsuarios
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Nombre Usuario:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(685, 16)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Lista de Permisos"
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(623, 39)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(216, 290)
-        Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = ""
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 204)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Nombre Permiso:"
-        '
-        'btnBuscarPermiso
-        '
-        Me.btnBuscarPermiso.Location = New System.Drawing.Point(457, 198)
-        Me.btnBuscarPermiso.Name = "btnBuscarPermiso"
-        Me.btnBuscarPermiso.Size = New System.Drawing.Size(160, 23)
-        Me.btnBuscarPermiso.TabIndex = 8
-        Me.btnBuscarPermiso.Text = "Buscar Permiso"
-        Me.btnBuscarPermiso.UseVisualStyleBackColor = True
-        '
-        'txtBuscarPermiso
-        '
-        Me.txtBuscarPermiso.Location = New System.Drawing.Point(105, 201)
-        Me.txtBuscarPermiso.Name = "txtBuscarPermiso"
-        Me.txtBuscarPermiso.Size = New System.Drawing.Size(252, 20)
-        Me.txtBuscarPermiso.TabIndex = 7
-        '
-        'dgvPermisos
-        '
-        Me.dgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPermisos.Location = New System.Drawing.Point(15, 227)
-        Me.dgvPermisos.Name = "dgvPermisos"
-        Me.dgvPermisos.Size = New System.Drawing.Size(602, 150)
-        Me.dgvPermisos.TabIndex = 9
-        '
-        'btnAgregarPermiso
-        '
-        Me.btnAgregarPermiso.Location = New System.Drawing.Point(457, 383)
-        Me.btnAgregarPermiso.Name = "btnAgregarPermiso"
-        Me.btnAgregarPermiso.Size = New System.Drawing.Size(160, 23)
-        Me.btnAgregarPermiso.TabIndex = 10
-        Me.btnAgregarPermiso.Text = "Agregar Permiso"
-        Me.btnAgregarPermiso.UseVisualStyleBackColor = True
-        '
-        'btnGuardarPermisos
-        '
-        Me.btnGuardarPermisos.Location = New System.Drawing.Point(655, 335)
-        Me.btnGuardarPermisos.Name = "btnGuardarPermisos"
-        Me.btnGuardarPermisos.Size = New System.Drawing.Size(160, 42)
-        Me.btnGuardarPermisos.TabIndex = 11
-        Me.btnGuardarPermisos.Text = "Guardar Permisos"
-        Me.btnGuardarPermisos.UseVisualStyleBackColor = True
+        Me.btnPermisosUsuarios.Location = New System.Drawing.Point(246, 192)
+        Me.btnPermisosUsuarios.Name = "btnPermisosUsuarios"
+        Me.btnPermisosUsuarios.Size = New System.Drawing.Size(171, 23)
+        Me.btnPermisosUsuarios.TabIndex = 2
+        Me.btnPermisosUsuarios.Text = "Administrar Permisos"
+        Me.btnPermisosUsuarios.UseSelectable = True
         '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(851, 413)
-        Me.Controls.Add(Me.btnGuardarPermisos)
-        Me.Controls.Add(Me.btnAgregarPermiso)
-        Me.Controls.Add(Me.dgvPermisos)
-        Me.Controls.Add(Me.btnBuscarPermiso)
-        Me.Controls.Add(Me.txtBuscarPermiso)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(429, 230)
+        Me.Controls.Add(Me.btnPermisosUsuarios)
         Me.Controls.Add(Me.dgvUsuarios)
-        Me.Controls.Add(Me.btnBuscarUsuario)
-        Me.Controls.Add(Me.txtBuscarUsuario)
+        Me.Controls.Add(Me.MetroLabel1)
         Me.Name = "FormUsuarios"
-        Me.Text = "Administracion de Usuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Lista de Usuarios"
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvPermisos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents txtBuscarUsuario As TextBox
-    Friend WithEvents btnBuscarUsuario As Button
-    Friend WithEvents dgvUsuarios As DataGridView
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents btnBuscarPermiso As Button
-    Friend WithEvents txtBuscarPermiso As TextBox
-    Friend WithEvents dgvPermisos As DataGridView
-    Friend WithEvents btnAgregarPermiso As Button
-    Friend WithEvents btnGuardarPermisos As Button
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents dgvUsuarios As DevComponents.DotNetBar.Controls.DataGridViewX
+    Friend WithEvents btnPermisosUsuarios As MetroFramework.Controls.MetroButton
 End Class

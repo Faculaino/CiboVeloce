@@ -46,6 +46,16 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.9.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\Frameworks\METRO DLL\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\Frameworks\METRO DLL\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\Frameworks\METRO DLL\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -71,6 +81,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdministrador.Designer.vb">
+      <DependentUpon>FormAdministrador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministrador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBitacora.Designer.vb">
+      <DependentUpon>FormBitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormIdioma.Designer.vb">
       <DependentUpon>FormIdioma.vb</DependentUpon>
     </Compile>
@@ -102,6 +124,12 @@
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPermisosUsuarios.Designer.vb">
+      <DependentUpon>FormPermisosUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPermisosUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
@@ -125,6 +153,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBitacora.resx">
+      <DependentUpon>FormBitacora.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIdioma.resx">
       <DependentUpon>FormIdioma.vb</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPermisosUsuarios.resx">
+      <DependentUpon>FormPermisosUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
@@ -181,6 +218,18 @@
       <Project>{9228c505-8994-47ff-8ca7-27238f76d3e0}</Project>
       <Name>Servicios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataBase.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bandera_world.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bitacora.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

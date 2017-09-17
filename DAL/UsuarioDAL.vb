@@ -116,9 +116,9 @@ Public Class UsuarioDAL
 
     End Function
 
-    Function listarUsuarios(ByVal query As String) As DataTable
-        Dim nuevaLista = New DataTable
-        Dim da As New SqlDataAdapter
+    Function listarUsuarios(ByVal query As String) As List(Of UsuarioEntity)
+        Dim nuevaLista = New List(Of UsuarioEntity)
+
 
         Try
             OpenBD()
@@ -128,10 +128,20 @@ Public Class UsuarioDAL
             cmd.CommandText = query
             cmd.CommandType = CommandType.StoredProcedure
 
-            da.SelectCommand = cmd
-            da.Fill(nuevaLista)
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                Dim oUsuario = New UsuarioEntity()
+                oUsuario.ID = reader(0)
+                oUsuario.User = reader(1)
+                oUsuario.Nombre = reader(2)
+                oUsuario.Activo = reader(3)
 
-            cmd.ExecuteNonQuery()
+                nuevaLista.Add(oUsuario)
+            End While
+            reader.Close()
+
+
+            CloseBD()
 
             Return nuevaLista
         Catch ex As Exception

@@ -56,3 +56,11 @@ C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.exe
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.xml
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.pdb
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormIdioma.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.Design.dll
+C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.dll
+C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPermisosUsuarios.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormAdministrador.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormBitacora.resources
