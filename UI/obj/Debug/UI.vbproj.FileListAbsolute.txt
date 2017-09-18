@@ -46,7 +46,6 @@ C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DAL.pdb
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DAL.xml
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.vbprojResolveAssemblyReference.cache
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormLogin.resources
-C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormLogout.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormNuevoUsuario.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPrincipal.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormUsuarios.resources

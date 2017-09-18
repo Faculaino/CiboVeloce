@@ -1,21 +1,24 @@
-﻿Imports EE
+﻿Public Class BitacoraEntity
 
-Public Class Bitacora
 
-    Private _fecha As Date
+
     Private _mensaje As String
     Private _registroCambio As String
     Private _tipoEvento As String
+    Private _listaEventos As List(Of EventoEntity)
 
 
-    Public Shared Sub guardarLog(detalle As String, usuario As UsuarioEntity, fecha As Date)
 
-    End Sub
 
-    Function listarBitacora() As List(Of Bitacora)
+    Public Property listaEventos() As List(Of EventoEntity)
+        Get
+            Return _listaEventos
+        End Get
+        Set(ByVal value As List(Of EventoEntity))
+            _listaEventos = value
+        End Set
+    End Property
 
-        Return Nothing
-    End Function
 
 
 
@@ -45,15 +48,6 @@ Public Class Bitacora
         End Get
         Set(ByVal value As String)
             _mensaje = value
-        End Set
-    End Property
-
-    Public Property fecha() As DateTime
-        Get
-            Return _fecha
-        End Get
-        Set(ByVal value As DateTime)
-            _fecha = value
         End Set
     End Property
 

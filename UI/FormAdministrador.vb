@@ -1,5 +1,6 @@
 ﻿Imports MetroFramework
 Imports BLL
+Imports Servicios
 Public Class FormAdministrador
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         MetroFramework.MetroMessageBox.Show(Me, "Datos Resguardados Correctamente", "Backup OK", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -18,7 +19,9 @@ Public Class FormAdministrador
             Dim archivo = Date.Now.Year.ToString() & "-" & Date.Now.Month.ToString() & "@" & "CiboVeloce.bak"
             Dim ubicacion = "C:\BackupSQL\" & archivo
 
-            query = "BACKUP DATABASE [CiboVeloce] TO DISK = " & ubicacion
+            query = "BACKUP DATABASE [CiboVeloce] TO  DISK = N'" & ubicacion & "'" & " " & "WITH NOFORMAT, NOINIT,  NAME = N'CiboVeloce-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10"
+
+
 
             Dim newBK = New BackupBussines
             Dim respuesta = newBK.backup(query)
@@ -37,15 +40,21 @@ Public Class FormAdministrador
 
     End Sub
 
-    Private Sub MetroButton1_Click(sender As Object, e As EventArgs) Handles MetroButton1.Click
-        Dim frmIdioma = New FormIdioma
-        frmIdioma.StartPosition = FormStartPosition.CenterScreen
-        frmIdioma.Show()
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Me.Close()
+        SessionManager.Instance.Logout()
+        Application.Restart()
     End Sub
 
-    Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles MetroButton2.Click
+    Private Sub btnBitacora_Click(sender As Object, e As EventArgs) Handles btnBitacora.Click
         Dim frmbitacora = New FormBitacora
         frmbitacora.StartPosition = FormStartPosition.CenterScreen
         frmbitacora.Show()
+    End Sub
+
+    Private Sub btnIdioma_Click(sender As Object, e As EventArgs) Handles btnIdioma.Click
+        Dim frmIdioma = New FormIdioma
+        frmIdioma.StartPosition = FormStartPosition.CenterScreen
+        frmIdioma.Show()
     End Sub
 End Class

@@ -25,15 +25,15 @@ Partial Class FormAdministrador
     Private Sub InitializeComponent()
         Me.btnUsuarios = New MetroFramework.Controls.MetroButton()
         Me.btnClientes = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton3 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.btnCerrarSesion = New MetroFramework.Controls.MetroButton()
+        Me.btnBitacora = New MetroFramework.Controls.MetroButton()
+        Me.btnIdioma = New MetroFramework.Controls.MetroButton()
         Me.btnBackup = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'btnUsuarios
         '
-        Me.btnUsuarios.Location = New System.Drawing.Point(105, 63)
+        Me.btnUsuarios.Location = New System.Drawing.Point(184, 63)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(149, 119)
         Me.btnUsuarios.TabIndex = 0
@@ -42,55 +42,58 @@ Partial Class FormAdministrador
         '
         'btnClientes
         '
-        Me.btnClientes.Location = New System.Drawing.Point(276, 63)
+        Me.btnClientes.BackgroundImage = Global.UI.My.Resources.Resources.Clientes
+        Me.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnClientes.Location = New System.Drawing.Point(355, 63)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(149, 119)
         Me.btnClientes.TabIndex = 1
         Me.btnClientes.Text = "Clientes"
+        Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnClientes.UseSelectable = True
         '
-        'MetroButton3
+        'btnCerrarSesion
         '
-        Me.MetroButton3.BackgroundImage = Global.UI.My.Resources.Resources.cerrar
-        Me.MetroButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.MetroButton3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.MetroButton3.Location = New System.Drawing.Point(782, 63)
-        Me.MetroButton3.Name = "MetroButton3"
-        Me.MetroButton3.Size = New System.Drawing.Size(149, 119)
-        Me.MetroButton3.TabIndex = 5
-        Me.MetroButton3.Text = "Cerrar Sesión"
-        Me.MetroButton3.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.MetroButton3.UseSelectable = True
+        Me.btnCerrarSesion.BackgroundImage = Global.UI.My.Resources.Resources.logout
+        Me.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(861, 63)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(149, 119)
+        Me.btnCerrarSesion.TabIndex = 5
+        Me.btnCerrarSesion.Text = "Cerrar Sesión"
+        Me.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCerrarSesion.UseSelectable = True
         '
-        'MetroButton2
+        'btnBitacora
         '
-        Me.MetroButton2.BackgroundImage = Global.UI.My.Resources.Resources.bitacora
-        Me.MetroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.MetroButton2.Location = New System.Drawing.Point(105, 199)
-        Me.MetroButton2.Name = "MetroButton2"
-        Me.MetroButton2.Size = New System.Drawing.Size(149, 119)
-        Me.MetroButton2.TabIndex = 4
-        Me.MetroButton2.Text = "Bitacora"
-        Me.MetroButton2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.MetroButton2.UseSelectable = True
+        Me.btnBitacora.BackgroundImage = Global.UI.My.Resources.Resources.bitacora
+        Me.btnBitacora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBitacora.Location = New System.Drawing.Point(184, 197)
+        Me.btnBitacora.Name = "btnBitacora"
+        Me.btnBitacora.Size = New System.Drawing.Size(149, 119)
+        Me.btnBitacora.TabIndex = 4
+        Me.btnBitacora.Text = "Bitacora"
+        Me.btnBitacora.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnBitacora.UseSelectable = True
         '
-        'MetroButton1
+        'btnIdioma
         '
-        Me.MetroButton1.BackgroundImage = Global.UI.My.Resources.Resources.bandera_world
-        Me.MetroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MetroButton1.Location = New System.Drawing.Point(617, 63)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(149, 119)
-        Me.MetroButton1.TabIndex = 3
-        Me.MetroButton1.Text = "Idioma"
-        Me.MetroButton1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.MetroButton1.UseSelectable = True
+        Me.btnIdioma.BackgroundImage = Global.UI.My.Resources.Resources.bandera_world
+        Me.btnIdioma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnIdioma.Location = New System.Drawing.Point(696, 63)
+        Me.btnIdioma.Name = "btnIdioma"
+        Me.btnIdioma.Size = New System.Drawing.Size(149, 119)
+        Me.btnIdioma.TabIndex = 3
+        Me.btnIdioma.Text = "Idioma"
+        Me.btnIdioma.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnIdioma.UseSelectable = True
         '
         'btnBackup
         '
         Me.btnBackup.BackgroundImage = Global.UI.My.Resources.Resources.DataBase
         Me.btnBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBackup.Location = New System.Drawing.Point(445, 63)
+        Me.btnBackup.Location = New System.Drawing.Point(524, 63)
         Me.btnBackup.Name = "btnBackup"
         Me.btnBackup.Size = New System.Drawing.Size(149, 119)
         Me.btnBackup.TabIndex = 2
@@ -102,10 +105,10 @@ Partial Class FormAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(942, 351)
-        Me.Controls.Add(Me.MetroButton3)
-        Me.Controls.Add(Me.MetroButton2)
-        Me.Controls.Add(Me.MetroButton1)
+        Me.ClientSize = New System.Drawing.Size(1023, 351)
+        Me.Controls.Add(Me.btnCerrarSesion)
+        Me.Controls.Add(Me.btnBitacora)
+        Me.Controls.Add(Me.btnIdioma)
         Me.Controls.Add(Me.btnBackup)
         Me.Controls.Add(Me.btnClientes)
         Me.Controls.Add(Me.btnUsuarios)
@@ -119,7 +122,7 @@ Partial Class FormAdministrador
     Friend WithEvents btnUsuarios As MetroFramework.Controls.MetroButton
     Friend WithEvents btnClientes As MetroFramework.Controls.MetroButton
     Friend WithEvents btnBackup As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
-    Friend WithEvents MetroButton3 As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnIdioma As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnBitacora As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCerrarSesion As MetroFramework.Controls.MetroButton
 End Class

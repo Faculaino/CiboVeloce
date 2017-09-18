@@ -4,7 +4,7 @@ Public Class BackupDAL
     Inherits Connection
 
 
-    Function backupDatos(Query As String) As Boolean
+    Function backupDatos(ByVal Query As String) As Boolean
         OpenBD()
 
         Dim Tx As SqlTransaction
@@ -25,6 +25,7 @@ Public Class BackupDAL
 
         Catch ex As SqlException
             Tx.Rollback()
+            MsgBox(ex.Message)
             Return False
         Catch ex As Exception
             Tx.Rollback()

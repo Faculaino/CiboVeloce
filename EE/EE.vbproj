@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.vb" />
+    <Compile Include="BitacoraEntity.vb" />
+    <Compile Include="EventoEntity.vb" />
     <Compile Include="IdiomaEntity.vb" />
     <Compile Include="UsuarioEntity.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

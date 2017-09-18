@@ -106,12 +106,6 @@
       <DependentUpon>FormLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogout.Designer.vb">
-      <DependentUpon>FormLogout.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogout.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormNuevoUsuario.Designer.vb">
       <DependentUpon>FormNuevoUsuario.vb</DependentUpon>
     </Compile>
@@ -164,9 +158,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogout.resx">
-      <DependentUpon>FormLogout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoUsuario.resx">
       <DependentUpon>FormNuevoUsuario.vb</DependentUpon>
@@ -230,6 +221,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cerrar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

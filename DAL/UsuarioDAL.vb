@@ -96,6 +96,7 @@ Public Class UsuarioDAL
 
             Dim reader = cmd.ExecuteReader
             While reader.Read
+                oUsuario.ID = reader(0)
                 oUsuario.User = reader(2)
                 oUsuario.Password = reader(3)
             End While
@@ -115,6 +116,44 @@ Public Class UsuarioDAL
         End Try
 
     End Function
+
+
+    Function buscarUserID(query As String, id As Integer) As UsuarioEntity
+        Dim oUsuario = New UsuarioEntity()
+
+
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = query
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("ID", id)
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+
+                oUsuario.ID = reader(0)
+                oUsuario.User = reader(1)
+                oUsuario.Nombre = reader(2)
+
+
+
+            End While
+            reader.Close()
+
+
+            CloseBD()
+
+            Return oUsuario
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+
+    End Function
+
 
     Function listarUsuarios(ByVal query As String) As List(Of UsuarioEntity)
         Dim nuevaLista = New List(Of UsuarioEntity)

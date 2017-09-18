@@ -23,9 +23,6 @@ Partial Class FormPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoPedidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelNombre = New System.Windows.Forms.Panel()
         Me.lblUsuario = New System.Windows.Forms.Label()
@@ -36,7 +33,7 @@ Partial Class FormPrincipal
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.AdministrarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministrarToolStripMenuItem})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -45,32 +42,12 @@ Partial Class FormPrincipal
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'ArchivoToolStripMenuItem
-        '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoPedidoToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
-        Me.ArchivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'NuevoPedidoToolStripMenuItem
-        '
-        Me.NuevoPedidoToolStripMenuItem.Name = "NuevoPedidoToolStripMenuItem"
-        Me.NuevoPedidoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.NuevoPedidoToolStripMenuItem.Text = "Nuevo Pedido"
-        '
-        'CerrarSesiónToolStripMenuItem
-        '
-        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
-        '
         'AdministrarToolStripMenuItem
         '
         Me.AdministrarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText
         Me.AdministrarToolStripMenuItem.Name = "AdministrarToolStripMenuItem"
-        Me.AdministrarToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
-        Me.AdministrarToolStripMenuItem.Text = "Administrar"
+        Me.AdministrarToolStripMenuItem.Size = New System.Drawing.Size(99, 20)
+        Me.AdministrarToolStripMenuItem.Text = "Menu Principal"
         '
         'panelNombre
         '
@@ -103,7 +80,7 @@ Partial Class FormPrincipal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CiboVeloce [Menú Principal]"
+        Me.Text = "CiboVeloce "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -115,10 +92,7 @@ Partial Class FormPrincipal
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministrarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NuevoPedidoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents panelNombre As Panel
     Friend WithEvents lblUsuario As Label
-    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
 End Class

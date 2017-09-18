@@ -1,6 +1,6 @@
 ﻿Imports Servicios
 Public Class FormPrincipal
-    'Property menuUsuario As Integer = 0
+
 
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formatoVista()
@@ -22,32 +22,6 @@ Public Class FormPrincipal
         lblUsuario.Text = "Usuario: " + SessionManager.Instance.Usuario.User
     End Sub
 
-
-    'Private Sub linkUsuario_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-    '    Dim oCerrar = New FormLogout()
-    '    If menuUsuario = 0 Then
-    '        oCerrar.Show()
-    '        oCerrar.Text = SessionManager.Instance.Usuario.User
-    '        oCerrar.Location = New Point(Me.Width - 230, 50)
-    '        menuUsuario = 1
-    '    ElseIf menuUsuario = 1 Then
-    '        oCerrar.Close()
-    '        menuUsuario = 0
-    '        oCerrar = Nothing
-    '    End If
-
-
-    'End Sub
-
-    'Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
-
-    '    Dim frmUsuarios = New FormUsuarios
-    '    frmUsuarios.MdiParent = Me
-    '    frmUsuarios.StartPosition = FormStartPosition.CenterScreen
-    '    frmUsuarios.Show()
-
-    'End Sub
-
     Private Sub SeleccionarIdiomaToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -56,12 +30,10 @@ Public Class FormPrincipal
         ubicarUsuario()
     End Sub
 
-    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs)
         SessionManager.Instance.Logout()
         Application.Restart()
     End Sub
-
-
 
     Private Sub AdministrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarToolStripMenuItem.Click
         Dim frmBK = New FormAdministrador

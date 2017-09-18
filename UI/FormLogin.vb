@@ -3,6 +3,7 @@ Imports BLL
 Imports System.Text
 Imports System.Security.Cryptography
 Imports Servicios
+Imports MetroFramework
 
 Public Class FormLogin
 
@@ -115,10 +116,13 @@ Public Class FormLogin
 
                 If usuarioOK.User = txtUsername.Text Then
                     If PasswordHash.Length = usuarioOK.Password.Length Then
-                        MsgBox("Bienvenido " + usuarioOK.User, MsgBoxStyle.Information, "Login Correcto!")
+                        'MsgBox("Bienvenido " + usuarioOK.User, MsgBoxStyle.Information, "Login Correcto")
+
+                        MetroMessageBox.Show(Me, "Bienvenido " & usuarioOK.User, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.Question)
 
                         SessionManager.Instance.Login(usuarioOK)
-                        Bitacora.guardarLog("Login", usuarioOK, DateTime.Now)
+                        Dim nuevaBitacora = New BitacoraBussines
+                        nuevaBitacora.guardarEvento("Login", usuarioOK)
 
                         Dim oPrincipal = New FormPrincipal
                         oPrincipal.Show()
@@ -127,7 +131,8 @@ Public Class FormLogin
                     End If
 
                 Else
-                    MsgBox("Error al Iniciar Sesión", MsgBoxStyle.Critical, "Usuario o Contraseña Incorrecto")
+                    'MsgBox("Error al Iniciar Sesión", MsgBoxStyle.Critical, "Usuario o Contraseña Incorrecto")
+                    MetroMessageBox.Show(Me, "Usuario o Contraseña Incorrecto", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     limpiarCampos()
                 End If
 

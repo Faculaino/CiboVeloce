@@ -64,7 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackupBussines.vb" />
+    <Compile Include="BitacoraBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
+    <Compile Include="Observer\IObserver.vb" />
+    <Compile Include="Observer\Objeto.vb" />
     <Compile Include="UsuarioBussines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
