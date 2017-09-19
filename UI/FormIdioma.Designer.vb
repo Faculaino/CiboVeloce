@@ -34,6 +34,7 @@ Partial Class FormIdioma
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(50, 19)
         Me.MetroLabel1.TabIndex = 3
+        Me.MetroLabel1.Tag = "1"
         Me.MetroLabel1.Text = "Idioma"
         Me.MetroLabel1.UseCustomBackColor = True
         '

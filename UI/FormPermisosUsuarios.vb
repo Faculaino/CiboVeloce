@@ -20,10 +20,10 @@ Public Class FormPermisosUsuarios
 
     Sub llenarGrilla()
 
-        'Dim usuarioBussines = New UsuarioBussines
+        Dim nuevoPermisos = New PermisosBussines
 
-        'dgvUsuarios.DataSource = Nothing
-        'dgvUsuarios.DataSource = usuarioBussines.listarUsuarios
+        dgvPermisosFaltantes.DataSource = Nothing
+        dgvPermisosFaltantes.DataSource = nuevoPermisos.listarPermisos()
 
     End Sub
 End Class

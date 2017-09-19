@@ -67,6 +67,7 @@
     <Compile Include="BitacoraEntity.vb" />
     <Compile Include="EventoEntity.vb" />
     <Compile Include="IdiomaEntity.vb" />
+    <Compile Include="PermisoEntity.vb" />
     <Compile Include="UsuarioEntity.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

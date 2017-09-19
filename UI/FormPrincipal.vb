@@ -28,6 +28,7 @@ Public Class FormPrincipal
 
     Private Sub FormPrincipal_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         ubicarUsuario()
+
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs)

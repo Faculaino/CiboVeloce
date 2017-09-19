@@ -65,9 +65,10 @@
   <ItemGroup>
     <Compile Include="BackupBussines.vb" />
     <Compile Include="BitacoraBussines.vb" />
+    <Compile Include="Composite\PermisosBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
-    <Compile Include="Observer\Objeto.vb" />
+    <Compile Include="Observer\Sujeto.vb" />
     <Compile Include="UsuarioBussines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -118,6 +119,7 @@
       <Name>Servicios</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,11 +4,9 @@ Imports EE
 Public Class FormIdioma
     Implements IObserver
 
-
-
     Private Sub FormIdioma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCombo()
-        Objeto.agregarObserver(Me)
+
     End Sub
 
     Sub llenarCombo()
@@ -24,17 +22,25 @@ Public Class FormIdioma
         cmbIdioma.SelectedIndex = -1
     End Sub
 
-    Public Sub modificarIdioma(idioma As IdiomaEntity) Implements IObserver.modificarIdioma
-
-        If cmbIdioma.SelectedItem = "Español" Then
-
+    Public Sub actulizar() Implements IObserver.actulizar
+        If cmbIdioma.DisplayMember.ToString() = "Español" Then
+            MsgBox("vale")
         ElseIf cmbIdioma.SelectedItem = "Inglés" Then
+            For Each c In Controls
+                MsgBox("Entre")
+            Next
 
         ElseIf cmbIdioma.SelectedItem = "Italiano" Then
 
+
         End If
+    End Sub
 
+    Private Sub cmbIdioma_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbIdioma.SelectedIndexChanged
 
+    End Sub
 
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        actulizar()
     End Sub
 End Class

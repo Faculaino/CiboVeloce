@@ -11,6 +11,8 @@ Public Class FormBitacora
         dgvEventos.DataSource = bitacora.listarEventos()
 
 
+        dgvEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
     End Sub
 
 End Class

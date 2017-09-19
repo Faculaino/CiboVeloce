@@ -120,9 +120,12 @@ Public Class FormLogin
 
                         MetroMessageBox.Show(Me, "Bienvenido " & usuarioOK.User, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.Question)
 
+
                         SessionManager.Instance.Login(usuarioOK)
-                        Dim nuevaBitacora = New BitacoraBussines
-                        nuevaBitacora.guardarEvento("Login", usuarioOK)
+
+
+                        'Dim nuevaBitacora = New BitacoraBussines
+                        'nuevaBitacora.guardarEvento("Login", usuarioOK)
 
                         Dim oPrincipal = New FormPrincipal
                         oPrincipal.Show()

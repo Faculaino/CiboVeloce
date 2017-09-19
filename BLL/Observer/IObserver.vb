@@ -1,7 +1,7 @@
 ﻿Imports EE
 Public Interface IObserver
 
-    Sub modificarIdioma(idioma As IdiomaEntity)
+    Sub actulizar()
 
 
 End Interface

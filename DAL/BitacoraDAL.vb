@@ -63,7 +63,7 @@ Public Class BitacoraDAL
                 Dim user = New UsuarioEntity
                 user = nuevoUsuario.buscarUserID("SP_Select_UsuariosPorID", reader(0))
 
-                nuevoEvento.mensaje = reader(1) & " " & "del Usuario = " & user.Nombre & "/" & user.User
+                nuevoEvento.mensaje = reader(1) & " " & "del Usuario = " & user.User
 
                 nuevaLista.Add(nuevoEvento)
             End While

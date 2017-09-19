@@ -57,4 +57,12 @@ Public Class FormAdministrador
         frmIdioma.StartPosition = FormStartPosition.CenterScreen
         frmIdioma.Show()
     End Sub
+
+    Private Sub FormAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub FormAdministrador_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+
+    End Sub
 End Class

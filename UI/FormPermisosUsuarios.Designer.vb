@@ -28,11 +28,11 @@ Partial Class FormPermisosUsuarios
         Me.listPermisos = New DevComponents.DotNetBar.Controls.RichTextBoxEx()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.dgvPermisos = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.dgvPermisosFaltantes = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.btnAgregarPermiso = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.btnQuitarPermiso = New MetroFramework.Controls.MetroButton()
-        CType(Me.dgvPermisos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbUsuario
@@ -82,15 +82,15 @@ Partial Class FormPermisosUsuarios
         Me.MetroLabel3.AutoSize = True
         Me.MetroLabel3.Location = New System.Drawing.Point(279, 42)
         Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(109, 19)
+        Me.MetroLabel3.Size = New System.Drawing.Size(163, 19)
         Me.MetroLabel3.TabIndex = 16
-        Me.MetroLabel3.Text = "Lista de Permisos"
+        Me.MetroLabel3.Text = "Lista de Permisos Faltantes"
         Me.MetroLabel3.UseCustomBackColor = True
         '
-        'dgvPermisos
+        'dgvPermisosFaltantes
         '
-        Me.dgvPermisos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPermisosFaltantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvPermisosFaltantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -98,13 +98,13 @@ Partial Class FormPermisosUsuarios
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPermisos.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvPermisos.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.dgvPermisos.Location = New System.Drawing.Point(279, 71)
-        Me.dgvPermisos.Name = "dgvPermisos"
-        Me.dgvPermisos.RowHeadersVisible = False
-        Me.dgvPermisos.Size = New System.Drawing.Size(370, 150)
-        Me.dgvPermisos.TabIndex = 17
+        Me.dgvPermisosFaltantes.DefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPermisosFaltantes.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.dgvPermisosFaltantes.Location = New System.Drawing.Point(279, 71)
+        Me.dgvPermisosFaltantes.Name = "dgvPermisosFaltantes"
+        Me.dgvPermisosFaltantes.RowHeadersVisible = False
+        Me.dgvPermisosFaltantes.Size = New System.Drawing.Size(370, 150)
+        Me.dgvPermisosFaltantes.TabIndex = 17
         '
         'btnAgregarPermiso
         '
@@ -141,7 +141,7 @@ Partial Class FormPermisosUsuarios
         Me.Controls.Add(Me.btnQuitarPermiso)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnAgregarPermiso)
-        Me.Controls.Add(Me.dgvPermisos)
+        Me.Controls.Add(Me.dgvPermisosFaltantes)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.listPermisos)
@@ -150,7 +150,7 @@ Partial Class FormPermisosUsuarios
         Me.Name = "FormPermisosUsuarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administracion de Permisos de Usuarios"
-        CType(Me.dgvPermisos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -160,7 +160,7 @@ Partial Class FormPermisosUsuarios
     Friend WithEvents listPermisos As DevComponents.DotNetBar.Controls.RichTextBoxEx
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents dgvPermisos As DevComponents.DotNetBar.Controls.DataGridViewX
+    Friend WithEvents dgvPermisosFaltantes As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents btnAgregarPermiso As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnQuitarPermiso As MetroFramework.Controls.MetroButton
