@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormLogin
-    ''Inherits System.Windows.Forms.Form
+    'Inherits System.Windows.Forms.Form
     Inherits MetroFramework.Forms.MetroForm
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>

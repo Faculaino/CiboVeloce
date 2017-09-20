@@ -37,8 +37,8 @@ Public Class BackupDAL
     Function backupDatos(ByVal Query As String, ubicacion As String) As Boolean
         OpenBD()
 
-        Dim Tx As SqlTransaction
-        Tx = cnn.BeginTransaction()
+        'Dim Tx As SqlTransaction
+        'Tx = cnn.BeginTransaction()
 
         Try
             cmd = New SqlCommand
@@ -47,19 +47,19 @@ Public Class BackupDAL
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@nombre", ubicacion)
 
-            cmd.Transaction = Tx
+            'cmd.Transaction = Tx
 
             cmd.ExecuteNonQuery()
-            Tx.Commit()
+            'Tx.Commit()
             CloseBD()
             Return True
 
         Catch ex As SqlException
-            Tx.Rollback()
-            MsgBox(ex.Message)
+            'Tx.Rollback()
+            'MsgBox(ex.Message)
             Return False
         Catch ex As Exception
-            Tx.Rollback()
+            'Tx.Rollback()
             Return False
         End Try
 
