@@ -1,14 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Imports EE
-Public Class PermisoDAL
+Public Class PerfilDAL
     Inherits Connection
 
 
+    Function perfilUsuario(query As String, id As Integer) As PerfilEntity
 
-
-    Function listarPermisos(ByVal query As String) As List(Of PermisoEntity)
-        Dim nuevaLista = New List(Of PermisoEntity)
-
+        Dim nuevoPerfil = New PerfilEntity
 
         Try
             OpenBD()
@@ -16,33 +14,25 @@ Public Class PermisoDAL
             cmd = New SqlCommand
             cmd.Connection = cnn
             cmd.CommandText = query
-            cmd.CommandType = CommandType.Text
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", id)
 
 
             Dim reader = cmd.ExecuteReader
             While reader.Read
-                Dim nuevoPermiso = New PermisoEntity()
-                nuevoPermiso.ID = reader(0)
-                nuevoPermiso.descripcion = reader(1)
-                nuevaLista.Add(nuevoPermiso)
+                nuevoPerfil.descripcion = reader(0)
             End While
             reader.Close()
 
 
             CloseBD()
 
-            Return nuevaLista
+            Return nuevoPerfil
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing
         End Try
-
-
     End Function
-
-
-
-
 
 
 End Class

@@ -3,8 +3,14 @@
 
 
     Private _mensaje As String
-    Private _registroCambio As String
-    Private _tipoEvento As String
+    Private _fechahora As DateTime
+    Private _usuario As String
+
+
+
+
+
+
     Private _listaEventos As List(Of EventoEntity)
 
 
@@ -20,27 +26,25 @@
     End Property
 
 
-
-
-
-
-    Public Property tipoEvento() As String
+    Public Property fechahora() As DateTime
         Get
-            Return _tipoEvento
+            Return _fechahora
         End Get
-        Set(ByVal value As String)
-            _tipoEvento = value
+        Set(ByVal value As DateTime)
+            _fechahora = value
         End Set
     End Property
 
-    Public Property registroCambio() As String
+    Public Property usuario() As String
         Get
-            Return _registroCambio
+            Return _usuario
         End Get
         Set(ByVal value As String)
-            _registroCambio = value
+            _usuario = value
         End Set
     End Property
+
+
 
     Public Property mensaje() As String
         Get

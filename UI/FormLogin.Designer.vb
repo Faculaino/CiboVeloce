@@ -50,7 +50,7 @@ Partial Class FormLogin
         '
         Me.lnkNuevoUsuario.AutoSize = True
         Me.lnkNuevoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lnkNuevoUsuario.Location = New System.Drawing.Point(64, 199)
+        Me.lnkNuevoUsuario.Location = New System.Drawing.Point(64, 197)
         Me.lnkNuevoUsuario.Name = "lnkNuevoUsuario"
         Me.lnkNuevoUsuario.Size = New System.Drawing.Size(198, 18)
         Me.lnkNuevoUsuario.TabIndex = 11
@@ -93,7 +93,7 @@ Partial Class FormLogin
         '
         '
         Me.ReflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.ReflectionLabel1.Location = New System.Drawing.Point(55, 285)
+        Me.ReflectionLabel1.Location = New System.Drawing.Point(67, 285)
         Me.ReflectionLabel1.Name = "ReflectionLabel1"
         Me.ReflectionLabel1.Size = New System.Drawing.Size(207, 70)
         Me.ReflectionLabel1.TabIndex = 16

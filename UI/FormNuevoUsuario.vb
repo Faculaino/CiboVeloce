@@ -1,5 +1,7 @@
 ﻿Imports EE
 Imports BLL
+Imports MetroFramework
+
 Public Class FormNuevoUsuario
 
 
@@ -24,17 +26,35 @@ Public Class FormNuevoUsuario
             oUsuario.User = txtUserName.Text
             oUsuario.Activo = 1
             oUsuario.DVV = txtNombre.Text.Length + txtUserName.Text.Length
-            oUsuario.DVH = txtNombre.Text.Length + txtUserName.Text.Length
-            oUsuario.IDPerfil = 18
+
+            Dim nuevoUsuario = New UsuarioBussines
+            Dim lista As New List(Of UsuarioEntity)
+
+            lista = nuevoUsuario.listarUsuarios
+            Dim nuevoDVH As Integer = 0
+            For Each user In lista
+                nuevoDVH += user.DVV
+            Next
+
+
+
+
+            oUsuario.DVH = nuevoDVH + oUsuario.DVV
+            oUsuario.IDPerfil = 4 'Usuario Comun
 
             Dim oUsuarioBLL As New UsuarioBussines
             oUsuarioBLL.insertUsuario(oUsuario)
+            oUsuarioBLL.updateUsuarios(oUsuario.DVH)
 
-            MsgBox("Usuario creado con exito!")
+            MetroMessageBox.Show(Me, "Se dió de alta correctamente al Usuario", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Question)
+
+            'Dim nuevaBitacora = New BitacoraBussines
+            'nuevaBitacora.guardarEvento("Alta", oUsuario)
+
             limpiarCampos()
             Me.Close()
         Catch ex As Exception
-            MsgBox("Hubo un error al Crear el Usuari0, inténtelo más tarde!")
+            MetroMessageBox.Show(Me, "Hubo un error al dar de alta al Usuario. Por favor, inténtelo más tarde", "Error al Crear Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
 

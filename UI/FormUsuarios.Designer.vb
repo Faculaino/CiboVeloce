@@ -22,10 +22,11 @@ Partial Class FormUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.dgvUsuarios = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.btnPermisosUsuarios = New MetroFramework.Controls.MetroButton()
+        Me.btnAltaUsuario = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,14 +44,14 @@ Partial Class FormUsuarios
         '
         Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvUsuarios.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvUsuarios.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvUsuarios.Location = New System.Drawing.Point(13, 36)
         Me.dgvUsuarios.Name = "dgvUsuarios"
@@ -67,11 +68,21 @@ Partial Class FormUsuarios
         Me.btnPermisosUsuarios.Text = "Administrar Permisos"
         Me.btnPermisosUsuarios.UseSelectable = True
         '
+        'btnAltaUsuario
+        '
+        Me.btnAltaUsuario.Location = New System.Drawing.Point(13, 195)
+        Me.btnAltaUsuario.Name = "btnAltaUsuario"
+        Me.btnAltaUsuario.Size = New System.Drawing.Size(171, 23)
+        Me.btnAltaUsuario.TabIndex = 3
+        Me.btnAltaUsuario.Text = "Alta de Usuario"
+        Me.btnAltaUsuario.UseSelectable = True
+        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(429, 230)
+        Me.Controls.Add(Me.btnAltaUsuario)
         Me.Controls.Add(Me.btnPermisosUsuarios)
         Me.Controls.Add(Me.dgvUsuarios)
         Me.Controls.Add(Me.MetroLabel1)
@@ -87,4 +98,5 @@ Partial Class FormUsuarios
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents dgvUsuarios As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents btnPermisosUsuarios As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnAltaUsuario As MetroFramework.Controls.MetroButton
 End Class

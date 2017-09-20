@@ -2,9 +2,7 @@
 Imports BLL
 Imports Servicios
 Public Class FormAdministrador
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        MetroFramework.MetroMessageBox.Show(Me, "Datos Resguardados Correctamente", "Backup OK", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
+
 
     Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
         Dim frmUsuarios = New FormUsuarios
@@ -16,15 +14,16 @@ Public Class FormAdministrador
 
         Try
             Dim query As String = ""
-            Dim archivo = Date.Now.Year.ToString() & "-" & Date.Now.Month.ToString() & "@" & "CiboVeloce.bak"
+            Dim archivo = Date.Now.Year.ToString() & "-" & Date.Now.Month.ToString() & "-" & Date.Now.Day.ToString() & "@" & "CiboVeloce.bak"
             Dim ubicacion = "C:\BackupSQL\" & archivo
 
-            query = "BACKUP DATABASE [CiboVeloce] TO  DISK = N'" & ubicacion & "'" & " " & "WITH NOFORMAT, NOINIT,  NAME = N'CiboVeloce-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10"
-
+            'query = "BACKUP DATABASE [CiboVeloce] TO  DISK = N'" & ubicacion & "'" & " " & "WITH NOFORMAT, NOINIT,  NAME = N'CiboVeloce-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10"
+            Dim SP = "SP_BackupSQL"
 
 
             Dim newBK = New BackupBussines
-            Dim respuesta = newBK.backup(query)
+            'Dim respuesta = newBK.backup(query, ubicacion)
+            Dim respuesta = newBK.backup(SP, ubicacion)
 
             If respuesta = True Then
                 MetroMessageBox.Show(Me, "Datos Resguardados Correctamente", "Backup OK", MessageBoxButtons.OK, MessageBoxIcon.Question)
@@ -41,7 +40,11 @@ Public Class FormAdministrador
     End Sub
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Dim nuevaBitacora = New BitacoraBussines
+        nuevaBitacora.guardarEvento("Logout", SessionManager.Instance.Usuario)
+
         Me.Close()
+
         SessionManager.Instance.Logout()
         Application.Restart()
     End Sub

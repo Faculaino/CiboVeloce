@@ -70,6 +70,11 @@ Public Class UsuarioBussines
         Return listarUsuarios
     End Function
 
+    Sub updateUsuarios(dvh As Integer)
+        Dim nuevoDatos = New UsuarioDAL
+        nuevoDatos.updateUsuariosDVH("SP_Update_UsuariosDVH", dvh)
+    End Sub
+
 
 
 

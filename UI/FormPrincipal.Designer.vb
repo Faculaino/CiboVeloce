@@ -51,6 +51,7 @@ Partial Class FormPrincipal
         '
         'panelNombre
         '
+        Me.panelNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.panelNombre.Controls.Add(Me.lblUsuario)
         Me.panelNombre.Location = New System.Drawing.Point(0, 498)
         Me.panelNombre.Name = "panelNombre"

@@ -14,7 +14,7 @@ Public Class BitacoraBussines
     Function listarEventos() As List(Of BitacoraEntity)
 
         Dim nuevalista = New List(Of BitacoraEntity)
-        Dim query = "SELECT * FROM Bitacora"
+        Dim query = "SELECT B.Mensaje, B.FechaHora, U.Usuario, U.ID FROM Bitacora AS B INNER JOIN Usuarios AS U ON B.IDUsuario = U.ID"
         Dim nuevaConsulta = New BitacoraDAL
 
         nuevalista = nuevaConsulta.listarBitacora(query)

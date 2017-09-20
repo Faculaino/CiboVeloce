@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormNuevoUsuario
-    Inherits System.Windows.Forms.Form
+    Inherits MetroFramework.Forms.MetroForm
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -22,42 +22,21 @@ Partial Class FormNuevoUsuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnVerContraseña = New System.Windows.Forms.Button()
         Me.btnNuevoUsuario = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtUserName = New System.Windows.Forms.TextBox()
-        Me.GroupBox1.SuspendLayout()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Me.txtUserName = New MetroFramework.Controls.MetroTextBox()
+        Me.txtPassword = New MetroFramework.Controls.MetroTextBox()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox1.Controls.Add(Me.btnVerContraseña)
-        Me.GroupBox1.Controls.Add(Me.btnNuevoUsuario)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.txtPassword)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtUserName)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(313, 188)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos"
         '
         'btnVerContraseña
         '
         Me.btnVerContraseña.BackColor = System.Drawing.Color.White
         Me.btnVerContraseña.Image = Global.UI.My.Resources.Resources.ImagenOjo1
-        Me.btnVerContraseña.Location = New System.Drawing.Point(279, 92)
+        Me.btnVerContraseña.Location = New System.Drawing.Point(489, 150)
         Me.btnVerContraseña.Name = "btnVerContraseña"
         Me.btnVerContraseña.Size = New System.Drawing.Size(22, 22)
         Me.btnVerContraseña.TabIndex = 15
@@ -67,85 +46,109 @@ Partial Class FormNuevoUsuario
         '
         Me.btnNuevoUsuario.BackColor = System.Drawing.Color.DarkCyan
         Me.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnNuevoUsuario.Location = New System.Drawing.Point(22, 126)
+        Me.btnNuevoUsuario.Location = New System.Drawing.Point(130, 193)
         Me.btnNuevoUsuario.Name = "btnNuevoUsuario"
         Me.btnNuevoUsuario.Size = New System.Drawing.Size(264, 47)
         Me.btnNuevoUsuario.TabIndex = 14
         Me.btnNuevoUsuario.Text = "Crear Usuario"
         Me.btnNuevoUsuario.UseVisualStyleBackColor = False
         '
-        'Label6
+        'MetroLabel1
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 17)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 15)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Nombre"
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(24, 64)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(59, 19)
+        Me.MetroLabel1.TabIndex = 8
+        Me.MetroLabel1.Text = "Nombre"
         '
-        'txtPassword
+        'MetroLabel2
         '
-        Me.txtPassword.Location = New System.Drawing.Point(153, 93)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(120, 21)
-        Me.txtPassword.TabIndex = 13
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(24, 128)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(71, 19)
+        Me.MetroLabel2.TabIndex = 9
+        Me.MetroLabel2.Text = "UserName"
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.Location = New System.Drawing.Point(261, 128)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(75, 19)
+        Me.MetroLabel3.TabIndex = 10
+        Me.MetroLabel3.Text = "Contraseña"
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(9, 36)
+        Me.txtNombre.Lines = New String() {"Nombre"}
+        Me.txtNombre.Location = New System.Drawing.Point(24, 87)
+        Me.txtNombre.MaxLength = 32767
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(120, 21)
-        Me.txtNombre.TabIndex = 9
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(150, 74)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 15)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Contraseña"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 74)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 15)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "UserName"
+        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombre.SelectedText = ""
+        Me.txtNombre.Size = New System.Drawing.Size(222, 23)
+        Me.txtNombre.TabIndex = 11
+        Me.txtNombre.Text = "Nombre"
+        Me.txtNombre.UseSelectable = True
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(9, 93)
+        Me.txtUserName.Lines = New String() {"UserName"}
+        Me.txtUserName.Location = New System.Drawing.Point(24, 150)
+        Me.txtUserName.MaxLength = 32767
         Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(120, 21)
-        Me.txtUserName.TabIndex = 11
+        Me.txtUserName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtUserName.SelectedText = ""
+        Me.txtUserName.Size = New System.Drawing.Size(222, 23)
+        Me.txtUserName.TabIndex = 12
+        Me.txtUserName.Text = "UserName"
+        Me.txtUserName.UseSelectable = True
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Lines = New String() {"Contraseña"}
+        Me.txtPassword.Location = New System.Drawing.Point(261, 150)
+        Me.txtPassword.MaxLength = 32767
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtPassword.SelectedText = ""
+        Me.txtPassword.Size = New System.Drawing.Size(222, 23)
+        Me.txtPassword.TabIndex = 13
+        Me.txtPassword.Text = "Contraseña"
+        Me.txtPassword.UseSelectable = True
         '
         'FormNuevoUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkCyan
-        Me.ClientSize = New System.Drawing.Size(337, 211)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(524, 261)
+        Me.Controls.Add(Me.btnNuevoUsuario)
+        Me.Controls.Add(Me.btnVerContraseña)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtUserName)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.MetroLabel3)
+        Me.Controls.Add(Me.MetroLabel2)
+        Me.Controls.Add(Me.MetroLabel1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Name = "FormNuevoUsuario"
+        Me.Resizable = False
         Me.Text = "Alta de Usuario"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnNuevoUsuario As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtNombre As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtUserName As TextBox
     Friend WithEvents btnVerContraseña As Button
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtUserName As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtPassword As MetroFramework.Controls.MetroTextBox
 End Class

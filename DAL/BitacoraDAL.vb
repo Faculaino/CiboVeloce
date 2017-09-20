@@ -56,14 +56,16 @@ Public Class BitacoraDAL
             Dim reader = cmd.ExecuteReader
             While reader.Read
                 Dim nuevoEvento = New BitacoraEntity()
-                nuevoEvento.tipoEvento = reader(1)
-                nuevoEvento.registroCambio = reader(2)
+                nuevoEvento.mensaje = reader(0)
+                nuevoEvento.fechahora = reader(1)
+
 
                 Dim nuevoUsuario = New UsuarioDAL
                 Dim user = New UsuarioEntity
-                user = nuevoUsuario.buscarUserID("SP_Select_UsuariosPorID", reader(0))
+                user = nuevoUsuario.buscarUserID("SP_Select_UsuariosPorID", reader(3))
+                nuevoEvento.usuario = user.User
 
-                nuevoEvento.mensaje = reader(1) & " " & "del Usuario = " & user.User
+                nuevoEvento.mensaje = reader(0) & " " & "del Usuario = " & user.User
 
                 nuevaLista.Add(nuevoEvento)
             End While

@@ -65,10 +65,12 @@
   <ItemGroup>
     <Compile Include="BackupBussines.vb" />
     <Compile Include="BitacoraBussines.vb" />
+    <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />
+    <Compile Include="TraduccionBussines.vb" />
     <Compile Include="UsuarioBussines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

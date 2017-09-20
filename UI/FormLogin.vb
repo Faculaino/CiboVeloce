@@ -45,55 +45,6 @@ Public Class FormLogin
         Return True
     End Function
 
-    'Private Sub btnLogin_Click(sender As Object, e As EventArgs)
-
-
-    '    Dim usuarioOK = New UsuarioEntity
-    '    Dim encriptar = New CryptoManager
-
-    '    If (validarCampos(txtUsername.Text.Trim(), txtPassword.Text.Trim())) Then
-    '        Try
-
-    '            Dim PasswordHash() As Byte = encriptar.hashearPassword(txtPassword.Text)
-    '            Dim oUsuario = New UsuarioEntity
-
-
-    '            oUsuario.User = txtUsername.Text
-    '            oUsuario.Password = txtPassword.Text
-
-
-
-    '            Dim oUsuarioBussines = New UsuarioBussines
-    '            usuarioOK = oUsuarioBussines.buscarUsuario(oUsuario)
-
-    '            If usuarioOK.User = txtUsername.Text Then
-    '                If PasswordHash.Length = usuarioOK.Password.Length Then
-    '                    MsgBox("Bienvenido " + usuarioOK.User, MsgBoxStyle.Information, "Login Correcto!")
-
-    '                    SessionManager.Instance.Login(usuarioOK)
-
-    '                    Dim oPrincipal = New FormPrincipal
-    '                    oPrincipal.Show()
-
-    '                    Me.Close()
-    '                End If
-
-    '            Else
-    '                MsgBox("Error al Iniciar Sesión", MsgBoxStyle.Critical, "Usuario o Contraseña Incorrecto")
-    '                limpiarCampos()
-    '            End If
-
-
-    '        Catch ex As Exception
-
-    '        End Try
-
-    '    Else
-
-    '    End If
-
-
-    'End Sub
 
     Private Sub codeLogin()
         Dim usuarioOK = New UsuarioEntity
@@ -124,8 +75,8 @@ Public Class FormLogin
                         SessionManager.Instance.Login(usuarioOK)
 
 
-                        'Dim nuevaBitacora = New BitacoraBussines
-                        'nuevaBitacora.guardarEvento("Login", usuarioOK)
+                        Dim nuevaBitacora = New BitacoraBussines
+                        nuevaBitacora.guardarEvento("Login", usuarioOK)
 
                         Dim oPrincipal = New FormPrincipal
                         oPrincipal.Show()

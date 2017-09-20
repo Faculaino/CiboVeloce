@@ -23,14 +23,47 @@ Public Class FormIdioma
     End Sub
 
     Public Sub actulizar() Implements IObserver.actulizar
-        If cmbIdioma.DisplayMember.ToString() = "Español" Then
-            MsgBox("vale")
-        ElseIf cmbIdioma.SelectedItem = "Inglés" Then
-            For Each c In Controls
-                MsgBox("Entre")
+        Dim nuevoIdioma = New IdiomaBussines
+        Dim idiomaEE = New IdiomaEntity
+        idiomaEE = nuevoIdioma.buscarIdiomaID(CInt(cmbIdioma.SelectedValue))
+
+
+        If cmbIdioma.Text = idiomaEE.idioma Then
+            Dim nuevaTraduccion = New TraduccionBussines
+            Dim nuevaLista = New List(Of TraduccionEntity)
+            nuevaLista = nuevaTraduccion.listarTraduccion(cmbIdioma.SelectedValue)
+
+
+            For Each c In Me.Controls
+
+                For Each item In nuevaLista
+                    If item.PalabraTraducida = "Language" Then
+                        Me.Text = "Language List"
+                        If c.text = "Idioma" Then
+                            c.text = item.PalabraTraducida
+                        End If
+                    End If
+
+                    If item.PalabraTraducida = "Select" Then
+
+                        If c.text = "Seleccionar" Then
+                            c.text = item.PalabraTraducida
+                        End If
+                    End If
+
+                    If item.PalabraTraducida = "List" Then
+
+                        If c.text = "Lista" Then
+                            c.text = item.PalabraTraducida
+                        End If
+                    End If
+
+                Next
+
+
             Next
 
-        ElseIf cmbIdioma.SelectedItem = "Italiano" Then
+
 
 
         End If

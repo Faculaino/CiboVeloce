@@ -40,6 +40,37 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
+    Sub updateUsuariosDVH(Query As String, dvh As Integer)
+        OpenBD()
+
+        Dim Tx As SqlTransaction
+        Tx = cnn.BeginTransaction()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = Query
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@DVH", dvh)
+
+            cmd.Transaction = Tx
+
+
+
+            cmd.ExecuteNonQuery()
+            Tx.Commit()
+            CloseBD()
+
+        Catch ex As SqlException
+            Tx.Rollback()
+            MsgBox(ex.Message)
+        Catch ex As Exception
+            Tx.Rollback()
+            MsgBox(ex)
+        End Try
+    End Sub
+
+
     Sub deleteUsuario(ByVal Query As String, ByVal hdatos As Hashtable)
         OpenBD()
 
@@ -174,6 +205,8 @@ Public Class UsuarioDAL
                 oUsuario.User = reader(1)
                 oUsuario.Nombre = reader(2)
                 oUsuario.Activo = reader(3)
+                oUsuario.DVV = reader(4)
+                oUsuario.DVH = reader(5)
 
                 nuevaLista.Add(oUsuario)
             End While

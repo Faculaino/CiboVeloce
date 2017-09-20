@@ -1,9 +1,9 @@
 ﻿Imports DAL
 Public Class BackupBussines
 
-    Function backup(query As String) As Boolean
+    Function backup(query As String, ubicacion As String) As Boolean
         Dim newBackup = New BackupDAL
-        Dim resultado = newBackup.backupDatos(query)
+        Dim resultado = newBackup.backupDatos(query, ubicacion)
         Return resultado
     End Function
 

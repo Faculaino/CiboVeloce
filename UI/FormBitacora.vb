@@ -12,6 +12,19 @@ Public Class FormBitacora
 
 
         dgvEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        formatoGrilla()
+
+    End Sub
+
+    Sub formatoGrilla()
+        Dim cuenta As Integer = 0
+        For Each c In dgvEventos.Columns
+            cuenta += c.width
+
+        Next
+
+        dgvEventos.Width = cuenta + 25
+        Me.Width = dgvEventos.Width + 50
 
     End Sub
 

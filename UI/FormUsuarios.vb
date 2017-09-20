@@ -25,4 +25,10 @@ Public Class FormUsuarios
 
 
     End Sub
+
+    Private Sub btnAltaUsuario_Click(sender As Object, e As EventArgs) Handles btnAltaUsuario.Click
+        Dim nuevoUsuario = New FormNuevoUsuario
+        nuevoUsuario.StartPosition = FormStartPosition.CenterScreen
+        nuevoUsuario.Show()
+    End Sub
 End Class

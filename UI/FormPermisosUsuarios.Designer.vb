@@ -32,6 +32,8 @@ Partial Class FormPermisosUsuarios
         Me.btnAgregarPermiso = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.btnQuitarPermiso = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.lblPerfil = New MetroFramework.Controls.MetroLabel()
         CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -133,11 +135,32 @@ Partial Class FormPermisosUsuarios
         Me.btnQuitarPermiso.Text = "Quitar"
         Me.btnQuitarPermiso.UseSelectable = True
         '
+        'MetroLabel4
+        '
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.Location = New System.Drawing.Point(259, 9)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(41, 19)
+        Me.MetroLabel4.TabIndex = 22
+        Me.MetroLabel4.Text = "Perfil:"
+        Me.MetroLabel4.UseCustomBackColor = True
+        '
+        'lblPerfil
+        '
+        Me.lblPerfil.AutoSize = True
+        Me.lblPerfil.Location = New System.Drawing.Point(301, 9)
+        Me.lblPerfil.Name = "lblPerfil"
+        Me.lblPerfil.Size = New System.Drawing.Size(0, 0)
+        Me.lblPerfil.TabIndex = 23
+        Me.lblPerfil.UseCustomBackColor = True
+        '
         'FormPermisosUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 368)
+        Me.Controls.Add(Me.lblPerfil)
+        Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.btnQuitarPermiso)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnAgregarPermiso)
@@ -164,4 +187,6 @@ Partial Class FormPermisosUsuarios
     Friend WithEvents btnAgregarPermiso As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnQuitarPermiso As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblPerfil As MetroFramework.Controls.MetroLabel
 End Class
