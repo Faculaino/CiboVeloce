@@ -11,32 +11,9 @@ Public Class FormAdministrador
     End Sub
 
     Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
-
-        Try
-            Dim query As String = ""
-            Dim archivo = Date.Now.Year.ToString() & "-" & Date.Now.Month.ToString() & "-" & Date.Now.Day.ToString() & "@" & "CiboVeloce.bak"
-            Dim ubicacion = "C:\BackupSQL\" & archivo
-
-            'query = "BACKUP DATABASE [CiboVeloce] TO  DISK = N'" & ubicacion & "'" & " " & "WITH NOFORMAT, NOINIT,  NAME = N'CiboVeloce-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10"
-            Dim SP = "SP_BackupSQL"
-
-
-            Dim newBK = New BackupBussines
-            'Dim respuesta = newBK.backup(query, ubicacion)
-            Dim respuesta = newBK.backup(SP, ubicacion)
-
-            If respuesta = True Then
-                MetroMessageBox.Show(Me, "Datos Resguardados Correctamente", "Backup OK", MessageBoxButtons.OK, MessageBoxIcon.Question)
-            Else
-                MetroMessageBox.Show(Me, "Hubo un error que impidió guardar los datos. Intentelo más tarde", "Error Backup", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-
-        Catch ex As Exception
-            MetroMessageBox.Show(Me, "Hubo un error que impidió guardar los datos. Intentelo más tarde", "Error Backup", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-
+        Dim nuevoDatos = New FormBaseDeDatos
+        nuevoDatos.StartPosition = FormStartPosition.CenterScreen
+        nuevoDatos.Show()
     End Sub
 
     Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click

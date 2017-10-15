@@ -7,8 +7,7 @@ Public Class TraduccionBussines
 
         Dim nuevaLista = New List(Of TraduccionEntity)
         Dim nuevoDatos = New IdiomasDAL
-        Dim query = "SP_Select_ListarTraduccion"
-        nuevaLista = nuevoDatos.listarPalabras(query, id)
+        nuevaLista = nuevoDatos.listarPalabras(id)
 
         Return nuevaLista
     End Function

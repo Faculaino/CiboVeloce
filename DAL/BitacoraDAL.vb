@@ -21,7 +21,7 @@ Public Class BitacoraDAL
         Try
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = evento
+            cmd.CommandText = "INSERT INTO Bitacora (Mensaje, IDUsuario, FechaHora) VALUES ('" & evento & "', " & usuario.ID & ", GETDATE())"
             cmd.CommandType = CommandType.Text
 
             cmd.Transaction = Tx
@@ -40,7 +40,7 @@ Public Class BitacoraDAL
         End Try
     End Sub
 
-    Function listarBitacora(query As String) As List(Of BitacoraEntity)
+    Function listarBitacora() As List(Of BitacoraEntity)
         Dim nuevaLista = New List(Of BitacoraEntity)
         Dim nuevaBitacora = New BitacoraEntity
 
@@ -50,7 +50,7 @@ Public Class BitacoraDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SELECT B.Mensaje, B.FechaHora, U.Usuario, U.ID FROM Bitacora AS B INNER JOIN Usuarios AS U ON B.IDUsuario = U.ID"
             cmd.CommandType = CommandType.Text
 
             Dim reader = cmd.ExecuteReader

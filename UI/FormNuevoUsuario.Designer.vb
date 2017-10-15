@@ -82,7 +82,7 @@ Partial Class FormNuevoUsuario
         '
         'txtNombre
         '
-        Me.txtNombre.Lines = New String() {"Nombre"}
+        Me.txtNombre.Lines = New String(-1) {}
         Me.txtNombre.Location = New System.Drawing.Point(24, 87)
         Me.txtNombre.MaxLength = 32767
         Me.txtNombre.Name = "txtNombre"
@@ -91,12 +91,11 @@ Partial Class FormNuevoUsuario
         Me.txtNombre.SelectedText = ""
         Me.txtNombre.Size = New System.Drawing.Size(222, 23)
         Me.txtNombre.TabIndex = 11
-        Me.txtNombre.Text = "Nombre"
         Me.txtNombre.UseSelectable = True
         '
         'txtUserName
         '
-        Me.txtUserName.Lines = New String() {"UserName"}
+        Me.txtUserName.Lines = New String(-1) {}
         Me.txtUserName.Location = New System.Drawing.Point(24, 150)
         Me.txtUserName.MaxLength = 32767
         Me.txtUserName.Name = "txtUserName"
@@ -105,12 +104,11 @@ Partial Class FormNuevoUsuario
         Me.txtUserName.SelectedText = ""
         Me.txtUserName.Size = New System.Drawing.Size(222, 23)
         Me.txtUserName.TabIndex = 12
-        Me.txtUserName.Text = "UserName"
         Me.txtUserName.UseSelectable = True
         '
         'txtPassword
         '
-        Me.txtPassword.Lines = New String() {"Contraseña"}
+        Me.txtPassword.Lines = New String(-1) {}
         Me.txtPassword.Location = New System.Drawing.Point(261, 150)
         Me.txtPassword.MaxLength = 32767
         Me.txtPassword.Name = "txtPassword"
@@ -119,7 +117,6 @@ Partial Class FormNuevoUsuario
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(222, 23)
         Me.txtPassword.TabIndex = 13
-        Me.txtPassword.Text = "Contraseña"
         Me.txtPassword.UseSelectable = True
         '
         'FormNuevoUsuario

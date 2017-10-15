@@ -87,6 +87,12 @@
     <Compile Include="FormAdministrador.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBaseDeDatos.Designer.vb">
+      <DependentUpon>FormBaseDeDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseDeDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormBitacora.Designer.vb">
       <DependentUpon>FormBitacora.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoIdioma.Designer.vb">
+      <DependentUpon>FormNuevoIdioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoIdioma.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormNuevoUsuario.Designer.vb">
@@ -150,6 +162,9 @@
     <EmbeddedResource Include="FormAdministrador.resx">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseDeDatos.resx">
+      <DependentUpon>FormBaseDeDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.vb</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoIdioma.resx">
+      <DependentUpon>FormNuevoIdioma.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoUsuario.resx">
       <DependentUpon>FormNuevoUsuario.vb</DependentUpon>
@@ -239,6 +257,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pedido.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

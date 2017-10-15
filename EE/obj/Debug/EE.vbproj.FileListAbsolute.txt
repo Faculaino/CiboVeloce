@@ -15,3 +15,4 @@ C:\Users\facun\Desktop\CiboVeloce\EE\obj\Debug\EE.vbproj.GenerateResource.Cache
 C:\Users\facun\Desktop\CiboVeloce\EE\obj\Debug\EE.dll
 C:\Users\facun\Desktop\CiboVeloce\EE\obj\Debug\EE.xml
 C:\Users\facun\Desktop\CiboVeloce\EE\obj\Debug\EE.pdb
+C:\Users\facun\Desktop\CiboVeloce\EE\obj\Debug\EE.vbprojResolveAssemblyReference.cache

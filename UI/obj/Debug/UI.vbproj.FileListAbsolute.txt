@@ -35,9 +35,6 @@ C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\UI.xml
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\BLL.dll
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DevComponents.DotNetBar2.dll
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\EE.dll
-C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.Design.dll
-C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.dll
-C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\Servicios.dll
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\DAL.dll
 C:\Users\facun\Desktop\CiboVeloce\UI\bin\Debug\BLL.pdb
@@ -63,3 +60,5 @@ C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.exe
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.xml
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.pdb
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormBaseDeDatos.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormNuevoIdioma.resources

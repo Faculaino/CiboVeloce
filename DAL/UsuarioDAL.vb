@@ -6,7 +6,7 @@ Public Class UsuarioDAL
 
 
 
-    Sub insertUsuario(ByVal Query As String, ByVal hdatos As Hashtable)
+    Sub insertUsuario(ByVal hdatos As Hashtable)
         OpenBD()
 
         Dim Tx As SqlTransaction
@@ -15,7 +15,7 @@ Public Class UsuarioDAL
         Try
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = Query
+            cmd.CommandText = "SP_Insert_Usuario"
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Transaction = Tx
@@ -40,7 +40,7 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
-    Sub updateUsuariosDVH(Query As String, dvh As Integer)
+    Sub updateUsuariosDVH(dvh As Integer)
         OpenBD()
 
         Dim Tx As SqlTransaction
@@ -49,14 +49,12 @@ Public Class UsuarioDAL
         Try
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = Query
+            cmd.CommandText = "SP_Update_UsuariosDVH"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@DVH", dvh)
 
             cmd.Transaction = Tx
 
-
-
             cmd.ExecuteNonQuery()
             Tx.Commit()
             CloseBD()
@@ -71,7 +69,7 @@ Public Class UsuarioDAL
     End Sub
 
 
-    Sub deleteUsuario(ByVal Query As String, ByVal hdatos As Hashtable)
+    Sub deleteUsuario(ByVal hdatos As Hashtable)
         OpenBD()
 
         Dim Tx As SqlTransaction
@@ -80,7 +78,7 @@ Public Class UsuarioDAL
         Try
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = Query
+            cmd.CommandText = "FALTA"
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Transaction = Tx
@@ -107,14 +105,14 @@ Public Class UsuarioDAL
 
 
 
-    Function buscarUsuario(ByVal Query As String, ByVal hdatos As Hashtable) As UsuarioEntity
+    Function buscarUsuario(ByVal hdatos As Hashtable) As UsuarioEntity
         Dim oUsuario As New UsuarioEntity
         OpenBD()
         Try
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = Query
+            cmd.CommandText = "SP_Select_Usuario"
             cmd.CommandType = CommandType.StoredProcedure
 
             If Not hdatos Is Nothing Then
@@ -130,6 +128,7 @@ Public Class UsuarioDAL
                 oUsuario.ID = reader(0)
                 oUsuario.User = reader(2)
                 oUsuario.Password = reader(3)
+                oUsuario.IDPerfil = reader(7)
             End While
             reader.Close()
 
@@ -186,7 +185,7 @@ Public Class UsuarioDAL
     End Function
 
 
-    Function listarUsuarios(ByVal query As String) As List(Of UsuarioEntity)
+    Function listarUsuarios() As List(Of UsuarioEntity)
         Dim nuevaLista = New List(Of UsuarioEntity)
 
 
@@ -195,7 +194,7 @@ Public Class UsuarioDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SP_Select_ListarUsuarios"
             cmd.CommandType = CommandType.StoredProcedure
 
             Dim reader = cmd.ExecuteReader
@@ -207,6 +206,7 @@ Public Class UsuarioDAL
                 oUsuario.Activo = reader(3)
                 oUsuario.DVV = reader(4)
                 oUsuario.DVH = reader(5)
+                oUsuario.IDPerfil = reader(6)
 
                 nuevaLista.Add(oUsuario)
             End While

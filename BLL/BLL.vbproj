@@ -63,8 +63,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackupBussines.vb" />
+    <Compile Include="BaseDeDatosBussines.vb" />
     <Compile Include="BitacoraBussines.vb" />
+    <Compile Include="Composite\Componente.vb" />
     <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />

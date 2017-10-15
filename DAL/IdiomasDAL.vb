@@ -4,7 +4,7 @@ Public Class IdiomasDAL
     Inherits Connection
 
 
-    Function listaIdiomas(ByVal query As String) As List(Of IdiomaEntity)
+    Function listaIdiomas() As List(Of IdiomaEntity)
 
 
         Dim nuevaLista = New List(Of IdiomaEntity)
@@ -15,7 +15,7 @@ Public Class IdiomasDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SP_Select_Idiomas"
             cmd.CommandType = CommandType.StoredProcedure
 
             Dim reader = cmd.ExecuteReader
@@ -40,7 +40,7 @@ Public Class IdiomasDAL
 
 
 
-    Function listarPalabras(ByVal query As String, id As Integer) As List(Of TraduccionEntity)
+    Function listarPalabras(id As Integer) As List(Of TraduccionEntity)
 
 
         Dim nuevaLista = New List(Of TraduccionEntity)
@@ -51,7 +51,7 @@ Public Class IdiomasDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SP_Select_ListarTraduccion"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@IDIdioma", id)
 
@@ -78,13 +78,13 @@ Public Class IdiomasDAL
     End Function
 
 
-    Function buscarIdiomaID(id As Integer, query As String) As IdiomaEntity
+    Function buscarIdiomaID(id As Integer) As IdiomaEntity
         Try
             OpenBD()
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SP_Select_IdiomaPorID"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@ID", id)
             Dim nuevoIdioma = New IdiomaEntity()

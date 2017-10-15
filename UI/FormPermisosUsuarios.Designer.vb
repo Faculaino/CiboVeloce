@@ -25,7 +25,6 @@ Partial Class FormPermisosUsuarios
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cmbUsuario = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.listPermisos = New DevComponents.DotNetBar.Controls.RichTextBoxEx()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.dgvPermisosFaltantes = New DevComponents.DotNetBar.Controls.DataGridViewX()
@@ -34,6 +33,7 @@ Partial Class FormPermisosUsuarios
         Me.btnQuitarPermiso = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.lblPerfil = New MetroFramework.Controls.MetroLabel()
+        Me.tvPermisos = New System.Windows.Forms.TreeView()
         CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,18 +56,6 @@ Partial Class FormPermisosUsuarios
         Me.MetroLabel1.TabIndex = 13
         Me.MetroLabel1.Text = "Usuario:"
         Me.MetroLabel1.UseCustomBackColor = True
-        '
-        'listPermisos
-        '
-        '
-        '
-        '
-        Me.listPermisos.BackgroundStyle.Class = "RichTextBoxBorder"
-        Me.listPermisos.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.listPermisos.Location = New System.Drawing.Point(12, 71)
-        Me.listPermisos.Name = "listPermisos"
-        Me.listPermisos.Size = New System.Drawing.Size(227, 224)
-        Me.listPermisos.TabIndex = 14
         '
         'MetroLabel2
         '
@@ -154,11 +142,19 @@ Partial Class FormPermisosUsuarios
         Me.lblPerfil.TabIndex = 23
         Me.lblPerfil.UseCustomBackColor = True
         '
+        'tvPermisos
+        '
+        Me.tvPermisos.Location = New System.Drawing.Point(12, 71)
+        Me.tvPermisos.Name = "tvPermisos"
+        Me.tvPermisos.Size = New System.Drawing.Size(261, 242)
+        Me.tvPermisos.TabIndex = 24
+        '
         'FormPermisosUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 368)
+        Me.Controls.Add(Me.tvPermisos)
         Me.Controls.Add(Me.lblPerfil)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.btnQuitarPermiso)
@@ -167,7 +163,6 @@ Partial Class FormPermisosUsuarios
         Me.Controls.Add(Me.dgvPermisosFaltantes)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
-        Me.Controls.Add(Me.listPermisos)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.cmbUsuario)
         Me.Name = "FormPermisosUsuarios"
@@ -180,7 +175,6 @@ Partial Class FormPermisosUsuarios
     End Sub
     Friend WithEvents cmbUsuario As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents listPermisos As DevComponents.DotNetBar.Controls.RichTextBoxEx
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents dgvPermisosFaltantes As DevComponents.DotNetBar.Controls.DataGridViewX
@@ -189,4 +183,5 @@ Partial Class FormPermisosUsuarios
     Friend WithEvents btnQuitarPermiso As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblPerfil As MetroFramework.Controls.MetroLabel
+    Friend WithEvents tvPermisos As TreeView
 End Class

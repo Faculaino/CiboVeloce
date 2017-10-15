@@ -4,6 +4,29 @@ Public Class FormPermisosUsuarios
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCombo()
         llenarGrilla()
+
+    End Sub
+
+    Sub llenarTreeView()
+
+        Dim PerfilB = New PerfilBussines
+        Dim contador = 0
+
+        For Each nodo In PerfilB.listarPerfiles()
+            Dim permiso = nodo.listaPermisos
+            Dim NodoPerfil As New TreeNode(nodo.descripcion)
+            NodoPerfil.Tag = nodo.ID
+            tvPermisos.Nodes.Add(NodoPerfil)
+
+            For Each per In permiso
+                Dim NodoPermiso As New TreeNode(per.descripcion)
+                NodoPermiso.Tag = per.ID
+                tvPermisos.Nodes(contador).Nodes.Add(NodoPermiso)
+
+            Next
+            contador += 1
+
+        Next
     End Sub
 
 
@@ -36,17 +59,30 @@ Public Class FormPermisosUsuarios
 
     Private Sub cmbUsuario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUsuario.SelectedIndexChanged
 
-        'No Funciona
-        'If cmbUsuario.SelectedItem.ToString() = "" Then
+        Dim perfilB = New PerfilBussines
+        Dim permisosB = New PermisosBussines
+        Dim perfil = perfilB.buscarPerfil(cmbUsuario.SelectedItem)
+        Dim lista = New List(Of PermisoEntity)
+        lblPerfil.Text = perfil
+        tvPermisos.Nodes.Clear()
+        If cmbUsuario.SelectedItem Is Nothing Then
 
-        'Else
-        '    Dim nuevoPerfil = New PerfilBussines
-        '    Dim perfilEE = New PerfilEntity
-        '    perfilEE = nuevoPerfil.perfilUsuario(cmbUsuario.SelectedValue)
+        Else
+            lista = permisosB.buscarPermisos(cmbUsuario.SelectedItem)
 
-        '    lblPerfil.Text = perfilEE.descripcion
+            For Each nodo In lista
+                Dim NodoPerfil As New TreeNode(nodo.descripcion)
+                NodoPerfil.Tag = nodo.ID
+                tvPermisos.Nodes.Add(NodoPerfil)
+            Next
+        End If
 
-        'End If
+
+
+
+
+
+
 
     End Sub
 End Class

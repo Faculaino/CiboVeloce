@@ -95,7 +95,7 @@ Partial Class FormAdministrador
         Me.btnBackup.Name = "btnBackup"
         Me.btnBackup.Size = New System.Drawing.Size(149, 119)
         Me.btnBackup.TabIndex = 2
-        Me.btnBackup.Text = "Backup"
+        Me.btnBackup.Text = "Base de Datos"
         Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnBackup.UseSelectable = True
         '

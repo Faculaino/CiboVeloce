@@ -6,7 +6,7 @@ Public Class PermisoDAL
 
 
 
-    Function listarPermisos(ByVal query As String) As List(Of PermisoEntity)
+    Function listarPermisos() As List(Of PermisoEntity)
         Dim nuevaLista = New List(Of PermisoEntity)
 
 
@@ -15,7 +15,7 @@ Public Class PermisoDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
+            cmd.CommandText = "SELECT * FROM Permisos"
             cmd.CommandType = CommandType.Text
 
 
@@ -40,9 +40,35 @@ Public Class PermisoDAL
 
     End Function
 
+    Public Function buscarPermisos(usuario As UsuarioEntity) As List(Of PermisoEntity)
+        OpenBD()
+        Dim query = "SELECT M.ID, M.Descripcion FROM PerfilPermisos as Per INNER JOIN Perfil as P ON
+                    (Per.IDPerfil = p.ID) INNER JOIN Permisos as M ON (M.ID = Per.IDPermiso) WHERE P.ID = " & usuario.IDPerfil
+        Dim lista = New List(Of PermisoEntity)
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = query
+            cmd.CommandType = CommandType.Text
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                Dim nuevoPermiso = New PermisoEntity
+                nuevoPermiso.ID = reader(0)
+                nuevoPermiso.descripcion = reader(1)
+                lista.Add(nuevoPermiso)
+            End While
+            reader.Close()
+            CloseBD()
+            Return lista
+
+        Catch ex As Exception
+            Return Nothing
+        End Try
 
 
-
+    End Function
 
 
 End Class

@@ -76,4 +76,10 @@ Public Class FormIdioma
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         actulizar()
     End Sub
+
+    Private Sub NuevoIdiomaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoIdiomaToolStripMenuItem.Click
+        Dim nuevoIdioma = New FormNuevoIdioma
+        nuevoIdioma.StartPosition = FormStartPosition.CenterScreen
+        nuevoIdioma.Show()
+    End Sub
 End Class

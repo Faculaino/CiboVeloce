@@ -11,7 +11,6 @@ Public Class UsuarioBussines
     Sub insertUsuario(ByVal nuevoUsuario As UsuarioEntity)
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
-        Dim Consulta As String = "SP_Insert_Usuario"
         Dim PasswordHash() As Byte = encriptar.hashearPassword(nuevoUsuario.Password)
 
         oHash.Add("@Nombre", nuevoUsuario.Nombre)
@@ -22,14 +21,13 @@ Public Class UsuarioBussines
         oHash.Add("@Activo", nuevoUsuario.Activo)
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
 
-        oDatos.insertUsuario(Consulta, oHash)
+        oDatos.insertUsuario(oHash)
 
     End Sub
 
     Sub deleteUsuario(ByVal nuevoUsuario As UsuarioEntity)
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
-        Dim Consulta As String = "VER"
 
         oHash.Add("@Nombre", nuevoUsuario.Nombre)
         oHash.Add("@Usuario", nuevoUsuario.User)
@@ -38,7 +36,7 @@ Public Class UsuarioBussines
         oHash.Add("@Activo", nuevoUsuario.Activo)
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
 
-        oDatos.insertUsuario(Consulta, oHash)
+        oDatos.deleteUsuario(oHash)
 
     End Sub
 
@@ -47,13 +45,12 @@ Public Class UsuarioBussines
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
         Dim oUsuario As New UsuarioEntity
-        Dim Consulta As String = "SP_Select_Usuario"
         Dim PasswordHash() As Byte = encriptar.hashearPassword(nuevoUsuario.Password)
 
         oHash.Add("@Usuario", nuevoUsuario.User)
         oHash.Add("@Contraseña", PasswordHash)
 
-        oUsuario = oDatos.buscarUsuario(Consulta, oHash)
+        oUsuario = oDatos.buscarUsuario(oHash)
 
         Return oUsuario
     End Function
@@ -63,16 +60,15 @@ Public Class UsuarioBussines
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
         Dim listaUsuarios As New List(Of UsuarioEntity)
-        Dim Consulta As String = "SP_Select_ListarUsuarios"
 
-        listarUsuarios = oDatos.listarUsuarios(Consulta)
+        listarUsuarios = oDatos.listarUsuarios()
 
         Return listarUsuarios
     End Function
 
     Sub updateUsuarios(dvh As Integer)
         Dim nuevoDatos = New UsuarioDAL
-        nuevoDatos.updateUsuariosDVH("SP_Update_UsuariosDVH", dvh)
+        nuevoDatos.updateUsuariosDVH(dvh)
     End Sub
 
 
