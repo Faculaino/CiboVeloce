@@ -4,10 +4,14 @@ Public Class FormPermisosUsuarios
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCombo()
         llenarGrilla()
-
+        clearFields()
     End Sub
 
-    Sub llenarTreeView()
+    Sub clearFields()
+        tvPermisos.Nodes.Clear()
+    End Sub
+
+    Sub llenarTreeViewCompleto()
 
         Dim PerfilB = New PerfilBussines
         Dim contador = 0

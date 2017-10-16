@@ -62,3 +62,4 @@ C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.xml
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.pdb
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormBaseDeDatos.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormNuevoIdioma.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPedidos.resources

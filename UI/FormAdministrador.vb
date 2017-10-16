@@ -45,4 +45,10 @@ Public Class FormAdministrador
     Private Sub FormAdministrador_Resize(sender As Object, e As EventArgs) Handles Me.Resize
 
     End Sub
+
+    Private Sub btnPedidos_Click(sender As Object, e As EventArgs) Handles btnPedidos.Click
+        Dim nuevoPedido = New FormPedidos
+        nuevoPedido.StartPosition = FormStartPosition.CenterParent
+        nuevoPedido.Show()
+    End Sub
 End Class

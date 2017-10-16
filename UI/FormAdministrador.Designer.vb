@@ -24,6 +24,11 @@ Partial Class FormAdministrador
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdministrador))
+        Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
+        Me.Calculator1 = New DevComponents.Editors.Calculator()
+        Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
+        Me.ReflectionImage1 = New DevComponents.DotNetBar.Controls.ReflectionImage()
+        Me.btnPedidos = New MetroFramework.Controls.MetroButton()
         Me.btnCompras = New MetroFramework.Controls.MetroButton()
         Me.btnCerrarSesion = New MetroFramework.Controls.MetroButton()
         Me.btnBitacora = New MetroFramework.Controls.MetroButton()
@@ -31,12 +36,60 @@ Partial Class FormAdministrador
         Me.btnBackup = New MetroFramework.Controls.MetroButton()
         Me.btnClientes = New MetroFramework.Controls.MetroButton()
         Me.btnUsuarios = New MetroFramework.Controls.MetroButton()
-        Me.btnPedidos = New MetroFramework.Controls.MetroButton()
-        Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
-        Me.Calculator1 = New DevComponents.Editors.Calculator()
-        Me.ReflectionImage1 = New DevComponents.DotNetBar.Controls.ReflectionImage()
-        Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
         Me.SuspendLayout()
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Location = New System.Drawing.Point(13, 63)
+        Me.dtpFecha.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(252, 29)
+        Me.dtpFecha.TabIndex = 8
+        '
+        'Calculator1
+        '
+        Me.Calculator1.AutoSize = True
+        Me.Calculator1.Location = New System.Drawing.Point(35, 117)
+        Me.Calculator1.Name = "Calculator1"
+        Me.Calculator1.Size = New System.Drawing.Size(190, 211)
+        Me.Calculator1.Text = "Calculator1"
+        '
+        'ReflectionLabel1
+        '
+        '
+        '
+        '
+        Me.ReflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.ReflectionLabel1.Location = New System.Drawing.Point(955, 489)
+        Me.ReflectionLabel1.Name = "ReflectionLabel1"
+        Me.ReflectionLabel1.Size = New System.Drawing.Size(207, 70)
+        Me.ReflectionLabel1.TabIndex = 17
+        Me.ReflectionLabel1.Text = "<b><font size=""+18""><i>Cibo</i><font color=""#33CCFF"">Veloce</font></font></b>"
+        '
+        'ReflectionImage1
+        '
+        '
+        '
+        '
+        Me.ReflectionImage1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.ReflectionImage1.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
+        Me.ReflectionImage1.Image = CType(resources.GetObject("ReflectionImage1.Image"), System.Drawing.Image)
+        Me.ReflectionImage1.Location = New System.Drawing.Point(67, 394)
+        Me.ReflectionImage1.Name = "ReflectionImage1"
+        Me.ReflectionImage1.Size = New System.Drawing.Size(128, 128)
+        Me.ReflectionImage1.TabIndex = 10
+        '
+        'btnPedidos
+        '
+        Me.btnPedidos.BackgroundImage = Global.UI.My.Resources.Resources.pedido
+        Me.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPedidos.Location = New System.Drawing.Point(618, 197)
+        Me.btnPedidos.Name = "btnPedidos"
+        Me.btnPedidos.Size = New System.Drawing.Size(149, 119)
+        Me.btnPedidos.TabIndex = 7
+        Me.btnPedidos.Text = "Nuevo Pedido"
+        Me.btnPedidos.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPedidos.UseSelectable = True
         '
         'btnCompras
         '
@@ -122,59 +175,6 @@ Partial Class FormAdministrador
         Me.btnUsuarios.Text = "Usuarios"
         Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnUsuarios.UseSelectable = True
-        '
-        'btnPedidos
-        '
-        Me.btnPedidos.BackgroundImage = Global.UI.My.Resources.Resources.pedido
-        Me.btnPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPedidos.Location = New System.Drawing.Point(618, 197)
-        Me.btnPedidos.Name = "btnPedidos"
-        Me.btnPedidos.Size = New System.Drawing.Size(149, 119)
-        Me.btnPedidos.TabIndex = 7
-        Me.btnPedidos.Text = "Nuevo Pedido"
-        Me.btnPedidos.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPedidos.UseSelectable = True
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(13, 63)
-        Me.dtpFecha.MinimumSize = New System.Drawing.Size(0, 29)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(252, 29)
-        Me.dtpFecha.TabIndex = 8
-        '
-        'Calculator1
-        '
-        Me.Calculator1.AutoSize = True
-        Me.Calculator1.Location = New System.Drawing.Point(35, 117)
-        Me.Calculator1.Name = "Calculator1"
-        Me.Calculator1.Size = New System.Drawing.Size(190, 211)
-        Me.Calculator1.Text = "Calculator1"
-        '
-        'ReflectionImage1
-        '
-        '
-        '
-        '
-        Me.ReflectionImage1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.ReflectionImage1.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
-        Me.ReflectionImage1.Image = CType(resources.GetObject("ReflectionImage1.Image"), System.Drawing.Image)
-        Me.ReflectionImage1.Location = New System.Drawing.Point(67, 394)
-        Me.ReflectionImage1.Name = "ReflectionImage1"
-        Me.ReflectionImage1.Size = New System.Drawing.Size(128, 128)
-        Me.ReflectionImage1.TabIndex = 10
-        '
-        'ReflectionLabel1
-        '
-        '
-        '
-        '
-        Me.ReflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.ReflectionLabel1.Location = New System.Drawing.Point(955, 489)
-        Me.ReflectionLabel1.Name = "ReflectionLabel1"
-        Me.ReflectionLabel1.Size = New System.Drawing.Size(207, 70)
-        Me.ReflectionLabel1.TabIndex = 17
-        Me.ReflectionLabel1.Text = "<b><font size=""+18""><i>Cibo</i><font color=""#33CCFF"">Veloce</font></font></b>"
         '
         'FormAdministrador
         '
