@@ -8,7 +8,7 @@
     Private _detalleDireccion As String
     Private _telefonos As String
     Private _costo As Decimal
-    Private _idPedidos As Integer
+    'Private _idPedidos As Integer
     Private _dvv As Integer
     Private _dvh As Integer
 
@@ -31,14 +31,14 @@
             _dvv = value
         End Set
     End Property
-    Public Property idPedidos() As Integer
-        Get
-            Return _idPedidos
-        End Get
-        Set(ByVal value As Integer)
-            _idPedidos = value
-        End Set
-    End Property
+    'Public Property idPedidos() As Integer
+    '    Get
+    '        Return _idPedidos
+    '    End Get
+    '    Set(ByVal value As Integer)
+    '        _idPedidos = value
+    '    End Set
+    'End Property
     Public Property costo() As Decimal
         Get
             Return _costo

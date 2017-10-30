@@ -13,6 +13,15 @@ Public Class CryptoManager
         Return PasswordHash
     End Function
 
+    Public Function hashearDato(dato As String) As Byte()
+        Dim datoOriginal() As Byte
+        Dim datoModificado() As Byte
+        datoOriginal = Encoding.ASCII.GetBytes(dato)
+        datoModificado = New MD5CryptoServiceProvider().ComputeHash(datoOriginal)
+
+        Return datoModificado
+    End Function
+
 
 
 

@@ -65,7 +65,9 @@
   <ItemGroup>
     <Compile Include="BaseEntity.vb" />
     <Compile Include="BitacoraEntity.vb" />
+    <Compile Include="CategoriaEntity.vb" />
     <Compile Include="ClienteEntity.vb" />
+    <Compile Include="ComidaEntity.vb" />
     <Compile Include="EventoEntity.vb" />
     <Compile Include="IdiomaEntity.vb" />
     <Compile Include="PalabraEntity.vb" />

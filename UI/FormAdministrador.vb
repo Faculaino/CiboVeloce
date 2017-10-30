@@ -51,4 +51,10 @@ Public Class FormAdministrador
         nuevoPedido.StartPosition = FormStartPosition.CenterParent
         nuevoPedido.Show()
     End Sub
+
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        Dim nuevoClientes = New FormClientes
+        nuevoClientes.StartPosition = FormStartPosition.CenterParent
+        nuevoClientes.Show()
+    End Sub
 End Class

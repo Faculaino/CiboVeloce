@@ -12,11 +12,12 @@ Public Class UsuarioBussines
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
         Dim PasswordHash() As Byte = encriptar.hashearPassword(nuevoUsuario.Password)
+        Dim dvv = oDatos.buscarDVV() + 1
 
         oHash.Add("@Nombre", nuevoUsuario.Nombre)
         oHash.Add("@Usuario", nuevoUsuario.User)
         oHash.Add("@Contraseña", PasswordHash)
-        oHash.Add("@DVV", nuevoUsuario.DVV)
+        oHash.Add("@DVV", dvv)
         oHash.Add("@DVH", nuevoUsuario.DVH)
         oHash.Add("@Activo", nuevoUsuario.Activo)
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)

@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="BaseDeDatosBussines.vb" />
     <Compile Include="BitacoraBussines.vb" />
+    <Compile Include="CategoriaBussines.vb" />
+    <Compile Include="ClienteBussines.vb" />
+    <Compile Include="ComidaBussines.vb" />
     <Compile Include="Composite\Componente.vb" />
     <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />

@@ -97,6 +97,11 @@ UI
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:UI.My.Resources.Resources.Save">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:UI.My.Resources.Resources.sinsesion">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

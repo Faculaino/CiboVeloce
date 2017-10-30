@@ -99,6 +99,12 @@
     <Compile Include="FormBitacora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormClientes.Designer.vb">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormIdioma.Designer.vb">
       <DependentUpon>FormIdioma.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIdioma.resx">
       <DependentUpon>FormIdioma.vb</DependentUpon>
@@ -284,6 +293,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

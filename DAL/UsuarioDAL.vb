@@ -68,6 +68,29 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
+    Public Function buscarDVV() As Integer
+
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SP_Select_DVVUsuarios"
+            cmd.CommandType = CommandType.StoredProcedure
+
+            Dim reader = cmd.ExecuteReader
+            Dim valor As Integer
+            While reader.Read
+                valor = reader(0)
+            End While
+            reader.Close()
+            Return valor + 1
+
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
+
 
     Sub deleteUsuario(ByVal hdatos As Hashtable)
         OpenBD()
