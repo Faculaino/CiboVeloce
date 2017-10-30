@@ -22,12 +22,12 @@ Partial Class FormPedidos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPedidos))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
@@ -62,10 +62,13 @@ Partial Class FormPedidos
         Me.wbMaps = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnAgregarComida = New System.Windows.Forms.Button()
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnBuscar = New MetroFramework.Controls.MetroButton()
         Me.tvComidas = New System.Windows.Forms.TreeView()
+        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
+        Me.printDocument = New System.Drawing.Printing.PrintDocument()
+        Me.printPreview = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.dgvPedido, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -291,38 +294,30 @@ Partial Class FormPedidos
         '
         Me.dgvPedido.AllowUserToAddRows = False
         Me.dgvPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4, Me.C5})
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvPedido.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvPedido.Location = New System.Drawing.Point(309, 359)
         Me.dgvPedido.Name = "dgvPedido"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPedido.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvPedido.RowHeadersVisible = False
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvPedido.Size = New System.Drawing.Size(610, 241)
         Me.dgvPedido.TabIndex = 30
         '
@@ -340,19 +335,19 @@ Partial Class FormPedidos
         '
         'C3
         '
-        DataGridViewCellStyle8.Format = "C2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.C3.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle7.Format = "C2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.C3.DefaultCellStyle = DataGridViewCellStyle7
         Me.C3.HeaderText = "PU"
         Me.C3.Name = "C3"
         Me.C3.Width = 70
         '
         'C4
         '
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle9.Format = "C2"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.C4.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.C4.DefaultCellStyle = DataGridViewCellStyle8
         Me.C4.HeaderText = "SubTotal"
         Me.C4.Name = "C4"
         Me.C4.Width = 80
@@ -375,7 +370,7 @@ Partial Class FormPedidos
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(984, 432)
+        Me.MetroLabel12.Location = New System.Drawing.Point(992, 428)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel12.TabIndex = 32
@@ -385,13 +380,13 @@ Partial Class FormPedidos
         '
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtTotal.Lines = New String(-1) {}
-        Me.txtTotal.Location = New System.Drawing.Point(925, 460)
+        Me.txtTotal.Location = New System.Drawing.Point(976, 452)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtTotal.SelectedText = ""
-        Me.txtTotal.Size = New System.Drawing.Size(174, 30)
+        Me.txtTotal.Size = New System.Drawing.Size(83, 30)
         Me.txtTotal.TabIndex = 35
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTotal.UseSelectable = True
@@ -444,17 +439,17 @@ Partial Class FormPedidos
         Me.btnAgregarComida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAgregarComida.UseVisualStyleBackColor = True
         '
-        'MetroButton1
+        'btnImprimir
         '
-        Me.MetroButton1.BackgroundImage = Global.UI.My.Resources.Resources.printer
-        Me.MetroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.MetroButton1.Location = New System.Drawing.Point(962, 513)
-        Me.MetroButton1.Name = "MetroButton1"
-        Me.MetroButton1.Size = New System.Drawing.Size(103, 80)
-        Me.MetroButton1.TabIndex = 34
-        Me.MetroButton1.Text = "Confirmar Pedido"
-        Me.MetroButton1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.MetroButton1.UseSelectable = True
+        Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnImprimir.Location = New System.Drawing.Point(967, 505)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(103, 95)
+        Me.btnImprimir.TabIndex = 34
+        Me.btnImprimir.Text = "Confirmar Pedido" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "[F5]"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnImprimir.UseSelectable = True
         '
         'Button1
         '
@@ -489,18 +484,42 @@ Partial Class FormPedidos
         Me.tvComidas.Size = New System.Drawing.Size(270, 318)
         Me.tvComidas.TabIndex = 41
         '
+        'MetroLabel13
+        '
+        Me.MetroLabel13.AutoSize = True
+        Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel13.Location = New System.Drawing.Point(949, 457)
+        Me.MetroLabel13.Name = "MetroLabel13"
+        Me.MetroLabel13.Size = New System.Drawing.Size(21, 25)
+        Me.MetroLabel13.TabIndex = 42
+        Me.MetroLabel13.Text = "$"
+        '
+        'printDocument
+        '
+        '
+        'printPreview
+        '
+        Me.printPreview.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.printPreview.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.printPreview.ClientSize = New System.Drawing.Size(400, 300)
+        Me.printPreview.Enabled = True
+        Me.printPreview.Icon = CType(resources.GetObject("printPreview.Icon"), System.Drawing.Icon)
+        Me.printPreview.Name = "printPreview"
+        Me.printPreview.Visible = False
+        '
         'FormPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1122, 623)
+        Me.Controls.Add(Me.MetroLabel13)
         Me.Controls.Add(Me.tvComidas)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnGuardarCliente)
         Me.Controls.Add(Me.btnNuevoPedido)
         Me.Controls.Add(Me.btnAgregarComida)
         Me.Controls.Add(Me.txtTotal)
-        Me.Controls.Add(Me.MetroButton1)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MetroLabel12)
         Me.Controls.Add(Me.numericCantidad)
@@ -562,17 +581,20 @@ Partial Class FormPedidos
     Friend WithEvents numericCantidad As NumericUpDown
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Button1 As Button
-    Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnImprimir As MetroFramework.Controls.MetroButton
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregarComida As Button
     Friend WithEvents btnNuevoPedido As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardarCliente As Button
     Friend WithEvents wbMaps As WebBrowser
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents tvComidas As TreeView
+    Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents C1 As DataGridViewTextBoxColumn
     Friend WithEvents C2 As DataGridViewTextBoxColumn
     Friend WithEvents C3 As DataGridViewTextBoxColumn
     Friend WithEvents C4 As DataGridViewTextBoxColumn
     Friend WithEvents C5 As DataGridViewTextBoxColumn
-    Friend WithEvents tvComidas As TreeView
+    Friend WithEvents printDocument As Printing.PrintDocument
+    Friend WithEvents printPreview As PrintPreviewDialog
 End Class

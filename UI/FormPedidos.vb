@@ -235,4 +235,92 @@ Public Class FormPedidos
 
         End If
     End Sub
+
+    'Private Sub printDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles printDocument.PrintPage
+    '    Dim fuente As New Font("Calibri", 12)
+    '    Dim nombre = "Nombre Empresa" + " - " + Now.ToShortDateString("dd/mm/yyyy") + " - HS: " + Now.ToShortTimeString
+
+    '    'e.Graphics.DrawString(nombre, fuente, Brushes.Black, 200, 0)
+    '    'e.Graphics.DrawString("N°: ", fuente, Brushes.Black, 530, 0)
+    '    'e.Graphics.DrawString(Comanda.Text, fuente, Brushes.Black, 560, 0)
+    '    'e.Graphics.DrawString("Nombre: ", fuente, Brushes.Black, 200, 20)
+    '    'e.Graphics.DrawString(cliente, fuente, Brushes.Black, 270, 20)
+    '    'e.Graphics.DrawString("Dir: ", fuente, Brushes.Black, 200, 40)
+    '    'e.Graphics.DrawString(direccion, fuente, Brushes.Black, 230, 40)
+    '    'e.Graphics.DrawString("E/: ", fuente, Brushes.Black, 200, 60)
+    '    'e.Graphics.DrawString(TextBoxCalles.Text, fuente, Brushes.Black, 230, 60)
+
+    '    e.Graphics.DrawString(nombre, fuente, Brushes.Black, 0, 0)
+    '    e.Graphics.DrawString("N°: ", fuente, Brushes.Black, 330, 0)
+    '    'e.Graphics.DrawString(Comanda.Text, fuente, Brushes.Black, 360, 0)
+    '    e.Graphics.DrawString("Nombre: ", fuente, Brushes.Black, 0, 20)
+    '    e.Graphics.DrawString(txtNombre.Text, fuente, Brushes.Black, 70, 20)
+    '    e.Graphics.DrawString("Dirección: ", fuente, Brushes.Black, 0, 40)
+    '    e.Graphics.DrawString(txtDireccion.Text, fuente, Brushes.Black, 80, 40)
+    '    e.Graphics.DrawString("E/: ", fuente, Brushes.Black, 0, 60)
+    '    e.Graphics.DrawString(txtEntreCalles.Text, fuente, Brushes.Black, 30, 60)
+
+    '    'e.Graphics.DrawString("Cant", fuente, Brushes.Black, 200, 80)
+    '    e.Graphics.DrawString("Cant", fuente, Brushes.Black, 0, 80)
+
+
+    '    For i = 0 To dgvPedido.Rows.Count
+
+    '        'cantidad
+    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(1).Value, fuente, Brushes.Black, xPosCant, yPosCant)
+    '        'e.Graphics.DrawString("Detalles", fuente, Brushes.Black, 250, 80)
+    '        e.Graphics.DrawString("Detalles", fuente, Brushes.Black, 50, 80)
+    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(0).Value, fuente, Brushes.Black, New RectangleF(xPosDesc, yPosDesc, e.MarginBounds.Right - 160, altoNecesario))
+    '        'e.Graphics.DrawString("Guarnición", fuente, Brushes.Black, 400, 80)
+    '        e.Graphics.DrawString("Guarnición", fuente, Brushes.Black, 180, 80)
+    '        e.Graphics.DrawString("Precio", fuente, Brushes.Black, 530, 80)
+    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(3).Value, fuente, Brushes.Black, xPosPrec, yPosPrec)
+
+
+
+
+    '        'Pregunto si hubo observacion
+    '        If dgvPedido.Rows(i).Cells(4).Value = "" Then
+    '            'yPosDesc += 20
+    '            'yPosCant += 20
+    '            'yPosPrec += 20
+    '        Else
+    '            'yPosObs = yPosDesc
+    '            'e.Graphics.DrawString(DataGridViewPedido.Rows(i).Cells(4).Value, fuente, Brushes.Black, New RectangleF(xPosObs, yPosObs, e.MarginBounds.Right - 160, altoNecesario))
+    '            'yPosDesc += 20
+    '            'yPosCant += 20
+    '            'yPosPrec += 20
+    '        End If
+
+    '    Next
+
+
+
+
+
+    'End Sub
+
+
+
+    Sub imprimir()
+        Dim comanda As Image = My.Resources.ComandaA6
+        Dim g As Graphics = Graphics.FromImage(comanda)
+
+        printPreview.Show(comanda)
+
+    End Sub
+
+    Private Sub FormPedidos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        imprimir()
+    End Sub
+
+    Private Sub btnImprimir_KeyDown(sender As Object, e As KeyEventArgs) Handles btnImprimir.KeyDown
+        If e.KeyValue = Keys.F5 Then
+            MsgBox("Hola")
+        End If
+    End Sub
 End Class
