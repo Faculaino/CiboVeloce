@@ -1,15 +1,14 @@
 ﻿Imports EE
 Imports DAL
+Imports BLL
+
 Public Class PermisosBussines
     Inherits Componente
 
-    Public Overrides Sub AsignarPerfil(Usuario As UsuarioEntity)
-        Throw New NotImplementedException()
-    End Sub
 
-    Public Overrides Sub AsignarPermisos(Usuario As UsuarioEntity, Permisos As PermisoEntity)
-        Throw New NotImplementedException()
-    End Sub
+    'Public Sub New(name As String)
+    '    MyBase.New(name)
+    'End Sub
 
     Function listarPermisos() As List(Of PermisoEntity)
 
@@ -27,10 +26,19 @@ Public Class PermisosBussines
         Return lista
     End Function
 
+    'Public Overrides Sub agregar(c As Componente)
+    '    Throw New NotImplementedException()
+    'End Sub
 
+    Public Overrides Sub eliminar(c As Componente)
+        Throw New NotImplementedException()
+    End Sub
 
+    Public Overrides Sub mostrar(depth As Integer)
+        Throw New NotImplementedException()
+    End Sub
 
-
-
-
+    Public Overrides Sub agregar(c As Componente)
+        Throw New NotImplementedException()
+    End Sub
 End Class

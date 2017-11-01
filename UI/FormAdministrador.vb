@@ -57,4 +57,10 @@ Public Class FormAdministrador
         nuevoClientes.StartPosition = FormStartPosition.CenterParent
         nuevoClientes.Show()
     End Sub
+
+    Private Sub btnAdminComida_Click(sender As Object, e As EventArgs) Handles btnAdminComida.Click
+        Dim nuevaComida = New FormAdministracionCarta
+        nuevaComida.StartPosition = FormStartPosition.CenterParent
+        nuevaComida.Show()
+    End Sub
 End Class

@@ -51,6 +51,89 @@ Public Class ClienteDAL
         End Try
     End Function
 
+    Public Function buscarCliente(nombre As String, direccion As String) As ClienteEntity
+        Dim oCliente As New ClienteEntity
+        OpenBD()
+        Try
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SP_Select_ClienteNombreDireccion"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@nombre", nombre)
+            cmd.Parameters.AddWithValue("@direccion", direccion)
+
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                oCliente.ID = reader(0)
+                oCliente.apyn = reader(1)
+                oCliente.direccion = reader(2)
+                oCliente.localidad = reader(3)
+                oCliente.entreCalles = reader(4)
+                If reader(5) Is DBNull.Value Then
+                    oCliente.detalleDireccion = ""
+                Else
+                    oCliente.detalleDireccion = reader(5)
+                End If
+                oCliente.telefonos = reader(6)
+                oCliente.costo = reader(7)
+
+                reader.Close()
+
+                CloseBD()
+                Return oCliente
+            End While
+
+        Catch ex As SqlException
+            MsgBox(ex)
+            Return Nothing
+        Catch ex As Exception
+            MsgBox(ex)
+            Return Nothing
+
+
+        End Try
+    End Function
+
+    Public Function updateCliente(cliente As ClienteEntity, id As Integer) As ClienteEntity
+        OpenBD()
+
+        Dim Tx As SqlTransaction
+        Tx = cnn.BeginTransaction()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SP_Update_ClienteUpdate"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@apyn", cliente.apyn)
+            cmd.Parameters.AddWithValue("@direccion", cliente.direccion)
+            cmd.Parameters.AddWithValue("@localidad", cliente.localidad)
+            cmd.Parameters.AddWithValue("@entrecalles", cliente.entreCalles)
+            cmd.Parameters.AddWithValue("@detallesdir", cliente.detalleDireccion)
+            cmd.Parameters.AddWithValue("@telefonos", cliente.telefonos)
+            cmd.Parameters.AddWithValue("@costo", cliente.costo)
+            cmd.Parameters.AddWithValue("@ID", id)
+
+
+
+            cmd.Transaction = Tx
+
+
+
+            cmd.ExecuteNonQuery()
+            Tx.Commit()
+            CloseBD()
+
+        Catch ex As Exception
+            Tx.Rollback()
+            MsgBox(ex)
+        End Try
+
+    End Function
+
     Public Function buscarDVV() As Integer
 
         OpenBD()

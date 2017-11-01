@@ -21,6 +21,11 @@ Public Class BitacoraBussines
         Return nuevalista
     End Function
 
+    Sub controlCambios(cambio As String, user As UsuarioEntity)
+        Dim nuevoLog = New BitacoraDAL
+        nuevoLog.guardarCambios(cambio, user, Now.ToShortDateString)
+    End Sub
+
 
 
 End Class

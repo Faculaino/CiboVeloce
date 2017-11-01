@@ -1,5 +1,6 @@
 ﻿Imports BLL
 Imports EE
+Imports Servicios
 Public Class FormClientes
     Private Sub FormClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarGrilla()
@@ -8,10 +9,13 @@ Public Class FormClientes
     Sub cargarGrilla()
         Dim clienteBussines = New ClienteBussines
         Dim listaClientes = clienteBussines.listarCliente()
+        Dim hash = New CryptoManager
+        Dim telefonoByte() As Byte
 
         dgvListaClientes.Rows.Clear()
         For Each item In listaClientes
-            dgvListaClientes.Rows.Add(item.apyn, item.direccion, item.entreCalles, item.localidad, item.detalleDireccion, item.telefonos, item.costo)
+            telefonoByte = hash.hashearDato(item.telefonos)
+            dgvListaClientes.Rows.Add(item.apyn, item.direccion, item.entreCalles, item.localidad, item.detalleDireccion, telefonoByte, item.costo)
         Next
 
         dgvListaClientes.Sort(dgvListaClientes.Columns("C2"), ComponentModel.ListSortDirection.Ascending)

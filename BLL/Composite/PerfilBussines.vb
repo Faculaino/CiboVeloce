@@ -1,15 +1,18 @@
 ﻿Imports EE
 Imports DAL
+Imports BLL
+
 Public Class PerfilBussines
     Inherits Componente
 
-    Public Overrides Sub AsignarPerfil(Usuario As UsuarioEntity)
-        Throw New NotImplementedException()
-    End Sub
 
-    Public Overrides Sub AsignarPermisos(Usuario As UsuarioEntity, Permisos As PermisoEntity)
-        Throw New NotImplementedException()
-    End Sub
+    'Private elementos As New List(Of Componente)()
+
+
+    'Public Sub New(name As String)
+    '    MyBase.New(name)
+    'End Sub
+
 
     Function perfilUsuario(id As Integer) As PerfilEntity
 
@@ -41,5 +44,19 @@ Public Class PerfilBussines
 
         Return lista
     End Function
+
+    Public Overrides Sub agregar(c As Componente)
+        'elementos.Add(c)
+
+    End Sub
+
+    Public Overrides Sub eliminar(c As Componente)
+        'elementos.Remove(c)
+    End Sub
+
+    Public Overrides Sub mostrar(depth As Integer)
+        Throw New NotImplementedException()
+    End Sub
+
 
 End Class

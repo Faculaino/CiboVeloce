@@ -66,6 +66,13 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WebKit.Interop, Version=533.0.0.0, Culture=neutral, PublicKeyToken=b967213f6d29a3be">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WebKitBrowser, Version=0.5.0.0, Culture=neutral, PublicKeyToken=b967213f6d29a3be, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WebKitBrowser.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -81,6 +88,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdministracionCarta.Designer.vb">
+      <DependentUpon>FormAdministracionCarta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdministracionCarta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormAdministrador.Designer.vb">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
     </Compile>
@@ -116,6 +129,12 @@
     </Compile>
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevaCategoria.Designer.vb">
+      <DependentUpon>FormNuevaCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevaCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormNuevoIdioma.Designer.vb">
@@ -171,6 +190,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormAdministracionCarta.resx">
+      <DependentUpon>FormAdministracionCarta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAdministrador.resx">
       <DependentUpon>FormAdministrador.vb</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevaCategoria.resx">
+      <DependentUpon>FormNuevaCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoIdioma.resx">
       <DependentUpon>FormNuevoIdioma.vb</DependentUpon>
@@ -302,6 +327,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ComandaA6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\googleMaps.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comida.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

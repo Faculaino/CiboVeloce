@@ -11,6 +11,7 @@ Public Class UsuarioBussines
     Sub insertUsuario(ByVal nuevoUsuario As UsuarioEntity)
         Dim oDatos As New UsuarioDAL
         Dim oHash As New Hashtable
+        Dim nuevoDVV = New DVVBussines
         Dim PasswordHash() As Byte = encriptar.hashearPassword(nuevoUsuario.Password)
         Dim dvv = oDatos.buscarDVV() + 1
 
@@ -23,6 +24,7 @@ Public Class UsuarioBussines
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
 
         oDatos.insertUsuario(oHash)
+        nuevoDVV.actualizarDVV("Usuarios", dvv)
 
     End Sub
 

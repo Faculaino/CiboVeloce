@@ -26,10 +26,13 @@ Public Class ClienteBussines
     Public Sub insertCliente(cliente As ClienteEntity)
         Dim nuevoDatos = New ClienteDAL
         Dim hash = New CryptoManager
+        Dim nuevoDVV = New DVVBussines
 
         cliente.dvh = cliente.apyn.Length + cliente.direccion.Length
         cliente.dvv = nuevoDatos.buscarDVV()
         nuevoDatos.insertCliente(cliente)
+        nuevoDVV.actualizarDVV("Clientes", cliente.dvv)
+
 
     End Sub
 
@@ -38,5 +41,18 @@ Public Class ClienteBussines
         Dim dvv = nuevoDatos.buscarDVV()
         Return dvv
     End Function
+
+    Function searchCliente(nombre As String, direccion As String) As ClienteEntity
+        Dim nuevoDatos = New ClienteDAL
+        Dim nuevoCliente = New ClienteEntity
+        nuevoCliente = nuevoDatos.buscarCliente(nombre, direccion)
+        Return nuevoCliente
+    End Function
+
+    Sub updateCliente(cliente As ClienteEntity, id As Integer)
+        Dim nuevoDatos = New ClienteDAL
+        Dim nuevoCliente = New ClienteEntity
+        nuevoCliente = nuevoDatos.updateCliente(cliente, id)
+    End Sub
 
 End Class

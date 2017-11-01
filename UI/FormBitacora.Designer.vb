@@ -25,12 +25,16 @@ Partial Class FormBitacora
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvEventos = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.C1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.C2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.C3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvEventos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvEventos
         '
         Me.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEventos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -40,7 +44,7 @@ Partial Class FormBitacora
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvEventos.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgvEventos.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.dgvEventos.Location = New System.Drawing.Point(24, 87)
+        Me.dgvEventos.Location = New System.Drawing.Point(25, 87)
         Me.dgvEventos.Name = "dgvEventos"
         Me.dgvEventos.RowHeadersVisible = False
         Me.dgvEventos.Size = New System.Drawing.Size(612, 150)
@@ -54,6 +58,22 @@ Partial Class FormBitacora
         Me.MetroLabel1.Size = New System.Drawing.Size(124, 19)
         Me.MetroLabel1.TabIndex = 1
         Me.MetroLabel1.Text = "Eventos del Sistema"
+        '
+        'C1
+        '
+        Me.C1.HeaderText = "Fecha"
+        Me.C1.Name = "C1"
+        '
+        'C2
+        '
+        Me.C2.HeaderText = "Usuario"
+        Me.C2.Name = "C2"
+        '
+        'C3
+        '
+        Me.C3.HeaderText = "Mensaje"
+        Me.C3.Name = "C3"
+        Me.C3.Width = 400
         '
         'FormBitacora
         '
@@ -73,4 +93,7 @@ Partial Class FormBitacora
 
     Friend WithEvents dgvEventos As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents C1 As DataGridViewTextBoxColumn
+    Friend WithEvents C2 As DataGridViewTextBoxColumn
+    Friend WithEvents C3 As DataGridViewTextBoxColumn
 End Class

@@ -22,11 +22,11 @@ Partial Class FormPedidos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPedidos))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
@@ -59,19 +59,20 @@ Partial Class FormPedidos
         Me.txtTotal = New MetroFramework.Controls.MetroTextBox()
         Me.btnNuevoPedido = New MetroFramework.Controls.MetroButton()
         Me.btnGuardarCliente = New System.Windows.Forms.Button()
-        Me.wbMaps = New System.Windows.Forms.WebBrowser()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnAgregarComida = New System.Windows.Forms.Button()
-        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
+        Me.lblMaps = New System.Windows.Forms.Label()
+        Me.panelMaps = New System.Windows.Forms.Panel()
         Me.tvComidas = New System.Windows.Forms.TreeView()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
         Me.printDocument = New System.Drawing.Printing.PrintDocument()
         Me.printPreview = New System.Windows.Forms.PrintPreviewDialog()
+        Me.btnAgregarComida = New System.Windows.Forms.Button()
+        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
+        Me.btnDeleteRow = New System.Windows.Forms.Button()
+        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
+        Me.WebKitBrowser1 = New WebKit.WebKitBrowser()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgvPedido, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroLabel1
@@ -284,7 +285,7 @@ Partial Class FormPedidos
         'MetroLabel11
         '
         Me.MetroLabel11.AutoSize = True
-        Me.MetroLabel11.Location = New System.Drawing.Point(309, 296)
+        Me.MetroLabel11.Location = New System.Drawing.Point(310, 323)
         Me.MetroLabel11.Name = "MetroLabel11"
         Me.MetroLabel11.Size = New System.Drawing.Size(62, 19)
         Me.MetroLabel11.TabIndex = 29
@@ -294,31 +295,31 @@ Partial Class FormPedidos
         '
         Me.dgvPedido.AllowUserToAddRows = False
         Me.dgvPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4, Me.C5})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgvPedido.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.dgvPedido.Location = New System.Drawing.Point(309, 359)
+        Me.dgvPedido.Location = New System.Drawing.Point(309, 389)
         Me.dgvPedido.Name = "dgvPedido"
         Me.dgvPedido.RowHeadersVisible = False
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle10
-        Me.dgvPedido.Size = New System.Drawing.Size(610, 241)
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvPedido.Size = New System.Drawing.Size(610, 211)
         Me.dgvPedido.TabIndex = 30
         '
         'C1
@@ -335,19 +336,19 @@ Partial Class FormPedidos
         '
         'C3
         '
-        DataGridViewCellStyle7.Format = "C2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.C3.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.C3.DefaultCellStyle = DataGridViewCellStyle2
         Me.C3.HeaderText = "PU"
         Me.C3.Name = "C3"
         Me.C3.Width = 70
         '
         'C4
         '
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle8.Format = "C2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.C4.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.C4.DefaultCellStyle = DataGridViewCellStyle3
         Me.C4.HeaderText = "SubTotal"
         Me.C4.Name = "C4"
         Me.C4.Width = 80
@@ -361,7 +362,7 @@ Partial Class FormPedidos
         'numericCantidad
         '
         Me.numericCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.numericCantidad.Location = New System.Drawing.Point(309, 324)
+        Me.numericCantidad.Location = New System.Drawing.Point(310, 351)
         Me.numericCantidad.Name = "numericCantidad"
         Me.numericCantidad.Size = New System.Drawing.Size(98, 23)
         Me.numericCantidad.TabIndex = 31
@@ -370,7 +371,7 @@ Partial Class FormPedidos
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(992, 428)
+        Me.MetroLabel12.Location = New System.Drawing.Point(997, 415)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel12.TabIndex = 32
@@ -380,7 +381,7 @@ Partial Class FormPedidos
         '
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtTotal.Lines = New String(-1) {}
-        Me.txtTotal.Location = New System.Drawing.Point(976, 452)
+        Me.txtTotal.Location = New System.Drawing.Point(981, 439)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -410,70 +411,24 @@ Partial Class FormPedidos
         Me.btnGuardarCliente.Text = "Guardar"
         Me.btnGuardarCliente.UseVisualStyleBackColor = False
         '
-        'wbMaps
+        'lblMaps
         '
-        Me.wbMaps.Location = New System.Drawing.Point(20, 13)
-        Me.wbMaps.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wbMaps.Name = "wbMaps"
-        Me.wbMaps.Size = New System.Drawing.Size(523, 292)
-        Me.wbMaps.TabIndex = 39
+        Me.lblMaps.AutoSize = True
+        Me.lblMaps.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMaps.Location = New System.Drawing.Point(857, 338)
+        Me.lblMaps.Name = "lblMaps"
+        Me.lblMaps.Size = New System.Drawing.Size(170, 36)
+        Me.lblMaps.TabIndex = 41
+        Me.lblMaps.Text = "Google Maps"
         '
-        'Panel1
+        'panelMaps
         '
-        Me.Panel1.Controls.Add(Me.wbMaps)
-        Me.Panel1.Location = New System.Drawing.Point(556, 30)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(552, 326)
-        Me.Panel1.TabIndex = 40
-        '
-        'btnAgregarComida
-        '
-        Me.btnAgregarComida.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarComida.Image = Global.UI.My.Resources.Resources.down
-        Me.btnAgregarComida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregarComida.Location = New System.Drawing.Point(413, 296)
-        Me.btnAgregarComida.Name = "btnAgregarComida"
-        Me.btnAgregarComida.Size = New System.Drawing.Size(136, 60)
-        Me.btnAgregarComida.TabIndex = 36
-        Me.btnAgregarComida.Text = "Agregar "
-        Me.btnAgregarComida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregarComida.UseVisualStyleBackColor = True
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
-        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnImprimir.Location = New System.Drawing.Point(967, 505)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(103, 95)
-        Me.btnImprimir.TabIndex = 34
-        Me.btnImprimir.Text = "Confirmar Pedido" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "[F5]"
-        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImprimir.UseSelectable = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.UI.My.Resources.Resources.delete
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(925, 359)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(174, 59)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "Eliminar Descripción"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnBuscar.BackgroundImage = Global.UI.My.Resources.Resources.system_search
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnBuscar.Location = New System.Drawing.Point(483, 72)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(67, 135)
-        Me.btnBuscar.TabIndex = 14
-        Me.btnBuscar.UseSelectable = True
+        Me.panelMaps.BackgroundImage = Global.UI.My.Resources.Resources.googleMaps
+        Me.panelMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.panelMaps.Location = New System.Drawing.Point(1033, 312)
+        Me.panelMaps.Name = "panelMaps"
+        Me.panelMaps.Size = New System.Drawing.Size(75, 70)
+        Me.panelMaps.TabIndex = 40
         '
         'tvComidas
         '
@@ -488,7 +443,7 @@ Partial Class FormPedidos
         '
         Me.MetroLabel13.AutoSize = True
         Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel13.Location = New System.Drawing.Point(949, 457)
+        Me.MetroLabel13.Location = New System.Drawing.Point(954, 444)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(21, 25)
         Me.MetroLabel13.TabIndex = 42
@@ -507,20 +462,91 @@ Partial Class FormPedidos
         Me.printPreview.Name = "printPreview"
         Me.printPreview.Visible = False
         '
+        'btnAgregarComida
+        '
+        Me.btnAgregarComida.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarComida.Image = Global.UI.My.Resources.Resources.down
+        Me.btnAgregarComida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregarComida.Location = New System.Drawing.Point(414, 323)
+        Me.btnAgregarComida.Name = "btnAgregarComida"
+        Me.btnAgregarComida.Size = New System.Drawing.Size(136, 60)
+        Me.btnAgregarComida.TabIndex = 36
+        Me.btnAgregarComida.Text = "Agregar "
+        Me.btnAgregarComida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregarComida.UseVisualStyleBackColor = True
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnImprimir.Location = New System.Drawing.Point(970, 492)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(103, 80)
+        Me.btnImprimir.TabIndex = 34
+        Me.btnImprimir.Text = "Confirmar Pedido"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnImprimir.UseSelectable = True
+        '
+        'btnDeleteRow
+        '
+        Me.btnDeleteRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteRow.Image = Global.UI.My.Resources.Resources.delete
+        Me.btnDeleteRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDeleteRow.Location = New System.Drawing.Point(556, 323)
+        Me.btnDeleteRow.Name = "btnDeleteRow"
+        Me.btnDeleteRow.Size = New System.Drawing.Size(174, 60)
+        Me.btnDeleteRow.TabIndex = 33
+        Me.btnDeleteRow.Text = "Eliminar Descripción"
+        Me.btnDeleteRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDeleteRow.UseVisualStyleBackColor = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnBuscar.BackgroundImage = Global.UI.My.Resources.Resources.system_search
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscar.Location = New System.Drawing.Point(483, 72)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(67, 135)
+        Me.btnBuscar.TabIndex = 14
+        Me.btnBuscar.UseSelectable = True
+        '
+        'WebKitBrowser1
+        '
+        Me.WebKitBrowser1.BackColor = System.Drawing.Color.White
+        Me.WebKitBrowser1.Location = New System.Drawing.Point(556, 48)
+        Me.WebKitBrowser1.Name = "WebKitBrowser1"
+        Me.WebKitBrowser1.Size = New System.Drawing.Size(543, 258)
+        Me.WebKitBrowser1.TabIndex = 44
+        Me.WebKitBrowser1.Url = Nothing
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.0!)
+        Me.Label1.Location = New System.Drawing.Point(791, 355)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(69, 14)
+        Me.Label1.TabIndex = 45
+        Me.Label1.Text = "Powered by"
+        '
         'FormPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1122, 623)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.WebKitBrowser1)
+        Me.Controls.Add(Me.lblMaps)
+        Me.Controls.Add(Me.panelMaps)
         Me.Controls.Add(Me.MetroLabel13)
         Me.Controls.Add(Me.tvComidas)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnGuardarCliente)
         Me.Controls.Add(Me.btnNuevoPedido)
         Me.Controls.Add(Me.btnAgregarComida)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.btnImprimir)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnDeleteRow)
         Me.Controls.Add(Me.MetroLabel12)
         Me.Controls.Add(Me.numericCantidad)
         Me.Controls.Add(Me.dgvPedido)
@@ -550,7 +576,6 @@ Partial Class FormPedidos
         Me.Text = "Administración de Pedidos"
         CType(Me.dgvPedido, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numericCantidad, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -580,14 +605,12 @@ Partial Class FormPedidos
     Friend WithEvents dgvPedido As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents numericCantidad As NumericUpDown
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDeleteRow As Button
     Friend WithEvents btnImprimir As MetroFramework.Controls.MetroButton
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregarComida As Button
     Friend WithEvents btnNuevoPedido As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardarCliente As Button
-    Friend WithEvents wbMaps As WebBrowser
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents tvComidas As TreeView
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
     Friend WithEvents C1 As DataGridViewTextBoxColumn
@@ -597,4 +620,8 @@ Partial Class FormPedidos
     Friend WithEvents C5 As DataGridViewTextBoxColumn
     Friend WithEvents printDocument As Printing.PrintDocument
     Friend WithEvents printPreview As PrintPreviewDialog
+    Friend WithEvents lblMaps As Label
+    Friend WithEvents panelMaps As Panel
+    Friend WithEvents WebKitBrowser1 As WebKit.WebKitBrowser
+    Friend WithEvents Label1 As Label
 End Class

@@ -47,6 +47,16 @@ UI
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:UI.My.Resources.Resources.ComandaA6">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UI.My.Resources.Resources.comida">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:UI.My.Resources.Resources.compra">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -73,6 +83,11 @@ UI
 </summary>
 </member>
 <member name="P:UI.My.Resources.Resources.down">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UI.My.Resources.Resources.googleMaps">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

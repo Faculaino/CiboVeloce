@@ -2,14 +2,23 @@
 Imports BLL
 Imports MetroFramework
 Imports System.Text
+Imports System.Drawing.Printing
+Imports Servicios
+
 Public Class FormPedidos
+
+    Private direccion As String = ""
+
     Private Sub FormPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBuscaTel.Select()
         formatControls()
         clearFields()
         cargarTree()
 
+        'cargarTreeComposite()
     End Sub
+
+
 
     Sub cargarTree()
         Dim categoriaB = New CategoriaBussines
@@ -33,7 +42,14 @@ Public Class FormPedidos
         Next
     End Sub
 
+    Sub cargarTreeComposite()
+
+    End Sub
+
+
+
     Sub localizacion()
+
         Dim query = New StringBuilder
         query.Append("http://maps.google.com/maps?q=")
 
@@ -45,11 +61,15 @@ Public Class FormPedidos
             query.Append(txtLocalidad.Text + "," & "+")
         End If
         Try
-            wbMaps.Navigate(query.ToString())
+            'wbMaps.Navigate(query.ToString())
+
             'wbMaps.Navigate("https://www.google.com.ar/maps/search/" & txtDireccion.Text & "+" & txtLocalidad.Text & "+" & "Buenos Aires" & "+" & "Argentina" & "+")
+            WebKitBrowser1.Navigate("www.maps.google.com.ar/maps?q= " + txtDireccion.Text + ",+" + txtLocalidad.Text)
         Catch ex As Exception
-            wbMaps.Navigate("")
+            WebKitBrowser1.Navigate("")
             MsgBox("Error en el Servicio de Google Maps")
+            lblMaps.Visible = True
+            panelMaps.Visible = True
         End Try
 
 
@@ -74,8 +94,14 @@ Public Class FormPedidos
         dgvPedido.Rows.Clear()
 
         txtTotal.Text = ""
+        WebKitBrowser1.Navigate("")
+
+        lblMaps.Visible = True
+        panelMaps.Visible = True
 
         bandera = False
+
+        cargarTree()
     End Sub
 
     Dim bandera = False
@@ -119,6 +145,8 @@ Public Class FormPedidos
         End If
     End Sub
 
+
+
     Sub mostrarCliente(cliente As ClienteEntity)
         If cliente Is Nothing Then
             MetroMessageBox.Show(Me, "Reintente la busqueda por Teléfono o Dirección", "Cliente Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -130,6 +158,10 @@ Public Class FormPedidos
             txtDetallesDir.Text = cliente.detalleDireccion
             txtLocalidad.Text = cliente.localidad
             txtCosto.Text = cliente.costo
+
+            direccion = txtDireccion.Text
+
+            txtTotal.Text = CDec(cliente.costo.ToString())
 
             localizacion()
         End If
@@ -196,7 +228,10 @@ Public Class FormPedidos
         clearFields()
         txtBuscaTel.Select()
         formatControls()
-        wbMaps.Navigate("")
+        WebKitBrowser1.Navigate("")
+        lblMaps.Visible = True
+        panelMaps.Visible = True
+        cargarTree()
     End Sub
 
     Private Sub btnGuardarCliente_Click(sender As Object, e As EventArgs) Handles btnGuardarCliente.Click
@@ -211,8 +246,23 @@ Public Class FormPedidos
         datosCliente.detalleDireccion = txtDetallesDir.Text
         datosCliente.costo = txtCosto.Text
 
-        nuevoCliente.insertCliente(datosCliente)
-        MsgBox("Cliente ingresado correctamente")
+        Dim buscaCliente = New ClienteEntity
+        buscaCliente = nuevoCliente.searchCliente(datosCliente.apyn, direccion)
+
+        If buscaCliente Is Nothing Then
+            datosCliente.direccion = txtDireccion.Text
+            nuevoCliente.insertCliente(datosCliente)
+            MsgBox("Cliente ingresado correctamente")
+        Else
+            nuevoCliente.updateCliente(datosCliente, buscaCliente.ID)
+            MsgBox("Se actualizó el Cliente correctamente")
+            Dim bitacora = New BitacoraBussines
+            bitacora.controlCambios("Modificar Datos Cliente", SessionManager.Instance.Usuario)
+        End If
+
+
+
+
     End Sub
 
     Private Sub btnAgregarComida_Click(sender As Object, e As EventArgs) Handles btnAgregarComida.Click
@@ -236,77 +286,13 @@ Public Class FormPedidos
         End If
     End Sub
 
-    'Private Sub printDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles printDocument.PrintPage
-    '    Dim fuente As New Font("Calibri", 12)
-    '    Dim nombre = "Nombre Empresa" + " - " + Now.ToShortDateString("dd/mm/yyyy") + " - HS: " + Now.ToShortTimeString
-
-    '    'e.Graphics.DrawString(nombre, fuente, Brushes.Black, 200, 0)
-    '    'e.Graphics.DrawString("N°: ", fuente, Brushes.Black, 530, 0)
-    '    'e.Graphics.DrawString(Comanda.Text, fuente, Brushes.Black, 560, 0)
-    '    'e.Graphics.DrawString("Nombre: ", fuente, Brushes.Black, 200, 20)
-    '    'e.Graphics.DrawString(cliente, fuente, Brushes.Black, 270, 20)
-    '    'e.Graphics.DrawString("Dir: ", fuente, Brushes.Black, 200, 40)
-    '    'e.Graphics.DrawString(direccion, fuente, Brushes.Black, 230, 40)
-    '    'e.Graphics.DrawString("E/: ", fuente, Brushes.Black, 200, 60)
-    '    'e.Graphics.DrawString(TextBoxCalles.Text, fuente, Brushes.Black, 230, 60)
-
-    '    e.Graphics.DrawString(nombre, fuente, Brushes.Black, 0, 0)
-    '    e.Graphics.DrawString("N°: ", fuente, Brushes.Black, 330, 0)
-    '    'e.Graphics.DrawString(Comanda.Text, fuente, Brushes.Black, 360, 0)
-    '    e.Graphics.DrawString("Nombre: ", fuente, Brushes.Black, 0, 20)
-    '    e.Graphics.DrawString(txtNombre.Text, fuente, Brushes.Black, 70, 20)
-    '    e.Graphics.DrawString("Dirección: ", fuente, Brushes.Black, 0, 40)
-    '    e.Graphics.DrawString(txtDireccion.Text, fuente, Brushes.Black, 80, 40)
-    '    e.Graphics.DrawString("E/: ", fuente, Brushes.Black, 0, 60)
-    '    e.Graphics.DrawString(txtEntreCalles.Text, fuente, Brushes.Black, 30, 60)
-
-    '    'e.Graphics.DrawString("Cant", fuente, Brushes.Black, 200, 80)
-    '    e.Graphics.DrawString("Cant", fuente, Brushes.Black, 0, 80)
-
-
-    '    For i = 0 To dgvPedido.Rows.Count
-
-    '        'cantidad
-    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(1).Value, fuente, Brushes.Black, xPosCant, yPosCant)
-    '        'e.Graphics.DrawString("Detalles", fuente, Brushes.Black, 250, 80)
-    '        e.Graphics.DrawString("Detalles", fuente, Brushes.Black, 50, 80)
-    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(0).Value, fuente, Brushes.Black, New RectangleF(xPosDesc, yPosDesc, e.MarginBounds.Right - 160, altoNecesario))
-    '        'e.Graphics.DrawString("Guarnición", fuente, Brushes.Black, 400, 80)
-    '        e.Graphics.DrawString("Guarnición", fuente, Brushes.Black, 180, 80)
-    '        e.Graphics.DrawString("Precio", fuente, Brushes.Black, 530, 80)
-    '        'e.Graphics.DrawString(dgvPedido.Rows(i).Cells(3).Value, fuente, Brushes.Black, xPosPrec, yPosPrec)
-
-
-
-
-    '        'Pregunto si hubo observacion
-    '        If dgvPedido.Rows(i).Cells(4).Value = "" Then
-    '            'yPosDesc += 20
-    '            'yPosCant += 20
-    '            'yPosPrec += 20
-    '        Else
-    '            'yPosObs = yPosDesc
-    '            'e.Graphics.DrawString(DataGridViewPedido.Rows(i).Cells(4).Value, fuente, Brushes.Black, New RectangleF(xPosObs, yPosObs, e.MarginBounds.Right - 160, altoNecesario))
-    '            'yPosDesc += 20
-    '            'yPosCant += 20
-    '            'yPosPrec += 20
-    '        End If
-
-    '    Next
-
-
-
-
-
-    'End Sub
-
 
 
     Sub imprimir()
-        Dim comanda As Image = My.Resources.ComandaA6
-        Dim g As Graphics = Graphics.FromImage(comanda)
+        printPreview.Document = printDocument
+        printPreview.ShowDialog()
 
-        printPreview.Show(comanda)
+        'printDocument.Print()
 
     End Sub
 
@@ -316,11 +302,62 @@ Public Class FormPedidos
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         imprimir()
+
+        'MailManager.enviarMail(txtNombre.Text, "Factura Compra", "Se envía factura por compra de $" + txtTotal.Text)
+        clearFields()
+
     End Sub
 
     Private Sub btnImprimir_KeyDown(sender As Object, e As KeyEventArgs) Handles btnImprimir.KeyDown
         If e.KeyValue = Keys.F5 Then
-            MsgBox("Hola")
+
         End If
+    End Sub
+
+    Private Sub printDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles printDocument.PrintPage
+        Dim fuente As New Font("Calibri", 15, FontStyle.Regular)
+        Dim empresa As String = "Nombre de la Empresa / " + Now.ToShortDateString() + " / HS: " + Now.ToShortTimeString()
+        Dim cliente As String = txtNombre.Text + " - " + txtBuscaTel.Text
+
+        'Formato del PrintDocument
+        '----------------------------------------------------------------------------------
+        Dim rect As Rectangle = New Rectangle(New Point(0, 0), My.Resources.ComandaA6.Size)
+        e.Graphics.DrawImage(My.Resources.ComandaA6, rect)
+        Dim pagina As New PaperSize("A6", 399.93701, 599.90551)
+        pagina.PaperName = PaperKind.A6
+        printDocument.DefaultPageSettings.PaperSize = pagina
+        '----------------------------------------------------------------------------------
+
+        e.Graphics.DrawString(empresa, fuente, Brushes.Black, 30, 30)
+        e.Graphics.DrawString("Cliente = " + cliente, fuente, Brushes.Black, 30, 50)
+
+        'Impresión de DataGridView
+        '-------------------------------------------------------------------------------------------------------------------------------
+        Dim xPosCant = 60
+        Dim yPosCant = 360
+
+        For i = 0 To dgvPedido.Rows.Count - 1
+            e.Graphics.DrawString(dgvPedido.Rows(i).Cells("C2").Value.ToString(), fuente, Brushes.Black, xPosCant, yPosCant)
+            e.Graphics.DrawString(dgvPedido.Rows(i).Cells("C1").Value.ToString(), fuente, Brushes.Black, xPosCant + 100, yPosCant)
+            If dgvPedido.Rows(i).Cells("C5").Value Is Nothing Then
+                e.Graphics.DrawString(" ", fuente, Brushes.Black, xPosCant + 40, yPosCant)
+            Else
+                e.Graphics.DrawString(dgvPedido.Rows(i).Cells("C5").Value.ToString(), fuente, Brushes.Black, xPosCant + 400, yPosCant)
+            End If
+            e.Graphics.DrawString("$" + dgvPedido.Rows(i).Cells("C4").Value.ToString(), fuente, Brushes.Black, xPosCant + 650, yPosCant)
+            e.Graphics.DrawString(txtTotal.Text, fuente, Brushes.Black, xPosCant + 655, yPosCant + 715)
+
+            yPosCant += 30
+        Next
+        '-------------------------------------------------------------------------------------------------------------------------------
+
+
+    End Sub
+
+    Private Sub btnDeleteRow_Click(sender As Object, e As EventArgs) Handles btnDeleteRow.Click
+        Dim Variable As String = dgvPedido.Item(3, dgvPedido.CurrentRow.Index).Value
+        Dim Valor = Variable.Replace("$", "")
+        dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index)
+        txtTotal.Text = CDec(txtTotal.Text.ToString()) - CDec(Valor.ToString())
     End Sub
 End Class

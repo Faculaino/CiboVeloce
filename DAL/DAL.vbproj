@@ -69,6 +69,7 @@
     <Compile Include="ClienteDAL.vb" />
     <Compile Include="ComidaDAL.vb" />
     <Compile Include="Connection.vb" />
+    <Compile Include="DVVDAL.vb" />
     <Compile Include="IdiomasDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

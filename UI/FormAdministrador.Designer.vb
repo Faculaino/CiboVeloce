@@ -27,6 +27,7 @@ Partial Class FormAdministrador
         Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
         Me.Calculator1 = New DevComponents.Editors.Calculator()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
+        Me.btnAdminComida = New MetroFramework.Controls.MetroButton()
         Me.ReflectionImage1 = New DevComponents.DotNetBar.Controls.ReflectionImage()
         Me.btnPedidos = New MetroFramework.Controls.MetroButton()
         Me.btnCompras = New MetroFramework.Controls.MetroButton()
@@ -41,7 +42,7 @@ Partial Class FormAdministrador
         'dtpFecha
         '
         Me.dtpFecha.Location = New System.Drawing.Point(13, 63)
-        Me.dtpFecha.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFecha.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(252, 29)
         Me.dtpFecha.TabIndex = 8
@@ -65,6 +66,18 @@ Partial Class FormAdministrador
         Me.ReflectionLabel1.Size = New System.Drawing.Size(207, 70)
         Me.ReflectionLabel1.TabIndex = 17
         Me.ReflectionLabel1.Text = "<b><font size=""+18""><i>Cibo</i><font color=""#33CCFF"">Veloce</font></font></b>"
+        '
+        'btnAdminComida
+        '
+        Me.btnAdminComida.BackgroundImage = Global.UI.My.Resources.Resources.comida
+        Me.btnAdminComida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAdminComida.Location = New System.Drawing.Point(790, 197)
+        Me.btnAdminComida.Name = "btnAdminComida"
+        Me.btnAdminComida.Size = New System.Drawing.Size(149, 119)
+        Me.btnAdminComida.TabIndex = 19
+        Me.btnAdminComida.Text = "Administración de Carta"
+        Me.btnAdminComida.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnAdminComida.UseSelectable = True
         '
         'ReflectionImage1
         '
@@ -181,6 +194,7 @@ Partial Class FormAdministrador
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1165, 571)
+        Me.Controls.Add(Me.btnAdminComida)
         Me.Controls.Add(Me.ReflectionLabel1)
         Me.Controls.Add(Me.ReflectionImage1)
         Me.Controls.Add(Me.Calculator1)
@@ -213,4 +227,5 @@ Partial Class FormAdministrador
     Friend WithEvents Calculator1 As DevComponents.Editors.Calculator
     Friend WithEvents ReflectionImage1 As DevComponents.DotNetBar.Controls.ReflectionImage
     Friend WithEvents ReflectionLabel1 As DevComponents.DotNetBar.Controls.ReflectionLabel
+    Friend WithEvents btnAdminComida As MetroFramework.Controls.MetroButton
 End Class

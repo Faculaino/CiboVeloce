@@ -69,8 +69,10 @@
     <Compile Include="ClienteBussines.vb" />
     <Compile Include="ComidaBussines.vb" />
     <Compile Include="Composite\Componente.vb" />
+    <Compile Include="Composite\Composite.vb" />
     <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />
+    <Compile Include="DVVBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />

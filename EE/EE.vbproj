@@ -68,6 +68,7 @@
     <Compile Include="CategoriaEntity.vb" />
     <Compile Include="ClienteEntity.vb" />
     <Compile Include="ComidaEntity.vb" />
+    <Compile Include="DVVEntity.vb" />
     <Compile Include="EventoEntity.vb" />
     <Compile Include="IdiomaEntity.vb" />
     <Compile Include="PalabraEntity.vb" />
