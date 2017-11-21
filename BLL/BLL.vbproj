@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="BaseDeDatosBussines.vb" />
     <Compile Include="BitacoraBussines.vb" />
+    <Compile Include="CajaBussines.vb" />
     <Compile Include="CategoriaBussines.vb" />
     <Compile Include="ClienteBussines.vb" />
     <Compile Include="ComidaBussines.vb" />
@@ -76,6 +77,13 @@
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />
+    <Compile Include="PedidoBussines.vb" />
+    <Compile Include="ReporteBussines.vb" />
+    <Compile Include="State\EnElaboracion.vb" />
+    <Compile Include="State\EnEnvio.vb" />
+    <Compile Include="State\Estado.vb" />
+    <Compile Include="State\FaltaComida.vb" />
+    <Compile Include="State\Terminado.vb" />
     <Compile Include="TraduccionBussines.vb" />
     <Compile Include="UsuarioBussines.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

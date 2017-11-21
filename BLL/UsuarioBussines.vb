@@ -74,6 +74,11 @@ Public Class UsuarioBussines
         nuevoDatos.updateUsuariosDVH(dvh)
     End Sub
 
+    Function buscarUserID(id As Integer) As UsuarioEntity
+        Dim nuevoDatos = New UsuarioDAL
+        Dim nuevoUsuario = nuevoDatos.buscarUserID(id)
+        Return nuevoUsuario
+    End Function
 
 
 

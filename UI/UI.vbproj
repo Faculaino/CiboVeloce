@@ -46,7 +46,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=10.9.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework">
       <HintPath>..\..\Frameworks\METRO DLL\MetroFramework.dll</HintPath>
     </Reference>
@@ -60,6 +65,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -112,10 +119,22 @@
     <Compile Include="FormBitacora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCaja.Designer.vb">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormClientes.Designer.vb">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompras.Designer.vb">
+      <DependentUpon>FormCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormIdioma.Designer.vb">
@@ -155,6 +174,12 @@
     <Compile Include="FormPedidos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPedidosHistorial.Designer.vb">
+      <DependentUpon>FormPedidosHistorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPedidosHistorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPrincipal.Designer.vb">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </Compile>
@@ -165,6 +190,12 @@
       <DependentUpon>FormPermisosUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPermisosUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes.Designer.vb">
+      <DependentUpon>FormReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUsuarios.Designer.vb">
@@ -188,6 +219,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reportes\ReportePedidos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportePedidos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormAdministracionCarta.resx">
@@ -202,8 +239,14 @@
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCaja.resx">
+      <DependentUpon>FormCaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompras.resx">
+      <DependentUpon>FormCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIdioma.resx">
       <DependentUpon>FormIdioma.vb</DependentUpon>
@@ -223,11 +266,17 @@
     <EmbeddedResource Include="FormPedidos.resx">
       <DependentUpon>FormPedidos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPedidosHistorial.resx">
+      <DependentUpon>FormPedidosHistorial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPermisosUsuarios.resx">
       <DependentUpon>FormPermisosUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
@@ -237,6 +286,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePedidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportePedidos.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +305,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\ImagenOjo.JPG" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +387,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\comida.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrosPedidos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

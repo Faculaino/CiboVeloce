@@ -63,4 +63,22 @@ Public Class FormAdministrador
         nuevaComida.StartPosition = FormStartPosition.CenterParent
         nuevaComida.Show()
     End Sub
+
+    Private Sub btnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
+        Dim nuevaCaja = New FormCaja
+        nuevaCaja.StartPosition = FormStartPosition.CenterParent
+        nuevaCaja.Show()
+    End Sub
+
+    Private Sub btnPedidosHistorial_Click(sender As Object, e As EventArgs) Handles btnPedidosHistorial.Click
+        Dim nuevoHistorial = New FormPedidosHistorial
+        nuevoHistorial.StartPosition = FormStartPosition.CenterParent
+        nuevoHistorial.Show()
+    End Sub
+
+    Private Sub btnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
+        Dim nuevoReportes = New FormReportes
+        nuevoReportes.StartPosition = FormStartPosition.CenterParent
+        nuevoReportes.Show()
+    End Sub
 End Class

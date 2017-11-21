@@ -65,13 +65,16 @@
   <ItemGroup>
     <Compile Include="BaseEntity.vb" />
     <Compile Include="BitacoraEntity.vb" />
+    <Compile Include="CajaEntity.vb" />
     <Compile Include="CategoriaEntity.vb" />
     <Compile Include="ClienteEntity.vb" />
     <Compile Include="ComidaEntity.vb" />
     <Compile Include="DVVEntity.vb" />
+    <Compile Include="EstadoEntity.vb" />
     <Compile Include="EventoEntity.vb" />
     <Compile Include="IdiomaEntity.vb" />
     <Compile Include="PalabraEntity.vb" />
+    <Compile Include="PedidoEntity.vb" />
     <Compile Include="PerfilEntity.vb" />
     <Compile Include="TraduccionEntity.vb" />
     <Compile Include="PermisoEntity.vb" />

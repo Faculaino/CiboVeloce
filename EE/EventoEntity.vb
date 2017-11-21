@@ -1,4 +1,5 @@
 ﻿Public Class EventoEntity
+    Inherits BaseEntity
 
     Private _descripcion As String
 

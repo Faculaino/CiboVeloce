@@ -1,4 +1,5 @@
 ﻿Public Class BitacoraEntity
+    Inherits BaseEntity
 
 
 

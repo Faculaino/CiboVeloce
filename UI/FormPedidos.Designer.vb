@@ -22,11 +22,11 @@ Partial Class FormPedidos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPedidos))
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
@@ -71,6 +71,15 @@ Partial Class FormPedidos
         Me.btnBuscar = New MetroFramework.Controls.MetroButton()
         Me.WebKitBrowser1 = New WebKit.WebKitBrowser()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
+        Me.txtAbona = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
+        Me.txtVuelto = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
+        Me.txtComentario = New MetroFramework.Controls.MetroTextBox()
+        Me.lblIDCliente = New System.Windows.Forms.Label()
         CType(Me.dgvPedido, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -295,30 +304,30 @@ Partial Class FormPedidos
         '
         Me.dgvPedido.AllowUserToAddRows = False
         Me.dgvPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPedido.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4, Me.C5})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvPedido.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvPedido.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvPedido.Location = New System.Drawing.Point(309, 389)
         Me.dgvPedido.Name = "dgvPedido"
         Me.dgvPedido.RowHeadersVisible = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvPedido.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvPedido.Size = New System.Drawing.Size(610, 211)
         Me.dgvPedido.TabIndex = 30
         '
@@ -336,19 +345,19 @@ Partial Class FormPedidos
         '
         'C3
         '
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.C3.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Format = "C2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.C3.DefaultCellStyle = DataGridViewCellStyle7
         Me.C3.HeaderText = "PU"
         Me.C3.Name = "C3"
         Me.C3.Width = 70
         '
         'C4
         '
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.C4.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.C4.DefaultCellStyle = DataGridViewCellStyle8
         Me.C4.HeaderText = "SubTotal"
         Me.C4.Name = "C4"
         Me.C4.Width = 80
@@ -371,7 +380,7 @@ Partial Class FormPedidos
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(997, 415)
+        Me.MetroLabel12.Location = New System.Drawing.Point(947, 414)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel12.TabIndex = 32
@@ -380,8 +389,8 @@ Partial Class FormPedidos
         'txtTotal
         '
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.txtTotal.Lines = New String(-1) {}
-        Me.txtTotal.Location = New System.Drawing.Point(981, 439)
+        Me.txtTotal.Lines = New String() {"0"}
+        Me.txtTotal.Location = New System.Drawing.Point(1016, 410)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -389,6 +398,7 @@ Partial Class FormPedidos
         Me.txtTotal.SelectedText = ""
         Me.txtTotal.Size = New System.Drawing.Size(83, 30)
         Me.txtTotal.TabIndex = 35
+        Me.txtTotal.Text = "0"
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTotal.UseSelectable = True
         '
@@ -436,14 +446,14 @@ Partial Class FormPedidos
         Me.tvComidas.Font = New System.Drawing.Font("Calibri", 12.0!)
         Me.tvComidas.Location = New System.Drawing.Point(23, 282)
         Me.tvComidas.Name = "tvComidas"
-        Me.tvComidas.Size = New System.Drawing.Size(270, 318)
+        Me.tvComidas.Size = New System.Drawing.Size(270, 357)
         Me.tvComidas.TabIndex = 41
         '
         'MetroLabel13
         '
         Me.MetroLabel13.AutoSize = True
         Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel13.Location = New System.Drawing.Point(954, 444)
+        Me.MetroLabel13.Location = New System.Drawing.Point(991, 411)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(21, 25)
         Me.MetroLabel13.TabIndex = 42
@@ -479,7 +489,7 @@ Partial Class FormPedidos
         '
         Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
         Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnImprimir.Location = New System.Drawing.Point(970, 492)
+        Me.btnImprimir.Location = New System.Drawing.Point(976, 539)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(103, 80)
         Me.btnImprimir.TabIndex = 34
@@ -530,11 +540,123 @@ Partial Class FormPedidos
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "Powered by"
         '
+        'MetroLabel14
+        '
+        Me.MetroLabel14.AutoSize = True
+        Me.MetroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel14.Location = New System.Drawing.Point(991, 447)
+        Me.MetroLabel14.Name = "MetroLabel14"
+        Me.MetroLabel14.Size = New System.Drawing.Size(21, 25)
+        Me.MetroLabel14.TabIndex = 48
+        Me.MetroLabel14.Text = "$"
+        '
+        'txtAbona
+        '
+        Me.txtAbona.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.txtAbona.Lines = New String() {"0"}
+        Me.txtAbona.Location = New System.Drawing.Point(1016, 446)
+        Me.txtAbona.MaxLength = 32767
+        Me.txtAbona.Name = "txtAbona"
+        Me.txtAbona.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAbona.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtAbona.SelectedText = ""
+        Me.txtAbona.Size = New System.Drawing.Size(83, 30)
+        Me.txtAbona.TabIndex = 47
+        Me.txtAbona.Text = "0"
+        Me.txtAbona.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAbona.UseSelectable = True
+        '
+        'MetroLabel15
+        '
+        Me.MetroLabel15.AutoSize = True
+        Me.MetroLabel15.Location = New System.Drawing.Point(950, 450)
+        Me.MetroLabel15.Name = "MetroLabel15"
+        Me.MetroLabel15.Size = New System.Drawing.Size(39, 19)
+        Me.MetroLabel15.TabIndex = 46
+        Me.MetroLabel15.Text = "Pagó"
+        '
+        'MetroLabel16
+        '
+        Me.MetroLabel16.AutoSize = True
+        Me.MetroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel16.Location = New System.Drawing.Point(991, 483)
+        Me.MetroLabel16.Name = "MetroLabel16"
+        Me.MetroLabel16.Size = New System.Drawing.Size(21, 25)
+        Me.MetroLabel16.TabIndex = 51
+        Me.MetroLabel16.Text = "$"
+        '
+        'txtVuelto
+        '
+        Me.txtVuelto.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.txtVuelto.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txtVuelto.Lines = New String() {"0"}
+        Me.txtVuelto.Location = New System.Drawing.Point(1016, 482)
+        Me.txtVuelto.MaxLength = 32767
+        Me.txtVuelto.Name = "txtVuelto"
+        Me.txtVuelto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtVuelto.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtVuelto.SelectedText = ""
+        Me.txtVuelto.Size = New System.Drawing.Size(83, 30)
+        Me.txtVuelto.TabIndex = 50
+        Me.txtVuelto.Text = "0"
+        Me.txtVuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtVuelto.UseSelectable = True
+        '
+        'MetroLabel17
+        '
+        Me.MetroLabel17.AutoSize = True
+        Me.MetroLabel17.Location = New System.Drawing.Point(947, 486)
+        Me.MetroLabel17.Name = "MetroLabel17"
+        Me.MetroLabel17.Size = New System.Drawing.Size(45, 19)
+        Me.MetroLabel17.TabIndex = 49
+        Me.MetroLabel17.Text = "Vuelto"
+        '
+        'MetroLabel18
+        '
+        Me.MetroLabel18.AutoSize = True
+        Me.MetroLabel18.Location = New System.Drawing.Point(309, 613)
+        Me.MetroLabel18.Name = "MetroLabel18"
+        Me.MetroLabel18.Size = New System.Drawing.Size(87, 19)
+        Me.MetroLabel18.TabIndex = 52
+        Me.MetroLabel18.Text = "Comentarios:"
+        '
+        'txtComentario
+        '
+        Me.txtComentario.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.txtComentario.Lines = New String(-1) {}
+        Me.txtComentario.Location = New System.Drawing.Point(397, 608)
+        Me.txtComentario.MaxLength = 32767
+        Me.txtComentario.Name = "txtComentario"
+        Me.txtComentario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtComentario.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtComentario.SelectedText = ""
+        Me.txtComentario.Size = New System.Drawing.Size(522, 30)
+        Me.txtComentario.TabIndex = 53
+        Me.txtComentario.UseSelectable = True
+        '
+        'lblIDCliente
+        '
+        Me.lblIDCliente.AutoSize = True
+        Me.lblIDCliente.Location = New System.Drawing.Point(327, 260)
+        Me.lblIDCliente.Name = "lblIDCliente"
+        Me.lblIDCliente.Size = New System.Drawing.Size(0, 13)
+        Me.lblIDCliente.TabIndex = 54
+        Me.lblIDCliente.Visible = False
+        '
         'FormPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1122, 623)
+        Me.ClientSize = New System.Drawing.Size(1115, 652)
+        Me.Controls.Add(Me.lblIDCliente)
+        Me.Controls.Add(Me.txtComentario)
+        Me.Controls.Add(Me.MetroLabel18)
+        Me.Controls.Add(Me.MetroLabel16)
+        Me.Controls.Add(Me.txtVuelto)
+        Me.Controls.Add(Me.MetroLabel17)
+        Me.Controls.Add(Me.MetroLabel14)
+        Me.Controls.Add(Me.txtAbona)
+        Me.Controls.Add(Me.MetroLabel15)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.WebKitBrowser1)
         Me.Controls.Add(Me.lblMaps)
@@ -624,4 +746,13 @@ Partial Class FormPedidos
     Friend WithEvents panelMaps As Panel
     Friend WithEvents WebKitBrowser1 As WebKit.WebKitBrowser
     Friend WithEvents Label1 As Label
+    Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtAbona As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtVuelto As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtComentario As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lblIDCliente As Label
 End Class

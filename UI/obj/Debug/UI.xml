@@ -32,6 +32,11 @@ UI
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:UI.My.Resources.Resources.caja">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:UI.My.Resources.Resources.cerrar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -113,6 +118,16 @@ UI
 </summary>
 </member>
 <member name="P:UI.My.Resources.Resources.printer">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UI.My.Resources.Resources.registrosPedidos">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UI.My.Resources.Resources.reporte">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

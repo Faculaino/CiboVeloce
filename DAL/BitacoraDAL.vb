@@ -86,7 +86,7 @@ Public Class BitacoraDAL
 
                 Dim nuevoUsuario = New UsuarioDAL
                 Dim user = New UsuarioEntity
-                user = nuevoUsuario.buscarUserID("SP_Select_UsuariosPorID", reader(3))
+                user = nuevoUsuario.buscarUserID(reader(3))
                 nuevoEvento.usuario = user.User
 
                 nuevoEvento.mensaje = reader(0) & " " & "del Usuario = " & user.User

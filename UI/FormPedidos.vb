@@ -158,6 +158,7 @@ Public Class FormPedidos
             txtDetallesDir.Text = cliente.detalleDireccion
             txtLocalidad.Text = cliente.localidad
             txtCosto.Text = cliente.costo
+            lblIDCliente.Text = cliente.ID
 
             direccion = txtDireccion.Text
 
@@ -207,7 +208,7 @@ Public Class FormPedidos
     Private Sub txtBuscaDir_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscaDir.KeyPress
         If e.KeyChar = Chr(13) Then
             If txtBuscaDir.Text = "" Then
-                MsgBox("Ingrese una dirección válido")
+                MsgBox("Ingrese una dirección válida")
             Else
                 'Dim nuevoCliente = New ClienteBussines
                 'Dim buscaCliente = New ClienteEntity
@@ -274,6 +275,7 @@ Public Class FormPedidos
             Dim comida = nodo(0)
             Dim precio = nodo(1)
             Dim cantidad = numericCantidad.Value
+
             dgvPedido.Rows.Add(categoria + " - " + comida, cantidad, precio, precio * cantidad)
             Dim total As Decimal = 0
             For Each item As DataGridViewRow In dgvPedido.Rows
@@ -301,12 +303,41 @@ Public Class FormPedidos
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        imprimir()
-
+        'imprimir()
+        nuevoPedido()
         'MailManager.enviarMail(txtNombre.Text, "Factura Compra", "Se envía factura por compra de $" + txtTotal.Text)
         clearFields()
 
     End Sub
+
+    Sub nuevoPedido()
+        Dim nuevoPedido = New PedidoEntity
+        Dim pedidoBussines = New PedidoBussines
+        Dim listaComida As String = ""
+
+        For Each item As DataGridViewRow In dgvPedido.Rows
+            If item.Cells("C2").Value.ToString() = "" Then
+
+            Else
+                listaComida += item.Cells("C2").Value.ToString() + " " + item.Cells("C1").Value.ToString() + " , "
+            End If
+
+        Next
+        listaComida = listaComida.Remove(listaComida.Length - 2)
+        nuevoPedido.fechahora = Now
+        nuevoPedido.idEstado = 1
+        nuevoPedido.listaComida = listaComida
+        nuevoPedido.idUsuario = SessionManager.Instance.Usuario.ID
+        nuevoPedido.idCliente = CInt(lblIDCliente.Text.ToString())
+        nuevoPedido.total = CDec(txtTotal.Text.ToString())
+
+        pedidoBussines.nuevoPedido(nuevoPedido)
+
+
+
+    End Sub
+
+
 
     Private Sub btnImprimir_KeyDown(sender As Object, e As KeyEventArgs) Handles btnImprimir.KeyDown
         If e.KeyValue = Keys.F5 Then
@@ -359,5 +390,17 @@ Public Class FormPedidos
         Dim Valor = Variable.Replace("$", "")
         dgvPedido.Rows.RemoveAt(dgvPedido.CurrentRow.Index)
         txtTotal.Text = CDec(txtTotal.Text.ToString()) - CDec(Valor.ToString())
+    End Sub
+
+    Private Sub txtAbona_Click(sender As Object, e As EventArgs) Handles txtAbona.Click
+
+    End Sub
+
+    Private Sub txtAbona_TextChanged(sender As Object, e As EventArgs) Handles txtAbona.TextChanged
+        If txtAbona.Text = "" Then
+        Else
+            txtVuelto.Text = CDec(txtAbona.Text.ToString()) - CDec(txtTotal.Text.ToString())
+        End If
+
     End Sub
 End Class

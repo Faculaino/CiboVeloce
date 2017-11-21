@@ -14,5 +14,7 @@ Public MustInherit Class Componente
     Public MustOverride Sub eliminar(c As Componente)
     Public MustOverride Sub mostrar(depth As Integer)
 
+    'Public MustOverride Function mostrar2() As List(Of Componente)
+
 
 End Class

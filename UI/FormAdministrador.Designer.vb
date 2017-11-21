@@ -27,6 +27,8 @@ Partial Class FormAdministrador
         Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
         Me.Calculator1 = New DevComponents.Editors.Calculator()
         Me.ReflectionLabel1 = New DevComponents.DotNetBar.Controls.ReflectionLabel()
+        Me.btnPedidosHistorial = New MetroFramework.Controls.MetroButton()
+        Me.btnCaja = New MetroFramework.Controls.MetroButton()
         Me.btnAdminComida = New MetroFramework.Controls.MetroButton()
         Me.ReflectionImage1 = New DevComponents.DotNetBar.Controls.ReflectionImage()
         Me.btnPedidos = New MetroFramework.Controls.MetroButton()
@@ -37,12 +39,13 @@ Partial Class FormAdministrador
         Me.btnBackup = New MetroFramework.Controls.MetroButton()
         Me.btnClientes = New MetroFramework.Controls.MetroButton()
         Me.btnUsuarios = New MetroFramework.Controls.MetroButton()
+        Me.btnReportes = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'dtpFecha
         '
         Me.dtpFecha.Location = New System.Drawing.Point(13, 63)
-        Me.dtpFecha.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpFecha.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(252, 29)
         Me.dtpFecha.TabIndex = 8
@@ -66,6 +69,30 @@ Partial Class FormAdministrador
         Me.ReflectionLabel1.Size = New System.Drawing.Size(207, 70)
         Me.ReflectionLabel1.TabIndex = 17
         Me.ReflectionLabel1.Text = "<b><font size=""+18""><i>Cibo</i><font color=""#33CCFF"">Veloce</font></font></b>"
+        '
+        'btnPedidosHistorial
+        '
+        Me.btnPedidosHistorial.BackgroundImage = Global.UI.My.Resources.Resources.registrosPedidos
+        Me.btnPedidosHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnPedidosHistorial.Location = New System.Drawing.Point(449, 334)
+        Me.btnPedidosHistorial.Name = "btnPedidosHistorial"
+        Me.btnPedidosHistorial.Size = New System.Drawing.Size(149, 119)
+        Me.btnPedidosHistorial.TabIndex = 23
+        Me.btnPedidosHistorial.Text = "Adm. de Pedidos"
+        Me.btnPedidosHistorial.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPedidosHistorial.UseSelectable = True
+        '
+        'btnCaja
+        '
+        Me.btnCaja.BackgroundImage = Global.UI.My.Resources.Resources.caja
+        Me.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCaja.Location = New System.Drawing.Point(278, 334)
+        Me.btnCaja.Name = "btnCaja"
+        Me.btnCaja.Size = New System.Drawing.Size(149, 119)
+        Me.btnCaja.TabIndex = 21
+        Me.btnCaja.Text = "Caja"
+        Me.btnCaja.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCaja.UseSelectable = True
         '
         'btnAdminComida
         '
@@ -189,11 +216,26 @@ Partial Class FormAdministrador
         Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnUsuarios.UseSelectable = True
         '
+        'btnReportes
+        '
+        Me.btnReportes.BackgroundImage = Global.UI.My.Resources.Resources.reporte
+        Me.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnReportes.Location = New System.Drawing.Point(618, 334)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Size = New System.Drawing.Size(149, 119)
+        Me.btnReportes.TabIndex = 25
+        Me.btnReportes.Text = "Reportes"
+        Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnReportes.UseSelectable = True
+        '
         'FormAdministrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1165, 571)
+        Me.Controls.Add(Me.btnReportes)
+        Me.Controls.Add(Me.btnPedidosHistorial)
+        Me.Controls.Add(Me.btnCaja)
         Me.Controls.Add(Me.btnAdminComida)
         Me.Controls.Add(Me.ReflectionLabel1)
         Me.Controls.Add(Me.ReflectionImage1)
@@ -228,4 +270,7 @@ Partial Class FormAdministrador
     Friend WithEvents ReflectionImage1 As DevComponents.DotNetBar.Controls.ReflectionImage
     Friend WithEvents ReflectionLabel1 As DevComponents.DotNetBar.Controls.ReflectionLabel
     Friend WithEvents btnAdminComida As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnCaja As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnPedidosHistorial As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnReportes As MetroFramework.Controls.MetroButton
 End Class

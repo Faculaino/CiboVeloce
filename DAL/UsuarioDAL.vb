@@ -171,7 +171,7 @@ Public Class UsuarioDAL
     End Function
 
 
-    Function buscarUserID(query As String, id As Integer) As UsuarioEntity
+    Function buscarUserID(id As Integer) As UsuarioEntity
         Dim oUsuario = New UsuarioEntity()
 
 
@@ -180,9 +180,9 @@ Public Class UsuarioDAL
 
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = query
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("ID", id)
+            cmd.CommandText = "SELECT * FROM Usuarios WHERE ID= " & id
+            cmd.CommandType = CommandType.Text
+
 
             Dim reader = cmd.ExecuteReader
             While reader.Read

@@ -10,6 +10,12 @@ Public Class ClienteBussines
         Return nuevoCliente
     End Function
 
+    Function buscarClienteID(id As Integer) As ClienteEntity
+        Dim nuevoDatos = New ClienteDAL
+        Dim nuevoCliente = nuevoDatos.buscarClienteID(id)
+        Return nuevoCliente
+    End Function
+
     Function buscarClienteDIR(direccion As String) As ClienteEntity
         Dim nuevoDatos = New ClienteDAL
         Dim nuevoCliente = nuevoDatos.buscarClienteDIR(direccion)

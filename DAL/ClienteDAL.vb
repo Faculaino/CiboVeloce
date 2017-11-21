@@ -97,6 +97,58 @@ Public Class ClienteDAL
         End Try
     End Function
 
+    Function buscarClienteID(id As Integer) As ClienteEntity
+
+        Dim oCliente As New ClienteEntity
+        OpenBD()
+        Try
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT * FROM Clientes WHERE ID= " & id
+            cmd.CommandType = CommandType.Text
+
+
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                oCliente.ID = reader(0)
+                oCliente.apyn = reader(1)
+                oCliente.direccion = reader(2)
+                oCliente.localidad = reader(3)
+                oCliente.entreCalles = reader(4)
+                If reader(5) Is DBNull.Value Then
+                    oCliente.detalleDireccion = ""
+                Else
+                    oCliente.detalleDireccion = reader(5)
+                End If
+                oCliente.telefonos = reader(6)
+                oCliente.costo = reader(7)
+
+                reader.Close()
+
+                CloseBD()
+                Return oCliente
+            End While
+
+        Catch ex As SqlException
+            MsgBox(ex)
+            Return Nothing
+        Catch ex As Exception
+            MsgBox(ex)
+            Return Nothing
+
+
+        End Try
+
+
+
+    End Function
+
+
+
+
     Public Function updateCliente(cliente As ClienteEntity, id As Integer) As ClienteEntity
         OpenBD()
 
