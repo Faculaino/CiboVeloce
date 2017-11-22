@@ -49,6 +49,7 @@ Public Class ClienteDAL
 
 
         End Try
+        Return Nothing
     End Function
 
     Public Function buscarCliente(nombre As String, direccion As String) As ClienteEntity
@@ -95,6 +96,7 @@ Public Class ClienteDAL
 
 
         End Try
+        Return Nothing
     End Function
 
     Function buscarClienteID(id As Integer) As ClienteEntity
@@ -142,7 +144,7 @@ Public Class ClienteDAL
 
         End Try
 
-
+        Return Nothing
 
     End Function
 
@@ -183,7 +185,7 @@ Public Class ClienteDAL
             Tx.Rollback()
             MsgBox(ex)
         End Try
-
+        Return Nothing
     End Function
 
     Public Function buscarDVV() As Integer
@@ -337,6 +339,7 @@ Public Class ClienteDAL
 
 
         End Try
+        Return Nothing
     End Function
 
 
