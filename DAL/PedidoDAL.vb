@@ -40,6 +40,139 @@ Public Class PedidoDAL
         End Try
     End Sub
 
+    Function listarPedidosEstado(id As Integer) As List(Of PedidoEntity)
+
+        Dim nuevaLista = New List(Of PedidoEntity)
+
+
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT * FROM Pedidos WHERE IDEstado = " & id
+            cmd.CommandType = CommandType.Text
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                Dim nuevoPedido = New PedidoEntity()
+                nuevoPedido.ID = reader(0)
+                nuevoPedido.fechahora = reader(1)
+                nuevoPedido.total = reader(2)
+                nuevoPedido.idCliente = reader(3)
+                nuevoPedido.listaComida = reader(4)
+                nuevoPedido.idUsuario = reader(5)
+                nuevoPedido.idEstado = reader(6)
+                nuevaLista.Add(nuevoPedido)
+
+            End While
+            reader.Close()
+
+
+            CloseBD()
+
+            Return nuevaLista
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscaUltimoID() As Integer
+        Dim valor As Integer = 0
+
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT MAX(ID) FROM Pedidos"
+            cmd.CommandType = CommandType.Text
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                valor = reader(0)
+            End While
+            reader.Close()
+
+
+            CloseBD()
+
+            Return valor
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Function buscarLocalidades() As List(Of String)
+        Dim nuevaLista = New List(Of String)
+
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT DISTINCT C.Localidad FROM Pedidos as P INNER JOIN Clientes as C ON (P.IDCliente = C.ID)"
+            cmd.CommandType = CommandType.Text
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                nuevaLista.Add(CStr(reader(0).ToString()))
+            End While
+            reader.Close()
+
+
+
+            CloseBD()
+
+            Return nuevaLista
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Function buscarPedidosLOCALIDAD(localidad As String) As List(Of PedidoEntity)
+        Dim nuevaLista = New List(Of PedidoEntity)
+
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT P.ID, P.FechaHora, p.Total, C.ID, p.ListaComida FROM Pedidos as P INNER JOIN Clientes as C ON (P.IDCliente = C.ID) WHERE C.Localidad = '" + localidad + "'"
+            cmd.CommandType = CommandType.Text
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                Dim nuevoPedido = New PedidoEntity()
+                nuevoPedido.ID = reader(0)
+                nuevoPedido.fechahora = reader(1)
+                nuevoPedido.total = reader(2)
+                nuevoPedido.idCliente = reader(3)
+                nuevoPedido.listaComida = reader(4)
+
+                nuevaLista.Add(nuevoPedido)
+
+            End While
+            reader.Close()
+
+
+            CloseBD()
+
+            Return nuevaLista
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function buscarPedidoID(idPedido As Integer) As PedidoEntity
         OpenBD()
 

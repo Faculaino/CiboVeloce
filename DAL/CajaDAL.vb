@@ -13,7 +13,7 @@ Public Class CajaDAL
         Try
             cmd = New SqlCommand
             cmd.Connection = cnn
-            cmd.CommandText = "INSERT INTO Caja (IDPedido, IDCliente, Fecha, Total, Descripcion, IDUsuario) VALUES (" & caja.idPedido & ", " & caja.idCliente & ", " & caja.fechahora & ", " & caja.importe & ", '" & motivo & "', " & caja.idUsuario & ")"
+            cmd.CommandText = "INSERT INTO Caja (IDPedido, IDCliente, Fecha, Total, Descripcion, IDUsuario) VALUES (" & caja.idPedido & ", " & caja.idCliente & ", GETDATE(), " & caja.importe & ", '" & motivo & "', " & caja.idUsuario & ")"
             cmd.CommandType = CommandType.Text
 
             cmd.Transaction = Tx

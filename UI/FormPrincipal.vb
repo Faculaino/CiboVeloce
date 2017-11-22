@@ -5,11 +5,28 @@ Public Class FormPrincipal
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formatoVista()
 
+        If SessionManager.Instance.Usuario.IDPerfil = 1 Or SessionManager.Instance.Usuario.IDPerfil = 3 Then
+            administrador()
+        ElseIf SessionManager.Instance.Usuario.IDPerfil = 2 Then
+            cocina()
+        End If
+
+    End Sub
+
+    Sub administrador()
         Dim newAdministrar = New FormAdministrador
         newAdministrar.MdiParent = Me
         newAdministrar.WindowState = FormWindowState.Maximized
         newAdministrar.Show()
     End Sub
+
+    Sub cocina()
+        Dim newAdministrar = New FormResponsableCocina
+        newAdministrar.MdiParent = Me
+        'newAdministrar.WindowState = FormWindowState.Maximized
+        newAdministrar.Show()
+    End Sub
+
 
     Sub formatoVista()
         ubicarUsuario()
@@ -37,10 +54,13 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub AdministrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrarToolStripMenuItem.Click
-        Dim frmBK = New FormAdministrador
-        frmBK.MdiParent = Me
-        frmBK.WindowState = FormWindowState.Maximized
-        frmBK.Show()
+
+        If SessionManager.Instance.Usuario.IDPerfil = 1 Or SessionManager.Instance.Usuario.IDPerfil = 3 Then
+            administrador()
+        ElseIf SessionManager.Instance.Usuario.IDPerfil = 2 Then
+            cocina()
+        End If
+
     End Sub
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs)

@@ -114,7 +114,7 @@ Partial Class FormLogin
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Name = "FormLogin"
         Me.Resizable = False
-        Me.Text = "Login"
+        Me.Text = "Iniciar Sesión"
         Me.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center
         Me.ResumeLayout(False)
         Me.PerformLayout()

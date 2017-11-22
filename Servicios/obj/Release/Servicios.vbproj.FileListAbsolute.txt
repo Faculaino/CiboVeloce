@@ -1,0 +1,12 @@
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\Servicios.dll
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\Servicios.pdb
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\Servicios.xml
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\EE.dll
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\EE.pdb
+C:\Users\facun\Desktop\CiboVeloce\Servicios\bin\Release\EE.xml
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.vbprojResolveAssemblyReference.cache
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.Resources.resources
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.vbproj.GenerateResource.Cache
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.dll
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.xml
+C:\Users\facun\Desktop\CiboVeloce\Servicios\obj\Release\Servicios.pdb

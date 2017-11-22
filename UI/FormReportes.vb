@@ -32,6 +32,8 @@ Public Class FormReportes
 
         If tipo = "Ventas" Then
             location = location + "Reportes\ReportePedidos.rpt"
+        ElseIf tipo = "Movimiento Caja" Then
+            location = location + "Reportes\ReporteCaja.rpt"
         End If
 
         path = corrigePath(location)

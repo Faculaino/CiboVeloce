@@ -80,9 +80,11 @@ C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormNuevoIdioma.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormNuevoUsuario.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPedidos.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPedidosHistorial.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPedidosPendientes.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPrincipal.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormPermisosUsuarios.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormReportes.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormResponsableCocina.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.FormUsuarios.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.Resources.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Debug\UI.vbproj.GenerateResource.Cache

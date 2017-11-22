@@ -128,7 +128,7 @@ Partial Class FormReportes
         '
         Me.cmbTipoReportes.FormattingEnabled = True
         Me.cmbTipoReportes.ItemHeight = 23
-        Me.cmbTipoReportes.Items.AddRange(New Object() {"Ventas", "Movimiento Caja", "Compras", ""})
+        Me.cmbTipoReportes.Items.AddRange(New Object() {"Ventas", "Movimiento Caja", "Compras"})
         Me.cmbTipoReportes.Location = New System.Drawing.Point(67, 13)
         Me.cmbTipoReportes.Name = "cmbTipoReportes"
         Me.cmbTipoReportes.Size = New System.Drawing.Size(179, 29)

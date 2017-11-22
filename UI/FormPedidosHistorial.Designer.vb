@@ -27,20 +27,23 @@ Partial Class FormPedidosHistorial
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvPedidosHistorial = New System.Windows.Forms.DataGridView()
-        Me.dtFecha2 = New MetroFramework.Controls.MetroDateTime()
-        Me.dtFecha1 = New MetroFramework.Controls.MetroDateTime()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
         Me.C1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dtFecha2 = New MetroFramework.Controls.MetroDateTime()
+        Me.dtFecha1 = New MetroFramework.Controls.MetroDateTime()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.txtTotal = New MetroFramework.Controls.MetroTextBox()
         Me.txtCantidadVentas = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.cmbLocalidades = New MetroFramework.Controls.MetroComboBox()
+        Me.btnBuscaLocalidad = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvPedidosHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,6 +75,50 @@ Partial Class FormPedidosHistorial
         Me.dgvPedidosHistorial.RowHeadersVisible = False
         Me.dgvPedidosHistorial.Size = New System.Drawing.Size(774, 303)
         Me.dgvPedidosHistorial.TabIndex = 9
+        '
+        'C1
+        '
+        DataGridViewCellStyle6.Format = "g"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.C1.DefaultCellStyle = DataGridViewCellStyle6
+        Me.C1.HeaderText = "Fecha"
+        Me.C1.Name = "C1"
+        Me.C1.ReadOnly = True
+        Me.C1.Width = 95
+        '
+        'C2
+        '
+        Me.C2.HeaderText = "Detalle Pedido"
+        Me.C2.Name = "C2"
+        Me.C2.ReadOnly = True
+        Me.C2.Width = 315
+        '
+        'C3
+        '
+        Me.C3.HeaderText = "Cliente"
+        Me.C3.Name = "C3"
+        Me.C3.ReadOnly = True
+        Me.C3.Width = 125
+        '
+        'C4
+        '
+        Me.C4.HeaderText = "Dirección"
+        Me.C4.Name = "C4"
+        Me.C4.ReadOnly = True
+        Me.C4.Width = 150
+        '
+        'C5
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle7.Format = "C2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.C5.DefaultCellStyle = DataGridViewCellStyle7
+        Me.C5.HeaderText = "Total"
+        Me.C5.Name = "C5"
+        Me.C5.ReadOnly = True
+        Me.C5.Width = 80
         '
         'dtFecha2
         '
@@ -120,54 +167,10 @@ Partial Class FormPedidosHistorial
         Me.btnBuscar.TabIndex = 16
         Me.btnBuscar.UseSelectable = True
         '
-        'C1
-        '
-        DataGridViewCellStyle6.Format = "g"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.C1.DefaultCellStyle = DataGridViewCellStyle6
-        Me.C1.HeaderText = "Fecha"
-        Me.C1.Name = "C1"
-        Me.C1.ReadOnly = True
-        Me.C1.Width = 95
-        '
-        'C2
-        '
-        Me.C2.HeaderText = "Detalle Pedido"
-        Me.C2.Name = "C2"
-        Me.C2.ReadOnly = True
-        Me.C2.Width = 315
-        '
-        'C3
-        '
-        Me.C3.HeaderText = "Cliente"
-        Me.C3.Name = "C3"
-        Me.C3.ReadOnly = True
-        Me.C3.Width = 125
-        '
-        'C4
-        '
-        Me.C4.HeaderText = "Dirección"
-        Me.C4.Name = "C4"
-        Me.C4.ReadOnly = True
-        Me.C4.Width = 150
-        '
-        'C5
-        '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle7.Format = "C2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.C5.DefaultCellStyle = DataGridViewCellStyle7
-        Me.C5.HeaderText = "Total"
-        Me.C5.Name = "C5"
-        Me.C5.ReadOnly = True
-        Me.C5.Width = 80
-        '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(600, 118)
+        Me.MetroLabel3.Location = New System.Drawing.Point(657, 91)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(100, 19)
         Me.MetroLabel3.TabIndex = 17
@@ -177,7 +180,7 @@ Partial Class FormPedidosHistorial
         '
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtTotal.Lines = New String() {"0"}
-        Me.txtTotal.Location = New System.Drawing.Point(706, 117)
+        Me.txtTotal.Location = New System.Drawing.Point(666, 113)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -186,14 +189,14 @@ Partial Class FormPedidosHistorial
         Me.txtTotal.Size = New System.Drawing.Size(85, 23)
         Me.txtTotal.TabIndex = 18
         Me.txtTotal.Text = "0"
-        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTotal.UseSelectable = True
         '
         'txtCantidadVentas
         '
         Me.txtCantidadVentas.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtCantidadVentas.Lines = New String() {"0"}
-        Me.txtCantidadVentas.Location = New System.Drawing.Point(706, 88)
+        Me.txtCantidadVentas.Location = New System.Drawing.Point(666, 68)
         Me.txtCantidadVentas.MaxLength = 32767
         Me.txtCantidadVentas.Name = "txtCantidadVentas"
         Me.txtCantidadVentas.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -208,17 +211,50 @@ Partial Class FormPedidosHistorial
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(594, 89)
+        Me.MetroLabel4.Location = New System.Drawing.Point(657, 46)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(106, 19)
         Me.MetroLabel4.TabIndex = 19
         Me.MetroLabel4.Text = "Cantidad Ventas:"
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.Location = New System.Drawing.Point(316, 72)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(68, 19)
+        Me.MetroLabel5.TabIndex = 21
+        Me.MetroLabel5.Text = "Localidad:"
+        '
+        'cmbLocalidades
+        '
+        Me.cmbLocalidades.FormattingEnabled = True
+        Me.cmbLocalidades.ItemHeight = 23
+        Me.cmbLocalidades.Location = New System.Drawing.Point(390, 68)
+        Me.cmbLocalidades.Name = "cmbLocalidades"
+        Me.cmbLocalidades.Size = New System.Drawing.Size(135, 29)
+        Me.cmbLocalidades.TabIndex = 22
+        Me.cmbLocalidades.UseSelectable = True
+        '
+        'btnBuscaLocalidad
+        '
+        Me.btnBuscaLocalidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnBuscaLocalidad.BackgroundImage = Global.UI.My.Resources.Resources.system_search
+        Me.btnBuscaLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscaLocalidad.Location = New System.Drawing.Point(531, 66)
+        Me.btnBuscaLocalidad.Name = "btnBuscaLocalidad"
+        Me.btnBuscaLocalidad.Size = New System.Drawing.Size(67, 70)
+        Me.btnBuscaLocalidad.TabIndex = 23
+        Me.btnBuscaLocalidad.UseSelectable = True
         '
         'FormPedidosHistorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(814, 472)
+        Me.Controls.Add(Me.btnBuscaLocalidad)
+        Me.Controls.Add(Me.cmbLocalidades)
+        Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.txtCantidadVentas)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.txtTotal)
@@ -253,4 +289,7 @@ Partial Class FormPedidosHistorial
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtCantidadVentas As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents cmbLocalidades As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents btnBuscaLocalidad As MetroFramework.Controls.MetroButton
 End Class

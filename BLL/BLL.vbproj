@@ -74,6 +74,7 @@
     <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />
     <Compile Include="DVVBussines.vb" />
+    <Compile Include="EstadoBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />

@@ -15,6 +15,9 @@ Public Class FormPedidos
         clearFields()
         cargarTree()
 
+        Dim nuevoPedido = New PedidoBussines
+        lblComanda.Text = nuevoPedido.consultaUltimoID().ToString() + 1
+
         'cargarTreeComposite()
     End Sub
 
@@ -305,9 +308,22 @@ Public Class FormPedidos
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         'imprimir()
         nuevoPedido()
+        registrarCobro()
         'MailManager.enviarMail(txtNombre.Text, "Factura Compra", "Se envía factura por compra de $" + txtTotal.Text)
         clearFields()
 
+    End Sub
+
+    Sub registrarCobro()
+        Dim cajaBussines = New CajaBussines
+        Dim nuevoPedido = New PedidoBussines
+        Dim nuevaCaja = New CajaEntity
+        nuevaCaja.fechahora = Now
+        nuevaCaja.idCliente = lblIDCliente.Text
+        nuevaCaja.idUsuario = SessionManager.Instance.Usuario.ID
+        nuevaCaja.importe = CDec(txtTotal.Text.ToString())
+        nuevaCaja.idPedido = CInt(nuevoPedido.consultaUltimoID())
+        cajaBussines.insertRegistro(nuevaCaja, "Pedido / N°" + lblComanda.Text)
     End Sub
 
     Sub nuevoPedido()

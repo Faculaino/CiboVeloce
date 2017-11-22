@@ -67,10 +67,7 @@ Public Class FormLogin
 
                 If usuarioOK.User = txtUsername.Text Then
                     If PasswordHash.Length = usuarioOK.Password.Length Then
-                        'MsgBox("Bienvenido " + usuarioOK.User, MsgBoxStyle.Information, "Login Correcto")
-
                         MetroMessageBox.Show(Me, "Bienvenido " & usuarioOK.User, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.Question)
-
 
                         SessionManager.Instance.Login(usuarioOK)
 
