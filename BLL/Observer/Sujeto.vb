@@ -15,7 +15,7 @@ Public MustInherit Class Sujeto
 
     Sub notificar()
         For Each observador In listaObservador
-            observador.actulizar()
+            'observador.actulizar(session.traducciones)
         Next
     End Sub
 

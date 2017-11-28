@@ -90,6 +90,7 @@
     <Compile Include="CategoriaEntity.vb" />
     <Compile Include="ClienteEntity.vb" />
     <Compile Include="ComidaEntity.vb" />
+    <Compile Include="ComprasEntity.vb" />
     <Compile Include="DVVEntity.vb" />
     <Compile Include="EstadoEntity.vb" />
     <Compile Include="EventoEntity.vb" />
@@ -97,6 +98,7 @@
     <Compile Include="PalabraEntity.vb" />
     <Compile Include="PedidoEntity.vb" />
     <Compile Include="PerfilEntity.vb" />
+    <Compile Include="ProveedorEntity.vb" />
     <Compile Include="TraduccionEntity.vb" />
     <Compile Include="PermisoEntity.vb" />
     <Compile Include="UsuarioEntity.vb" />

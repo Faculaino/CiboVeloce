@@ -67,6 +67,8 @@ Public Class FormPedidos
             'wbMaps.Navigate(query.ToString())
 
             'wbMaps.Navigate("https://www.google.com.ar/maps/search/" & txtDireccion.Text & "+" & txtLocalidad.Text & "+" & "Buenos Aires" & "+" & "Argentina" & "+")
+
+
             WebKitBrowser1.Navigate("www.maps.google.com.ar/maps?q= " + txtDireccion.Text + ",+" + txtLocalidad.Text)
         Catch ex As Exception
             WebKitBrowser1.Navigate("")
@@ -109,6 +111,7 @@ Public Class FormPedidos
 
     Dim bandera = False
     Sub buscarCliente()
+        TimerMapa.Start()
         Dim nuevoCliente = New ClienteBussines
         Dim clienteBuscado = New ClienteEntity
 
@@ -236,6 +239,7 @@ Public Class FormPedidos
         lblMaps.Visible = True
         panelMaps.Visible = True
         cargarTree()
+        metroProgress.Enabled = True
     End Sub
 
     Private Sub btnGuardarCliente_Click(sender As Object, e As EventArgs) Handles btnGuardarCliente.Click
@@ -306,7 +310,7 @@ Public Class FormPedidos
     End Sub
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        'imprimir()
+        imprimir()
         nuevoPedido()
         registrarCobro()
         'MailManager.enviarMail(txtNombre.Text, "Factura Compra", "Se envía factura por compra de $" + txtTotal.Text)
@@ -417,6 +421,24 @@ Public Class FormPedidos
         Else
             txtVuelto.Text = CDec(txtAbona.Text.ToString()) - CDec(txtTotal.Text.ToString())
         End If
+
+    End Sub
+
+    Private Sub TimerMapa_Tick(sender As Object, e As EventArgs) Handles TimerMapa.Tick
+        metroProgress.Increment(10)
+
+        If metroProgress.Value = 50 Then
+            lblTexto.Text = "Buscando Direccion"
+        ElseIf metroProgress.Value = 70 Then
+            lblTexto.Text = "Geolocalización"
+        End If
+
+        If metroProgress.Value = metroProgress.Maximum Then
+            TimerMapa.Stop()
+            lblTexto.Text = ""
+            metroProgress.Visible = False
+        End If
+
 
     End Sub
 End Class

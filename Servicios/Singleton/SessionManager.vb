@@ -7,6 +7,16 @@ Public NotInheritable Class SessionManager
 
     Private Shared _Instance As SessionManager = Nothing
 
+    Public Traductor As Dictionary(Of String, String)
+
+    Public Property NewProperty() As Dictionary(Of String, String)
+        Get
+            Return Traductor
+        End Get
+        Set(ByVal value As Dictionary(Of String, String))
+            Traductor = value
+        End Set
+    End Property
     Public Shared ReadOnly Property Instance() As SessionManager
         Get
             If _Instance Is Nothing Then

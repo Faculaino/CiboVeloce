@@ -1,6 +1,8 @@
 ﻿Imports EE
 Imports BLL
 Public Class FormCaja
+    Implements IObserver
+
     Private Sub FormCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvCaja.Rows.Clear()
         listarRegistros()
@@ -47,5 +49,9 @@ Public Class FormCaja
             dgvCaja.Rows.Add(item.fechahora, item.descripcion, cliente.apyn, pedido.listaComida, usuario.Nombre, item.importe)
         Next
 
+    End Sub
+
+    Public Sub actulizar(traducciones As Dictionary(Of String, String)) Implements IObserver.actulizar
+        Throw New NotImplementedException()
     End Sub
 End Class

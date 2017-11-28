@@ -81,4 +81,10 @@ Public Class FormAdministrador
         nuevoReportes.StartPosition = FormStartPosition.CenterParent
         nuevoReportes.Show()
     End Sub
+
+    Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click
+        Dim nuevaCompra = New FormCompras
+        nuevaCompra.StartPosition = FormStartPosition.CenterParent
+        nuevaCompra.Show()
+    End Sub
 End Class

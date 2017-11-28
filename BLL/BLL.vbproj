@@ -94,12 +94,14 @@
     <Compile Include="Composite\Composite.vb" />
     <Compile Include="Composite\PerfilBussines.vb" />
     <Compile Include="Composite\PermisosBussines.vb" />
+    <Compile Include="ComprasBussines.vb" />
     <Compile Include="DVVBussines.vb" />
     <Compile Include="EstadoBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />
     <Compile Include="PedidoBussines.vb" />
+    <Compile Include="ProveedorBussines.vb" />
     <Compile Include="ReporteBussines.vb" />
     <Compile Include="State\EnElaboracion.vb" />
     <Compile Include="State\EnEnvio.vb" />

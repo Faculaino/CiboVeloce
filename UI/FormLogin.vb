@@ -4,8 +4,11 @@ Imports System.Text
 Imports System.Security.Cryptography
 Imports Servicios
 Imports MetroFramework
+Imports System.IO
+Imports System.Data.Sql
 
 Public Class FormLogin
+
 
 
     Private Sub lnkNuevoUsuario_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
@@ -14,7 +17,45 @@ Public Class FormLogin
         'oNuevoUsuario.Show()
     End Sub
 
+    Sub SQLInstalado()
+        Dim servidores As SqlDataSourceEnumerator = SqlDataSourceEnumerator.Instance
+        Dim tablaServidores As DataTable = servidores.GetDataSources()
+
+        For Each row As DataRow In tablaServidores.Rows
+
+            Dim instanceName As String = Convert.ToString(row("InstanceName"))
+            Dim serverName As String = Convert.ToString(row("ServerName"))
+
+            If (instanceName = String.Empty) Then
+                ' Instancia predeterminada
+                cmbInstancias.Items.Add(serverName)
+
+            Else
+                ' Instancias con nombre
+                cmbInstancias.Items.Add(String.Format("{0}\{1}", serverName, instanceName))
+
+            End If
+
+        Next
+    End Sub
+
+
+    Sub verBD()
+        If Directory.Exists("C:\BackupSQL2\") Then
+            MsgBox("Esta")
+        Else
+            My.Computer.FileSystem.CreateDirectory("C:\BackupSQL12\")
+            'Dim path = "C:\Usuarios\" + SystemInformation.UserName + "\Escritorio\CiboVeloce.bak"
+            'Dim path2 = "C:\Users\" + SystemInformation.UserName + "\Desktop\CiboVeloce.bak"
+            My.Computer.FileSystem.CopyFile("", "C:\BackupSQL12\CiboVeloce.bak")
+
+
+
+        End If
+    End Sub
+
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'verBD()
         limpiarCampos()
         txtUsername.Select()
 
@@ -67,7 +108,7 @@ Public Class FormLogin
 
                 If usuarioOK.User = txtUsername.Text Then
                     If PasswordHash.Length = usuarioOK.Password.Length Then
-                        MetroMessageBox.Show(Me, "Bienvenido " & usuarioOK.User, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.Question)
+                        'MetroMessageBox.Show(Me, "Bienvenido " & usuarioOK.User, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.Question)
 
                         SessionManager.Instance.Login(usuarioOK)
 
@@ -83,7 +124,7 @@ Public Class FormLogin
 
                 Else
                     'MsgBox("Error al Iniciar Sesión", MsgBoxStyle.Critical, "Usuario o Contraseña Incorrecto")
-                    MetroMessageBox.Show(Me, "Usuario o Contraseña Incorrecto", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'MetroMessageBox.Show(Me, "Usuario o Contraseña Incorrecto", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     limpiarCampos()
                 End If
 
@@ -129,5 +170,40 @@ Public Class FormLogin
         If e.KeyChar = Chr(13) Then
             codeLogin()
         End If
+    End Sub
+
+    Private Sub btnSQL_Click(sender As Object, e As EventArgs) Handles btnSQL.Click
+        Dim original = New Point(333, 366)
+        If btnSQL.Text = "->" Then
+            Width = Width + 300
+            btnSQL.Text = "<-"
+        Else
+            btnSQL.Text = "->"
+            Size = original
+            StartPosition = FormStartPosition.CenterParent
+        End If
+
+
+    End Sub
+
+    Private Sub btnVerInstancias_Click(sender As Object, e As EventArgs) Handles btnVerInstancias.Click
+        SQLInstalado()
+        TimerProgress.Start()
+
+    End Sub
+
+    Private Sub TimerProgress_Tick(sender As Object, e As EventArgs) Handles TimerProgress.Tick
+        progressBar.Increment(10)
+
+        If progressBar.Value = 50 Then
+            lblMensajeProgress.Text = "Buscando Instancias de SQL"
+        ElseIf progressBar.Value = 80 Then
+            lblMensajeProgress.Text = "...finalizando"
+        End If
+        If progressBar.Value = progressBar.Maximum Then
+            TimerProgress.Stop()
+            lblMensajeProgress.Text = "Listo!"
+        End If
+        lblMensajeProgress.Text = ""
     End Sub
 End Class

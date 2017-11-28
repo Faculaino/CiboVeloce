@@ -46,8 +46,10 @@ Public Class FormReportes
         End Try
 
         ds = reporteBussines.generarReporte(dtFecha1.Value, dtFecha2.Value, tipo)
+        If ds.Tables.Count > 0 Then
+            repor.SetDataSource(ds.Tables(0))
+        End If
 
-        repor.SetDataSource(ds.Tables(0))
 
         crReportes.ReportSource = repor
         crReportes.Refresh()

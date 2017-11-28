@@ -91,6 +91,7 @@
     <Compile Include="CategoriaDAL.vb" />
     <Compile Include="ClienteDAL.vb" />
     <Compile Include="ComidaDAL.vb" />
+    <Compile Include="ComprasDAL.vb" />
     <Compile Include="Connection.vb" />
     <Compile Include="DVVDAL.vb" />
     <Compile Include="EstadoDAL.vb" />
@@ -113,6 +114,7 @@
     <Compile Include="PedidoDAL.vb" />
     <Compile Include="PerfilDAL.vb" />
     <Compile Include="PermisoDAL.vb" />
+    <Compile Include="ProveedorDAL.vb" />
     <Compile Include="ReportesDAL.vb" />
     <Compile Include="UsuarioDAL.vb" />
   </ItemGroup>
