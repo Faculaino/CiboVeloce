@@ -29,5 +29,26 @@ Public Class ComidaBussines
         Return valor
     End Function
 
+    Sub borrarRegistros(id As Integer)
+        Dim nuevoDatos = New ComidaDAL
+        nuevoDatos.borrarReg(id)
+    End Sub
 
+    Public Sub insertComidaLista(listaComida As List(Of ComidaEntity))
+        Dim nuevoDatos = New ComidaDAL
+        Dim nuevoDVV = New DVVBussines
+
+        For Each item As ComidaEntity In listaComida
+            Dim nuevaComida = New ComidaEntity
+            nuevaComida.detalle = item.detalle
+            nuevaComida.idcategoria = item.idcategoria
+            nuevaComida.precio = item.precio
+            nuevaComida.dvh = item.detalle.Length
+            nuevaComida.dvv = nuevoDVV.buscarDVV("Comidas") + 1
+
+            nuevoDatos.insertComida(nuevaComida)
+            nuevoDVV.actualizarDVV("Comidas", nuevaComida.dvv)
+        Next
+
+    End Sub
 End Class

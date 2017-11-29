@@ -6,6 +6,7 @@ Imports Servicios
 Imports MetroFramework
 Imports System.IO
 Imports System.Data.Sql
+Imports System.Management
 
 Public Class FormLogin
 
@@ -41,15 +42,13 @@ Public Class FormLogin
 
 
     Sub verBD()
-        If Directory.Exists("C:\BackupSQL2\") Then
-            MsgBox("Esta")
+        If Directory.Exists("C:\BackupSQL\") Then
+
         Else
-            My.Computer.FileSystem.CreateDirectory("C:\BackupSQL12\")
+            My.Computer.FileSystem.CreateDirectory("C:\BackupSQL\")
             'Dim path = "C:\Usuarios\" + SystemInformation.UserName + "\Escritorio\CiboVeloce.bak"
             'Dim path2 = "C:\Users\" + SystemInformation.UserName + "\Desktop\CiboVeloce.bak"
             My.Computer.FileSystem.CopyFile("", "C:\BackupSQL12\CiboVeloce.bak")
-
-
 
         End If
     End Sub
@@ -59,8 +58,8 @@ Public Class FormLogin
         limpiarCampos()
         txtUsername.Select()
 
-        txtUsername.Text = "Facu"
-        txtPassword.Text = "1234"
+        'txtUsername.Text = "Facu"
+        'txtPassword.Text = "1234"
 
 
     End Sub
@@ -152,21 +151,21 @@ Public Class FormLogin
 
     End Sub
 
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs)
         If e.KeyChar = Chr(13) Then
             codeLogin()
         End If
     End Sub
 
-    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsername.KeyPress
+    Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs)
         If e.KeyChar = Chr(13) Then
             codeLogin()
         End If
@@ -189,7 +188,9 @@ Public Class FormLogin
     Private Sub btnVerInstancias_Click(sender As Object, e As EventArgs) Handles btnVerInstancias.Click
         SQLInstalado()
         TimerProgress.Start()
-
+        If cmbInstancias.Items.Count <= 0 Then
+            btnInstalarSQL.Visible = True
+        End If
     End Sub
 
     Private Sub TimerProgress_Tick(sender As Object, e As EventArgs) Handles TimerProgress.Tick
@@ -206,4 +207,50 @@ Public Class FormLogin
         End If
         lblMensajeProgress.Text = ""
     End Sub
+
+    Private Sub btnInstalarSQL_Click(sender As Object, e As EventArgs) Handles btnInstalarSQL.Click
+        Dim OS As String = ""
+        OS = getVersionOS()
+
+        If OS = "64 bits" Then
+            'Ver la manera de ejecutar esto por CMD y transportar el Instalador
+
+            'SQLEXPR_x64_ESN /x
+            'Setup.exe /q /Action=Install /features=sql,tools /IACCEPTSQLSERVERLICENSETERMS /InstanceName=SQLExpress
+            'C:\Setup.exe /ConfigurationFile="C:\ConfigurationFile.ini"
+        ElseIf OS = "32 bits" Then
+
+            'Ver la manera de ejecutar esto por CMD y transportar el Instalador
+
+            'SQLEXPR_x86_ESN /x
+            'Setup.exe /q /Action=Install /features=sql,tools /IACCEPTSQLSERVERLICENSETERMS /InstanceName=SQLExpress
+            'C:\Setup.exe /ConfigurationFile="C:\ConfigurationFile.ini"
+        End If
+
+        Dim original = New Point(333, 366)
+
+    End Sub
+
+
+    Public Function getVersionOS() As String
+        Dim osClass As ManagementClass = Nothing
+        Dim result As String = "32-bit"
+        Try
+            osClass = New ManagementClass("Win32_OperatingSystem")
+            For Each mgo As ManagementObject In osClass.GetInstances
+                For Each prop As PropertyData In mgo.Properties
+                    If prop.Name = "OSArchitecture" Then
+                        result = prop.Value.ToString
+                        Exit For
+                    End If
+                Next
+            Next
+        Catch ex As Exception
+            result = String.Empty
+        Finally
+            If osClass IsNot Nothing Then osClass.Dispose()
+        End Try
+        Return result
+    End Function
+
 End Class

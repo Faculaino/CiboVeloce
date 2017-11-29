@@ -58,4 +58,22 @@ Public Class FormPedidosHistorial
         txtCantidadVentas.Text = lista.Count().ToString()
 
     End Sub
+
+    Private Sub btnBuscarPedidoCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarPedidoCliente.Click
+        Dim nuevoPedidos = New PedidoBussines
+        Dim lista = New List(Of PedidoEntity)
+        Dim nuevoCliente = New ClienteBussines
+        lista = nuevoPedidos.buscaPedidosCliente(txtTelefono.Text, Now)
+        total = 0
+        ventas = 0
+        dgvPedidosHistorial.Rows.Clear()
+        For Each item In lista
+            Dim clientePedido = nuevoCliente.buscarClienteID(item.idCliente)
+            dgvPedidosHistorial.Rows.Add(item.fechahora, item.listaComida, clientePedido.apyn, clientePedido.direccion + ", " + clientePedido.localidad, item.total)
+            total = total + item.total
+        Next
+
+        txtTotal.Text = total.ToString("C")
+        txtCantidadVentas.Text = dgvPedidosHistorial.Rows.Count()
+    End Sub
 End Class

@@ -44,6 +44,10 @@ Partial Class FormPedidosHistorial
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.cmbLocalidades = New MetroFramework.Controls.MetroComboBox()
         Me.btnBuscaLocalidad = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.txtTelefono = New MetroFramework.Controls.MetroTextBox()
+        Me.btnBuscarPedidoCliente = New MetroFramework.Controls.MetroButton()
+        Me.btnComandaCliente = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvPedidosHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,7 +73,7 @@ Partial Class FormPedidosHistorial
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvPedidosHistorial.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvPedidosHistorial.Location = New System.Drawing.Point(20, 149)
+        Me.dgvPedidosHistorial.Location = New System.Drawing.Point(23, 187)
         Me.dgvPedidosHistorial.Name = "dgvPedidosHistorial"
         Me.dgvPedidosHistorial.ReadOnly = True
         Me.dgvPedidosHistorial.RowHeadersVisible = False
@@ -178,6 +182,18 @@ Partial Class FormPedidosHistorial
         '
         'txtTotal
         '
+        '
+        '
+        '
+        Me.txtTotal.CustomButton.Image = Nothing
+        Me.txtTotal.CustomButton.Location = New System.Drawing.Point(63, 1)
+        Me.txtTotal.CustomButton.Name = ""
+        Me.txtTotal.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtTotal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtTotal.CustomButton.TabIndex = 1
+        Me.txtTotal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtTotal.CustomButton.UseSelectable = True
+        Me.txtTotal.CustomButton.Visible = False
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtTotal.Lines = New String() {"0"}
         Me.txtTotal.Location = New System.Drawing.Point(666, 113)
@@ -186,14 +202,31 @@ Partial Class FormPedidosHistorial
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtTotal.SelectedText = ""
+        Me.txtTotal.SelectionLength = 0
+        Me.txtTotal.SelectionStart = 0
+        Me.txtTotal.ShortcutsEnabled = True
         Me.txtTotal.Size = New System.Drawing.Size(85, 23)
         Me.txtTotal.TabIndex = 18
         Me.txtTotal.Text = "0"
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtTotal.UseSelectable = True
+        Me.txtTotal.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtTotal.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txtCantidadVentas
         '
+        '
+        '
+        '
+        Me.txtCantidadVentas.CustomButton.Image = Nothing
+        Me.txtCantidadVentas.CustomButton.Location = New System.Drawing.Point(63, 1)
+        Me.txtCantidadVentas.CustomButton.Name = ""
+        Me.txtCantidadVentas.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtCantidadVentas.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtCantidadVentas.CustomButton.TabIndex = 1
+        Me.txtCantidadVentas.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtCantidadVentas.CustomButton.UseSelectable = True
+        Me.txtCantidadVentas.CustomButton.Visible = False
         Me.txtCantidadVentas.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtCantidadVentas.Lines = New String() {"0"}
         Me.txtCantidadVentas.Location = New System.Drawing.Point(666, 68)
@@ -202,11 +235,16 @@ Partial Class FormPedidosHistorial
         Me.txtCantidadVentas.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCantidadVentas.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtCantidadVentas.SelectedText = ""
+        Me.txtCantidadVentas.SelectionLength = 0
+        Me.txtCantidadVentas.SelectionStart = 0
+        Me.txtCantidadVentas.ShortcutsEnabled = True
         Me.txtCantidadVentas.Size = New System.Drawing.Size(85, 23)
         Me.txtCantidadVentas.TabIndex = 20
         Me.txtCantidadVentas.Text = "0"
         Me.txtCantidadVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtCantidadVentas.UseSelectable = True
+        Me.txtCantidadVentas.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtCantidadVentas.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'MetroLabel4
         '
@@ -240,18 +278,81 @@ Partial Class FormPedidosHistorial
         '
         Me.btnBuscaLocalidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnBuscaLocalidad.BackgroundImage = Global.UI.My.Resources.Resources.system_search
-        Me.btnBuscaLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscaLocalidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnBuscaLocalidad.Location = New System.Drawing.Point(531, 66)
         Me.btnBuscaLocalidad.Name = "btnBuscaLocalidad"
-        Me.btnBuscaLocalidad.Size = New System.Drawing.Size(67, 70)
+        Me.btnBuscaLocalidad.Size = New System.Drawing.Size(67, 31)
         Me.btnBuscaLocalidad.TabIndex = 23
         Me.btnBuscaLocalidad.UseSelectable = True
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.Location = New System.Drawing.Point(316, 117)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(71, 19)
+        Me.MetroLabel6.TabIndex = 24
+        Me.MetroLabel6.Text = "Tel Cliente:"
+        '
+        'txtTelefono
+        '
+        '
+        '
+        '
+        Me.txtTelefono.CustomButton.Image = Nothing
+        Me.txtTelefono.CustomButton.Location = New System.Drawing.Point(113, 1)
+        Me.txtTelefono.CustomButton.Name = ""
+        Me.txtTelefono.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtTelefono.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtTelefono.CustomButton.TabIndex = 1
+        Me.txtTelefono.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtTelefono.CustomButton.UseSelectable = True
+        Me.txtTelefono.CustomButton.Visible = False
+        Me.txtTelefono.Lines = New String(-1) {}
+        Me.txtTelefono.Location = New System.Drawing.Point(390, 116)
+        Me.txtTelefono.MaxLength = 32767
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTelefono.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtTelefono.SelectedText = ""
+        Me.txtTelefono.SelectionLength = 0
+        Me.txtTelefono.SelectionStart = 0
+        Me.txtTelefono.ShortcutsEnabled = True
+        Me.txtTelefono.Size = New System.Drawing.Size(135, 23)
+        Me.txtTelefono.TabIndex = 25
+        Me.txtTelefono.UseSelectable = True
+        Me.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtTelefono.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'btnBuscarPedidoCliente
+        '
+        Me.btnBuscarPedidoCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnBuscarPedidoCliente.BackgroundImage = Global.UI.My.Resources.Resources.system_search
+        Me.btnBuscarPedidoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBuscarPedidoCliente.Location = New System.Drawing.Point(531, 113)
+        Me.btnBuscarPedidoCliente.Name = "btnBuscarPedidoCliente"
+        Me.btnBuscarPedidoCliente.Size = New System.Drawing.Size(67, 31)
+        Me.btnBuscarPedidoCliente.TabIndex = 26
+        Me.btnBuscarPedidoCliente.UseSelectable = True
+        '
+        'btnComandaCliente
+        '
+        Me.btnComandaCliente.Location = New System.Drawing.Point(390, 150)
+        Me.btnComandaCliente.Name = "btnComandaCliente"
+        Me.btnComandaCliente.Size = New System.Drawing.Size(208, 23)
+        Me.btnComandaCliente.TabIndex = 27
+        Me.btnComandaCliente.Text = "Generar Comanda del Cliente"
+        Me.btnComandaCliente.UseSelectable = True
         '
         'FormPedidosHistorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(814, 472)
+        Me.ClientSize = New System.Drawing.Size(814, 502)
+        Me.Controls.Add(Me.btnComandaCliente)
+        Me.Controls.Add(Me.btnBuscarPedidoCliente)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.btnBuscaLocalidad)
         Me.Controls.Add(Me.cmbLocalidades)
         Me.Controls.Add(Me.MetroLabel5)
@@ -292,4 +393,8 @@ Partial Class FormPedidosHistorial
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cmbLocalidades As MetroFramework.Controls.MetroComboBox
     Friend WithEvents btnBuscaLocalidad As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtTelefono As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents btnBuscarPedidoCliente As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnComandaCliente As MetroFramework.Controls.MetroButton
 End Class

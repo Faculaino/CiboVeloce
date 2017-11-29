@@ -45,12 +45,15 @@ C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormAdministrador.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormBaseDeDatos.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormBitacora.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormCaja.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormCargaMapa.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormClientes.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormCompras.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormComprasVer.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormIdioma.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormLogin.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormNuevaCategoria.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormNuevoIdioma.resources
+C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormNuevoProveedor.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormNuevoUsuario.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormPedidos.resources
 C:\Users\facun\Desktop\CiboVeloce\UI\obj\Release\UI.FormPedidosHistorial.resources

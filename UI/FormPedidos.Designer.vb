@@ -61,16 +61,10 @@ Partial Class FormPedidos
         Me.btnNuevoPedido = New MetroFramework.Controls.MetroButton()
         Me.btnGuardarCliente = New System.Windows.Forms.Button()
         Me.lblMaps = New System.Windows.Forms.Label()
-        Me.panelMaps = New System.Windows.Forms.Panel()
         Me.tvComidas = New System.Windows.Forms.TreeView()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
         Me.printDocument = New System.Drawing.Printing.PrintDocument()
         Me.printPreview = New System.Windows.Forms.PrintPreviewDialog()
-        Me.btnAgregarComida = New System.Windows.Forms.Button()
-        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
-        Me.btnDeleteRow = New System.Windows.Forms.Button()
-        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
-        Me.WebKitBrowser1 = New WebKit.WebKitBrowser()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.txtAbona = New MetroFramework.Controls.MetroTextBox()
@@ -84,8 +78,12 @@ Partial Class FormPedidos
         Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
         Me.lblComanda = New MetroFramework.Controls.MetroLabel()
         Me.TimerMapa = New System.Windows.Forms.Timer(Me.components)
-        Me.metroProgress = New MetroFramework.Controls.MetroProgressBar()
-        Me.lblTexto = New MetroFramework.Controls.MetroLabel()
+        Me.wb = New System.Windows.Forms.WebBrowser()
+        Me.panelMaps = New System.Windows.Forms.Panel()
+        Me.btnAgregarComida = New System.Windows.Forms.Button()
+        Me.btnImprimir = New MetroFramework.Controls.MetroButton()
+        Me.btnDeleteRow = New System.Windows.Forms.Button()
+        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvPedido, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numericCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -539,7 +537,7 @@ Partial Class FormPedidos
         'MetroLabel12
         '
         Me.MetroLabel12.AutoSize = True
-        Me.MetroLabel12.Location = New System.Drawing.Point(947, 414)
+        Me.MetroLabel12.Location = New System.Drawing.Point(975, 414)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel12.TabIndex = 32
@@ -561,7 +559,7 @@ Partial Class FormPedidos
         Me.txtTotal.CustomButton.Visible = False
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtTotal.Lines = New String() {"0"}
-        Me.txtTotal.Location = New System.Drawing.Point(1016, 410)
+        Me.txtTotal.Location = New System.Drawing.Point(1044, 410)
         Me.txtTotal.MaxLength = 32767
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -607,15 +605,6 @@ Partial Class FormPedidos
         Me.lblMaps.TabIndex = 41
         Me.lblMaps.Text = "Google Maps"
         '
-        'panelMaps
-        '
-        Me.panelMaps.BackgroundImage = Global.UI.My.Resources.Resources.googleMaps
-        Me.panelMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.panelMaps.Location = New System.Drawing.Point(1033, 312)
-        Me.panelMaps.Name = "panelMaps"
-        Me.panelMaps.Size = New System.Drawing.Size(75, 70)
-        Me.panelMaps.TabIndex = 40
-        '
         'tvComidas
         '
         Me.tvComidas.BackColor = System.Drawing.SystemColors.ScrollBar
@@ -629,7 +618,7 @@ Partial Class FormPedidos
         '
         Me.MetroLabel13.AutoSize = True
         Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel13.Location = New System.Drawing.Point(991, 411)
+        Me.MetroLabel13.Location = New System.Drawing.Point(1019, 411)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(21, 25)
         Me.MetroLabel13.TabIndex = 42
@@ -648,64 +637,6 @@ Partial Class FormPedidos
         Me.printPreview.Name = "printPreview"
         Me.printPreview.Visible = False
         '
-        'btnAgregarComida
-        '
-        Me.btnAgregarComida.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarComida.Image = Global.UI.My.Resources.Resources.down
-        Me.btnAgregarComida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregarComida.Location = New System.Drawing.Point(414, 323)
-        Me.btnAgregarComida.Name = "btnAgregarComida"
-        Me.btnAgregarComida.Size = New System.Drawing.Size(113, 60)
-        Me.btnAgregarComida.TabIndex = 36
-        Me.btnAgregarComida.Text = "Agregar "
-        Me.btnAgregarComida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregarComida.UseVisualStyleBackColor = True
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
-        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnImprimir.Location = New System.Drawing.Point(976, 539)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(103, 80)
-        Me.btnImprimir.TabIndex = 34
-        Me.btnImprimir.Text = "Confirmar Pedido"
-        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImprimir.UseSelectable = True
-        '
-        'btnDeleteRow
-        '
-        Me.btnDeleteRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteRow.Image = Global.UI.My.Resources.Resources.delete
-        Me.btnDeleteRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDeleteRow.Location = New System.Drawing.Point(533, 323)
-        Me.btnDeleteRow.Name = "btnDeleteRow"
-        Me.btnDeleteRow.Size = New System.Drawing.Size(174, 60)
-        Me.btnDeleteRow.TabIndex = 33
-        Me.btnDeleteRow.Text = "Eliminar Descripción"
-        Me.btnDeleteRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDeleteRow.UseVisualStyleBackColor = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnBuscar.BackgroundImage = Global.UI.My.Resources.Resources.system_search
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnBuscar.Location = New System.Drawing.Point(483, 72)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(67, 135)
-        Me.btnBuscar.TabIndex = 14
-        Me.btnBuscar.UseSelectable = True
-        '
-        'WebKitBrowser1
-        '
-        Me.WebKitBrowser1.BackColor = System.Drawing.Color.White
-        Me.WebKitBrowser1.Location = New System.Drawing.Point(556, 48)
-        Me.WebKitBrowser1.Name = "WebKitBrowser1"
-        Me.WebKitBrowser1.Size = New System.Drawing.Size(543, 258)
-        Me.WebKitBrowser1.TabIndex = 44
-        Me.WebKitBrowser1.Url = Nothing
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -720,7 +651,7 @@ Partial Class FormPedidos
         '
         Me.MetroLabel14.AutoSize = True
         Me.MetroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel14.Location = New System.Drawing.Point(991, 447)
+        Me.MetroLabel14.Location = New System.Drawing.Point(1019, 447)
         Me.MetroLabel14.Name = "MetroLabel14"
         Me.MetroLabel14.Size = New System.Drawing.Size(21, 25)
         Me.MetroLabel14.TabIndex = 48
@@ -742,7 +673,7 @@ Partial Class FormPedidos
         Me.txtAbona.CustomButton.Visible = False
         Me.txtAbona.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtAbona.Lines = New String() {"0"}
-        Me.txtAbona.Location = New System.Drawing.Point(1016, 446)
+        Me.txtAbona.Location = New System.Drawing.Point(1044, 446)
         Me.txtAbona.MaxLength = 32767
         Me.txtAbona.Name = "txtAbona"
         Me.txtAbona.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -762,7 +693,7 @@ Partial Class FormPedidos
         'MetroLabel15
         '
         Me.MetroLabel15.AutoSize = True
-        Me.MetroLabel15.Location = New System.Drawing.Point(950, 450)
+        Me.MetroLabel15.Location = New System.Drawing.Point(978, 450)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(39, 19)
         Me.MetroLabel15.TabIndex = 46
@@ -772,7 +703,7 @@ Partial Class FormPedidos
         '
         Me.MetroLabel16.AutoSize = True
         Me.MetroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel16.Location = New System.Drawing.Point(991, 483)
+        Me.MetroLabel16.Location = New System.Drawing.Point(1019, 483)
         Me.MetroLabel16.Name = "MetroLabel16"
         Me.MetroLabel16.Size = New System.Drawing.Size(21, 25)
         Me.MetroLabel16.TabIndex = 51
@@ -795,7 +726,7 @@ Partial Class FormPedidos
         Me.txtVuelto.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtVuelto.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txtVuelto.Lines = New String() {"0"}
-        Me.txtVuelto.Location = New System.Drawing.Point(1016, 482)
+        Me.txtVuelto.Location = New System.Drawing.Point(1044, 482)
         Me.txtVuelto.MaxLength = 32767
         Me.txtVuelto.Name = "txtVuelto"
         Me.txtVuelto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -815,7 +746,7 @@ Partial Class FormPedidos
         'MetroLabel17
         '
         Me.MetroLabel17.AutoSize = True
-        Me.MetroLabel17.Location = New System.Drawing.Point(947, 486)
+        Me.MetroLabel17.Location = New System.Drawing.Point(975, 486)
         Me.MetroLabel17.Name = "MetroLabel17"
         Me.MetroLabel17.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel17.TabIndex = 49
@@ -890,28 +821,79 @@ Partial Class FormPedidos
         'TimerMapa
         '
         '
-        'metroProgress
+        'wb
         '
-        Me.metroProgress.Location = New System.Drawing.Point(677, 149)
-        Me.metroProgress.Name = "metroProgress"
-        Me.metroProgress.Size = New System.Drawing.Size(335, 37)
-        Me.metroProgress.TabIndex = 57
+        Me.wb.Location = New System.Drawing.Point(556, 52)
+        Me.wb.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wb.Name = "wb"
+        Me.wb.Size = New System.Drawing.Size(595, 254)
+        Me.wb.TabIndex = 59
+        Me.wb.Visible = False
         '
-        'lblTexto
+        'panelMaps
         '
-        Me.lblTexto.AutoSize = True
-        Me.lblTexto.Location = New System.Drawing.Point(794, 199)
-        Me.lblTexto.Name = "lblTexto"
-        Me.lblTexto.Size = New System.Drawing.Size(0, 0)
-        Me.lblTexto.TabIndex = 58
+        Me.panelMaps.BackgroundImage = Global.UI.My.Resources.Resources.googleMaps
+        Me.panelMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.panelMaps.Location = New System.Drawing.Point(1033, 312)
+        Me.panelMaps.Name = "panelMaps"
+        Me.panelMaps.Size = New System.Drawing.Size(75, 70)
+        Me.panelMaps.TabIndex = 40
+        '
+        'btnAgregarComida
+        '
+        Me.btnAgregarComida.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarComida.Image = Global.UI.My.Resources.Resources.down
+        Me.btnAgregarComida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregarComida.Location = New System.Drawing.Point(414, 323)
+        Me.btnAgregarComida.Name = "btnAgregarComida"
+        Me.btnAgregarComida.Size = New System.Drawing.Size(113, 60)
+        Me.btnAgregarComida.TabIndex = 36
+        Me.btnAgregarComida.Text = "Agregar "
+        Me.btnAgregarComida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregarComida.UseVisualStyleBackColor = True
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackgroundImage = Global.UI.My.Resources.Resources.printer
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnImprimir.Location = New System.Drawing.Point(1004, 539)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(103, 80)
+        Me.btnImprimir.TabIndex = 34
+        Me.btnImprimir.Text = "Confirmar Pedido"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnImprimir.UseSelectable = True
+        '
+        'btnDeleteRow
+        '
+        Me.btnDeleteRow.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteRow.Image = Global.UI.My.Resources.Resources.delete
+        Me.btnDeleteRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDeleteRow.Location = New System.Drawing.Point(533, 323)
+        Me.btnDeleteRow.Name = "btnDeleteRow"
+        Me.btnDeleteRow.Size = New System.Drawing.Size(174, 60)
+        Me.btnDeleteRow.TabIndex = 33
+        Me.btnDeleteRow.Text = "Eliminar Descripción"
+        Me.btnDeleteRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDeleteRow.UseVisualStyleBackColor = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnBuscar.BackgroundImage = Global.UI.My.Resources.Resources.system_search
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscar.Location = New System.Drawing.Point(483, 72)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(67, 135)
+        Me.btnBuscar.TabIndex = 14
+        Me.btnBuscar.UseSelectable = True
         '
         'FormPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1115, 652)
-        Me.Controls.Add(Me.lblTexto)
-        Me.Controls.Add(Me.metroProgress)
+        Me.ClientSize = New System.Drawing.Size(1159, 652)
+        Me.Controls.Add(Me.wb)
         Me.Controls.Add(Me.lblComanda)
         Me.Controls.Add(Me.MetroLabel19)
         Me.Controls.Add(Me.lblIDCliente)
@@ -924,7 +906,6 @@ Partial Class FormPedidos
         Me.Controls.Add(Me.txtAbona)
         Me.Controls.Add(Me.MetroLabel15)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.WebKitBrowser1)
         Me.Controls.Add(Me.lblMaps)
         Me.Controls.Add(Me.panelMaps)
         Me.Controls.Add(Me.MetroLabel13)
@@ -1010,7 +991,6 @@ Partial Class FormPedidos
     Friend WithEvents printPreview As PrintPreviewDialog
     Friend WithEvents lblMaps As Label
     Friend WithEvents panelMaps As Panel
-    Friend WithEvents WebKitBrowser1 As WebKit.WebKitBrowser
     Friend WithEvents Label1 As Label
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtAbona As MetroFramework.Controls.MetroTextBox
@@ -1024,6 +1004,5 @@ Partial Class FormPedidos
     Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblComanda As MetroFramework.Controls.MetroLabel
     Friend WithEvents TimerMapa As Timer
-    Friend WithEvents metroProgress As MetroFramework.Controls.MetroProgressBar
-    Friend WithEvents lblTexto As MetroFramework.Controls.MetroLabel
+    Friend WithEvents wb As WebBrowser
 End Class

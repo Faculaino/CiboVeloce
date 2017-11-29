@@ -60,6 +60,24 @@ Public Class PerfilDAL
 
     End Function
 
+    Public Sub setearPerfil(idPerfil As Integer, idUsuario As Integer)
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "UPDATE Usuarios SET IDPerfil= " & idPerfil & "WHERE ID= " & idUsuario
+            cmd.CommandType = CommandType.Text
+            cmd.ExecuteNonQuery()
+
+            CloseBD()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+    End Sub
+
     Public Function listarPerfiles() As List(Of PerfilEntity)
 
         Dim nuevaLista = New List(Of PerfilEntity)

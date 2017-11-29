@@ -36,6 +36,7 @@ Public Class FormPermisosUsuarios
 
     Sub llenarCombo()
         Dim userBussines = New UsuarioBussines
+        Dim listaPerfiles = New PerfilBussines
 
         cmbUsuario.DataSource = Nothing
         cmbUsuario.DataSource = userBussines.listarUsuarios
@@ -43,21 +44,30 @@ Public Class FormPermisosUsuarios
         cmbUsuario.DisplayMember = "User"
         cmbUsuario.ValueMember = "ID"
         cmbUsuario.SelectedIndex = -1
+
+
+        cmbPerfiles.DataSource = Nothing
+        cmbPerfiles.DataSource = listaPerfiles.listarPerfiles()
+
+        cmbPerfiles.DisplayMember = "Descripcion"
+        cmbPerfiles.ValueMember = "ID"
+        cmbPerfiles.SelectedIndex = -1
+
     End Sub
 
 
     Sub llenarGrilla()
 
-        Dim nuevoPermisos = New PermisosBussines
+        'Dim nuevoPermisos = New PermisosBussines
 
-        dgvPermisosFaltantes.DataSource = Nothing
-        dgvPermisosFaltantes.DataSource = nuevoPermisos.listarPermisos
+        'dgvPermisosFaltantes.DataSource = Nothing
+        'dgvPermisosFaltantes.DataSource = nuevoPermisos.listarPermisos
 
-        dgvPermisosFaltantes.Columns("ID").Visible = False
-        dgvPermisosFaltantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        'dgvPermisosFaltantes.Columns("ID").Visible = False
+        'dgvPermisosFaltantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
-        Dim ancho = dgvPermisosFaltantes.Columns.GetColumnsWidth(DataGridViewElementStates.Visible)
-        dgvPermisosFaltantes.Width = ancho + 20
+        'Dim ancho = dgvPermisosFaltantes.Columns.GetColumnsWidth(DataGridViewElementStates.Visible)
+        'dgvPermisosFaltantes.Width = ancho + 20
 
     End Sub
 
@@ -88,5 +98,30 @@ Public Class FormPermisosUsuarios
 
 
 
+    End Sub
+
+    Private Sub btnAgregarPermiso_Click(sender As Object, e As EventArgs) Handles btnAgregarPermiso.Click
+
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+
+    End Sub
+
+    Private Sub btnQuitarPermiso_Click(sender As Object, e As EventArgs) Handles btnQuitarPermiso.Click
+
+    End Sub
+
+    Private Sub btnElegirPerfil_Click(sender As Object, e As EventArgs) Handles btnElegirPerfil.Click
+        Dim nuevoPerfil = New PerfilBussines
+        Try
+            nuevoPerfil.cambiarPerfil(cmbPerfiles.SelectedValue, cmbUsuario.SelectedValue)
+            lblPerfil.Text = ""
+            cmbUsuario.SelectedIndex = -1
+            cmbPerfiles.SelectedIndex = -1
+            tvPermisos.Nodes.Clear()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

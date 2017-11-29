@@ -79,6 +79,44 @@ Public Class PedidoDAL
         End Try
     End Function
 
+    Public Function buscarPedidoCliente(telefono As String, fecha As Date) As List(Of PedidoEntity)
+        Dim nuevaLista = New List(Of PedidoEntity)
+
+
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SP_Select_ReportePedidoCliente"
+            cmd.CommandType = CommandType.StoredProcedure
+
+
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                Dim nuevoPedido = New PedidoEntity()
+                nuevoPedido.ID = reader(0)
+                nuevoPedido.fechahora = reader(1)
+                nuevoPedido.total = reader(2)
+                nuevoPedido.idCliente = reader(3)
+                nuevoPedido.listaComida = reader(4)
+                nuevoPedido.idUsuario = reader(5)
+                nuevoPedido.idEstado = reader(6)
+                nuevaLista.Add(nuevoPedido)
+
+            End While
+            reader.Close()
+
+
+            CloseBD()
+
+            Return nuevaLista
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function buscaUltimoID() As Integer
         Dim valor As Integer = 0
 

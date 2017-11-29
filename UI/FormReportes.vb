@@ -30,10 +30,15 @@ Public Class FormReportes
         Dim location = AppDomain.CurrentDomain.BaseDirectory
         Dim path As String
 
+        crReportes.ReportSource = Nothing
+        crReportes.Refresh()
+
         If tipo = "Ventas" Then
             location = location + "Reportes\ReportePedidos.rpt"
         ElseIf tipo = "Movimiento Caja" Then
             location = location + "Reportes\ReporteCaja.rpt"
+        ElseIf tipo = "Compras" Then
+            location = location + "Reportes\ReporteCompras.rpt"
         End If
 
         path = corrigePath(location)
@@ -76,7 +81,7 @@ Public Class FormReportes
         dtFecha1.ResetText()
         dtFecha2.ResetText()
 
-
+        cmbTipoReportes.SelectedIndex = -1
 
     End Sub
 End Class

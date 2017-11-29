@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClienteEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClienteEntity>
+    <ID>0</ID>
+    <dvh>0</dvh>
+    <dvv>0</dvv>
+    <costo>15</costo>
+    <telefonos>System.Byte[]</telefonos>
+    <detalleDireccion>Rejas Rojas</detalleDireccion>
+    <entreCalles>Segurola y Havanna</entreCalles>
+    <localidad>Springfield</localidad>
+    <direccion>Calle Falsa 123</direccion>
+    <apyn>Roberto Perez</apyn>
+  </ClienteEntity>
+  <ClienteEntity>
+    <ID>0</ID>
+    <dvh>0</dvh>
+    <dvv>0</dvv>
+    <costo>0</costo>
+    <telefonos>System.Byte[]</telefonos>
+    <detalleDireccion />
+    <entreCalles>Lavalle y Olazabal</entreCalles>
+    <localidad>Ituzaingo</localidad>
+    <direccion>Fragio 300</direccion>
+    <apyn>Facundo Laino</apyn>
+  </ClienteEntity>
+  <ClienteEntity>
+    <ID>0</ID>
+    <dvh>0</dvh>
+    <dvv>0</dvv>
+    <costo>0</costo>
+    <telefonos>System.Byte[]</telefonos>
+    <detalleDireccion />
+    <entreCalles>Lavalla y Olazabal</entreCalles>
+    <localidad>Ituzaingo</localidad>
+    <direccion>Fragio 386</direccion>
+    <apyn>Ruben Laino</apyn>
+  </ClienteEntity>
+</ArrayOfClienteEntity>

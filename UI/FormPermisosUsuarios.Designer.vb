@@ -22,19 +22,18 @@ Partial Class FormPermisosUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cmbUsuario = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.dgvPermisosFaltantes = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.btnAgregarPermiso = New MetroFramework.Controls.MetroButton()
         Me.btnGuardar = New MetroFramework.Controls.MetroButton()
         Me.btnQuitarPermiso = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.lblPerfil = New MetroFramework.Controls.MetroLabel()
         Me.tvPermisos = New System.Windows.Forms.TreeView()
-        CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.cmbPerfiles = New MetroFramework.Controls.MetroComboBox()
+        Me.btnElegirPerfil = New MetroFramework.Controls.MetroButton()
         Me.SuspendLayout()
         '
         'cmbUsuario
@@ -60,41 +59,12 @@ Partial Class FormPermisosUsuarios
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(62, 42)
+        Me.MetroLabel2.Location = New System.Drawing.Point(78, 46)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(109, 19)
         Me.MetroLabel2.TabIndex = 15
         Me.MetroLabel2.Text = "Lista de Permisos"
         Me.MetroLabel2.UseCustomBackColor = True
-        '
-        'MetroLabel3
-        '
-        Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(279, 42)
-        Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(163, 19)
-        Me.MetroLabel3.TabIndex = 16
-        Me.MetroLabel3.Text = "Lista de Permisos Faltantes"
-        Me.MetroLabel3.UseCustomBackColor = True
-        '
-        'dgvPermisosFaltantes
-        '
-        Me.dgvPermisosFaltantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvPermisosFaltantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPermisosFaltantes.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvPermisosFaltantes.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.dgvPermisosFaltantes.Location = New System.Drawing.Point(279, 71)
-        Me.dgvPermisosFaltantes.Name = "dgvPermisosFaltantes"
-        Me.dgvPermisosFaltantes.RowHeadersVisible = False
-        Me.dgvPermisosFaltantes.Size = New System.Drawing.Size(370, 150)
-        Me.dgvPermisosFaltantes.TabIndex = 17
         '
         'btnAgregarPermiso
         '
@@ -126,7 +96,7 @@ Partial Class FormPermisosUsuarios
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(259, 9)
+        Me.MetroLabel4.Location = New System.Drawing.Point(279, 9)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(41, 19)
         Me.MetroLabel4.TabIndex = 22
@@ -149,26 +119,55 @@ Partial Class FormPermisosUsuarios
         Me.tvPermisos.Size = New System.Drawing.Size(261, 242)
         Me.tvPermisos.TabIndex = 24
         '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.Location = New System.Drawing.Point(283, 46)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(78, 19)
+        Me.MetroLabel3.TabIndex = 25
+        Me.MetroLabel3.Text = "Elegir Perfil:"
+        Me.MetroLabel3.UseCustomBackColor = True
+        '
+        'cmbPerfiles
+        '
+        Me.cmbPerfiles.FormattingEnabled = True
+        Me.cmbPerfiles.ItemHeight = 23
+        Me.cmbPerfiles.Location = New System.Drawing.Point(365, 42)
+        Me.cmbPerfiles.Name = "cmbPerfiles"
+        Me.cmbPerfiles.Size = New System.Drawing.Size(303, 29)
+        Me.cmbPerfiles.TabIndex = 26
+        Me.cmbPerfiles.UseSelectable = True
+        '
+        'btnElegirPerfil
+        '
+        Me.btnElegirPerfil.Location = New System.Drawing.Point(674, 41)
+        Me.btnElegirPerfil.Name = "btnElegirPerfil"
+        Me.btnElegirPerfil.Size = New System.Drawing.Size(82, 30)
+        Me.btnElegirPerfil.TabIndex = 27
+        Me.btnElegirPerfil.Text = "Cambiar"
+        Me.btnElegirPerfil.UseSelectable = True
+        '
         'FormPermisosUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(662, 368)
+        Me.ClientSize = New System.Drawing.Size(768, 368)
+        Me.Controls.Add(Me.btnElegirPerfil)
+        Me.Controls.Add(Me.cmbPerfiles)
+        Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.tvPermisos)
         Me.Controls.Add(Me.lblPerfil)
         Me.Controls.Add(Me.MetroLabel4)
         Me.Controls.Add(Me.btnQuitarPermiso)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnAgregarPermiso)
-        Me.Controls.Add(Me.dgvPermisosFaltantes)
-        Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
         Me.Controls.Add(Me.cmbUsuario)
         Me.Name = "FormPermisosUsuarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administracion de Permisos de Usuarios"
-        CType(Me.dgvPermisosFaltantes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -176,12 +175,13 @@ Partial Class FormPermisosUsuarios
     Friend WithEvents cmbUsuario As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents dgvPermisosFaltantes As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents btnAgregarPermiso As MetroFramework.Controls.MetroButton
     Friend WithEvents btnGuardar As MetroFramework.Controls.MetroButton
     Friend WithEvents btnQuitarPermiso As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents lblPerfil As MetroFramework.Controls.MetroLabel
     Friend WithEvents tvPermisos As TreeView
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents cmbPerfiles As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents btnElegirPerfil As MetroFramework.Controls.MetroButton
 End Class

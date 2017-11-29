@@ -26,19 +26,15 @@ Public Class PermisosBussines
         Return lista
     End Function
 
-    'Public Overrides Sub agregar(c As Componente)
-    '    Throw New NotImplementedException()
-    'End Sub
-
     Public Overrides Sub eliminar(c As Componente)
         Throw New NotImplementedException()
     End Sub
 
-    Public Overrides Sub mostrar(depth As Integer)
+    Public Overrides Sub agregar(c As Componente)
         Throw New NotImplementedException()
     End Sub
 
-    Public Overrides Sub agregar(c As Componente)
+    Public Overrides Sub mostrar(perfil As PerfilEntity, permiso As PermisoEntity)
         Throw New NotImplementedException()
     End Sub
 End Class

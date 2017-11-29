@@ -22,13 +22,13 @@ Partial Class FormCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
         Me.C1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,6 +42,7 @@ Partial Class FormCompras
         Me.btnNuevaCompra = New MetroFramework.Controls.MetroButton()
         Me.btnCargarLista = New MetroFramework.Controls.MetroButton()
         Me.btnVerCompras = New MetroFramework.Controls.MetroButton()
+        Me.btnNuevoProveedor = New MetroFramework.Controls.MetroButton()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListaItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,14 +51,14 @@ Partial Class FormCompras
         '
         Me.dgvProveedores.AllowUserToAddRows = False
         Me.dgvProveedores.AllowUserToDeleteRows = False
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4})
         Me.dgvProveedores.Location = New System.Drawing.Point(15, 64)
@@ -69,8 +70,8 @@ Partial Class FormCompras
         '
         'C1
         '
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.C1.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.C1.DefaultCellStyle = DataGridViewCellStyle2
         Me.C1.HeaderText = "Nombre"
         Me.C1.Name = "C1"
         Me.C1.ReadOnly = True
@@ -78,8 +79,8 @@ Partial Class FormCompras
         '
         'C2
         '
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.C2.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.C2.DefaultCellStyle = DataGridViewCellStyle3
         Me.C2.HeaderText = "Dirección"
         Me.C2.Name = "C2"
         Me.C2.ReadOnly = True
@@ -87,8 +88,8 @@ Partial Class FormCompras
         '
         'C3
         '
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.C3.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.C3.DefaultCellStyle = DataGridViewCellStyle4
         Me.C3.HeaderText = "Teléfono"
         Me.C3.Name = "C3"
         Me.C3.ReadOnly = True
@@ -112,14 +113,14 @@ Partial Class FormCompras
         '
         'dgvListaItems
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListaItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListaItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvListaItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListaItems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C5, Me.C6})
         Me.dgvListaItems.Location = New System.Drawing.Point(493, 64)
@@ -130,16 +131,16 @@ Partial Class FormCompras
         '
         'C5
         '
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.C5.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.C5.DefaultCellStyle = DataGridViewCellStyle6
         Me.C5.HeaderText = "Cant"
         Me.C5.Name = "C5"
         Me.C5.Width = 50
         '
         'C6
         '
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.C6.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.C6.DefaultCellStyle = DataGridViewCellStyle7
         Me.C6.HeaderText = "Detalle Item"
         Me.C6.Name = "C6"
         Me.C6.Width = 250
@@ -180,11 +181,21 @@ Partial Class FormCompras
         Me.btnVerCompras.Text = "Ver Compras"
         Me.btnVerCompras.UseSelectable = True
         '
+        'btnNuevoProveedor
+        '
+        Me.btnNuevoProveedor.Location = New System.Drawing.Point(359, 220)
+        Me.btnNuevoProveedor.Name = "btnNuevoProveedor"
+        Me.btnNuevoProveedor.Size = New System.Drawing.Size(110, 23)
+        Me.btnNuevoProveedor.TabIndex = 7
+        Me.btnNuevoProveedor.Text = "Nuevo Proveedor"
+        Me.btnNuevoProveedor.UseSelectable = True
+        '
         'FormCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(805, 340)
+        Me.Controls.Add(Me.btnNuevoProveedor)
         Me.Controls.Add(Me.btnVerCompras)
         Me.Controls.Add(Me.btnCargarLista)
         Me.Controls.Add(Me.btnNuevaCompra)
@@ -215,4 +226,5 @@ Partial Class FormCompras
     Friend WithEvents C5 As DataGridViewTextBoxColumn
     Friend WithEvents C6 As DataGridViewTextBoxColumn
     Friend WithEvents btnVerCompras As MetroFramework.Controls.MetroButton
+    Friend WithEvents btnNuevoProveedor As MetroFramework.Controls.MetroButton
 End Class

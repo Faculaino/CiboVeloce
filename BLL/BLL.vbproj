@@ -103,6 +103,10 @@
     <Compile Include="PedidoBussines.vb" />
     <Compile Include="ProveedorBussines.vb" />
     <Compile Include="ReporteBussines.vb" />
+    <Compile Include="Serializar\AbstractSerializador.vb" />
+    <Compile Include="Serializar\FileStreamManager.vb" />
+    <Compile Include="Serializar\Serializador.vb" />
+    <Compile Include="Serializar\XMLSerializator.vb" />
     <Compile Include="State\EnElaboracion.vb" />
     <Compile Include="State\EnEnvio.vb" />
     <Compile Include="State\Estado.vb" />

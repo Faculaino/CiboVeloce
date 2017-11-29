@@ -42,6 +42,34 @@ Public Class FormAdministrador
 
     End Sub
 
+    Sub administrador()
+        btnUsuarios.Enabled = True
+        btnClientes.Enabled = True
+        btnBackup.Enabled = True
+        btnIdioma.Enabled = True
+        btnBitacora.Enabled = True
+        btnCompras.Enabled = True
+        btnPedidos.Enabled = True
+        btnAdminComida.Enabled = True
+        btnCaja.Enabled = True
+        btnPedidosHistorial.Enabled = True
+        btnReportes.Enabled = True
+    End Sub
+
+    Sub responsableCocina()
+        btnUsuarios.Enabled = False
+        btnClientes.Enabled = False
+        btnBackup.Enabled = False
+        btnIdioma.Enabled = False
+        btnBitacora.Enabled = False
+        btnCompras.Enabled = False
+        btnPedidos.Enabled = True
+        btnAdminComida.Enabled = True
+        btnCaja.Enabled = False
+        btnPedidosHistorial.Enabled = True
+        btnReportes.Enabled = False
+    End Sub
+
     Private Sub FormAdministrador_Resize(sender As Object, e As EventArgs) Handles Me.Resize
 
     End Sub

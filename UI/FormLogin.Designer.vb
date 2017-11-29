@@ -23,8 +23,6 @@ Partial Class FormLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.lnkNuevoUsuario = New System.Windows.Forms.LinkLabel()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
@@ -37,22 +35,10 @@ Partial Class FormLogin
         Me.TimerProgress = New System.Windows.Forms.Timer(Me.components)
         Me.progressBar = New System.Windows.Forms.ProgressBar()
         Me.lblMensajeProgress = New MetroFramework.Controls.MetroLabel()
+        Me.btnInstalarSQL = New MetroFramework.Controls.MetroButton()
+        Me.txtUsername = New MetroFramework.Controls.MetroTextBox()
+        Me.txtPassword = New MetroFramework.Controls.MetroTextBox()
         Me.SuspendLayout()
-        '
-        'txtPassword
-        '
-        Me.txtPassword.Location = New System.Drawing.Point(45, 152)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(224, 21)
-        Me.txtPassword.TabIndex = 13
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Location = New System.Drawing.Point(45, 96)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(224, 21)
-        Me.txtUsername.TabIndex = 12
         '
         'lnkNuevoUsuario
         '
@@ -163,11 +149,83 @@ Partial Class FormLogin
         Me.lblMensajeProgress.Size = New System.Drawing.Size(0, 0)
         Me.lblMensajeProgress.TabIndex = 25
         '
+        'btnInstalarSQL
+        '
+        Me.btnInstalarSQL.Location = New System.Drawing.Point(430, 271)
+        Me.btnInstalarSQL.Name = "btnInstalarSQL"
+        Me.btnInstalarSQL.Size = New System.Drawing.Size(131, 23)
+        Me.btnInstalarSQL.TabIndex = 26
+        Me.btnInstalarSQL.Text = "Instalar SQL"
+        Me.btnInstalarSQL.UseSelectable = True
+        '
+        'txtUsername
+        '
+        '
+        '
+        '
+        Me.txtUsername.CustomButton.Image = Nothing
+        Me.txtUsername.CustomButton.Location = New System.Drawing.Point(211, 1)
+        Me.txtUsername.CustomButton.Name = ""
+        Me.txtUsername.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtUsername.CustomButton.TabIndex = 1
+        Me.txtUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtUsername.CustomButton.UseSelectable = True
+        Me.txtUsername.CustomButton.Visible = False
+        Me.txtUsername.Lines = New String(-1) {}
+        Me.txtUsername.Location = New System.Drawing.Point(45, 93)
+        Me.txtUsername.MaxLength = 32767
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtUsername.SelectedText = ""
+        Me.txtUsername.SelectionLength = 0
+        Me.txtUsername.SelectionStart = 0
+        Me.txtUsername.ShortcutsEnabled = True
+        Me.txtUsername.Size = New System.Drawing.Size(233, 23)
+        Me.txtUsername.TabIndex = 27
+        Me.txtUsername.UseSelectable = True
+        Me.txtUsername.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtUsername.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'txtPassword
+        '
+        '
+        '
+        '
+        Me.txtPassword.CustomButton.Image = Nothing
+        Me.txtPassword.CustomButton.Location = New System.Drawing.Point(211, 1)
+        Me.txtPassword.CustomButton.Name = ""
+        Me.txtPassword.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtPassword.CustomButton.TabIndex = 1
+        Me.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtPassword.CustomButton.UseSelectable = True
+        Me.txtPassword.CustomButton.Visible = False
+        Me.txtPassword.Lines = New String(-1) {}
+        Me.txtPassword.Location = New System.Drawing.Point(45, 152)
+        Me.txtPassword.MaxLength = 32767
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtPassword.SelectedText = ""
+        Me.txtPassword.SelectionLength = 0
+        Me.txtPassword.SelectionStart = 0
+        Me.txtPassword.ShortcutsEnabled = True
+        Me.txtPassword.Size = New System.Drawing.Size(233, 23)
+        Me.txtPassword.TabIndex = 28
+        Me.txtPassword.UseSelectable = True
+        Me.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtPassword.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(333, 366)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.btnInstalarSQL)
         Me.Controls.Add(Me.lblMensajeProgress)
         Me.Controls.Add(Me.progressBar)
         Me.Controls.Add(Me.MetroLabel4)
@@ -177,8 +235,6 @@ Partial Class FormLogin
         Me.Controls.Add(Me.ReflectionLabel1)
         Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroLabel1)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.lnkNuevoUsuario)
         Me.Controls.Add(Me.btnLogin)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
@@ -191,9 +247,6 @@ Partial Class FormLogin
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtUsername As TextBox
     Friend WithEvents lnkNuevoUsuario As LinkLabel
     Private WithEvents btnLogin As Button
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
@@ -206,4 +259,7 @@ Partial Class FormLogin
     Friend WithEvents TimerProgress As Timer
     Friend WithEvents progressBar As ProgressBar
     Friend WithEvents lblMensajeProgress As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnInstalarSQL As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtUsername As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtPassword As MetroFramework.Controls.MetroTextBox
 End Class

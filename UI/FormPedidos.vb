@@ -4,10 +4,15 @@ Imports MetroFramework
 Imports System.Text
 Imports System.Drawing.Printing
 Imports Servicios
+Imports WebKit
+Imports WebKit.DOM
+Imports Microsoft.Win32
 
 Public Class FormPedidos
 
     Private direccion As String = ""
+
+
 
     Private Sub FormPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtBuscaTel.Select()
@@ -67,11 +72,28 @@ Public Class FormPedidos
             'wbMaps.Navigate(query.ToString())
 
             'wbMaps.Navigate("https://www.google.com.ar/maps/search/" & txtDireccion.Text & "+" & txtLocalidad.Text & "+" & "Buenos Aires" & "+" & "Argentina" & "+")
+            Dim BrowserVer As Integer = 0
+            Dim RegVal As Integer = 0
+            Dim key As RegistryKey = Registry.CurrentUser.CreateSubKey("SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", RegistryKeyPermissionCheck.ReadWriteSubTree)
 
+            BrowserVer = wb.Version.Major
 
-            WebKitBrowser1.Navigate("www.maps.google.com.ar/maps?q= " + txtDireccion.Text + ",+" + txtLocalidad.Text)
+            If BrowserVer >= 11 Then
+                RegVal = 11001
+            ElseIf BrowserVer = 10 Then
+                RegVal = 10001
+            ElseIf BrowserVer = 9 Then
+                RegVal = 9999
+            End If
+
+            If key.GetValue(Process.GetCurrentProcess().ProcessName + ".exe") Is Nothing Then
+                key.SetValue(Process.GetCurrentProcess().ProcessName + ".exe", RegVal, RegistryValueKind.DWord)
+            End If
+            wb.Navigate("www.maps.google.com.ar/maps?q= " + txtDireccion.Text + ",+" + txtLocalidad.Text)
+
+            'WebKitBrowser1.Navigate("www.maps.google.com.ar/maps?q= " + txtDireccion.Text + ",+" + txtLocalidad.Text)
         Catch ex As Exception
-            WebKitBrowser1.Navigate("")
+            'WebKitBrowser1.Navigate("")
             MsgBox("Error en el Servicio de Google Maps")
             lblMaps.Visible = True
             panelMaps.Visible = True
@@ -99,8 +121,8 @@ Public Class FormPedidos
         dgvPedido.Rows.Clear()
 
         txtTotal.Text = ""
-        WebKitBrowser1.Navigate("")
-
+        'WebKitBrowser1.Navigate("")
+        wb.Navigate("")
         lblMaps.Visible = True
         panelMaps.Visible = True
 
@@ -114,6 +136,10 @@ Public Class FormPedidos
         TimerMapa.Start()
         Dim nuevoCliente = New ClienteBussines
         Dim clienteBuscado = New ClienteEntity
+        'WebKitBrowser1.Visible = True
+        Dim nuevoCarga = FormCargaMapa
+        nuevoCarga.Show()
+        wb.Visible = True
 
         If txtBuscaDir.Text = "" Then
             clienteBuscado = nuevoCliente.buscarClienteTEL(txtBuscaTel.Text)
@@ -235,11 +261,17 @@ Public Class FormPedidos
         clearFields()
         txtBuscaTel.Select()
         formatControls()
-        WebKitBrowser1.Navigate("")
+        'WebKitBrowser1.Navigate("")
+        'WebKitBrowser1.Visible = False
+        wb.Navigate("")
+        wb.Visible = False
+        'metroProgress.Visible = True
+        'metroProgress.Value = 0
+        'lblTexto.Visible = True
         lblMaps.Visible = True
         panelMaps.Visible = True
         cargarTree()
-        metroProgress.Enabled = True
+        'metroProgress.Enabled = True
     End Sub
 
     Private Sub btnGuardarCliente_Click(sender As Object, e As EventArgs) Handles btnGuardarCliente.Click
@@ -299,9 +331,12 @@ Public Class FormPedidos
 
     Sub imprimir()
         printPreview.Document = printDocument
-        printPreview.ShowDialog()
-
-        'printDocument.Print()
+        Try
+            printPreview.ShowDialog()
+            printDocument.Print()
+        Catch ex As Exception
+            MsgBox("Error al Imprimir - " + ex.Message)
+        End Try
 
     End Sub
 
@@ -315,7 +350,6 @@ Public Class FormPedidos
         registrarCobro()
         'MailManager.enviarMail(txtNombre.Text, "Factura Compra", "Se envía factura por compra de $" + txtTotal.Text)
         clearFields()
-
     End Sub
 
     Sub registrarCobro()
@@ -356,6 +390,8 @@ Public Class FormPedidos
 
 
     End Sub
+
+
 
 
 
@@ -425,19 +461,20 @@ Public Class FormPedidos
     End Sub
 
     Private Sub TimerMapa_Tick(sender As Object, e As EventArgs) Handles TimerMapa.Tick
-        metroProgress.Increment(10)
+        'metroProgress.Increment(5)
+        'If metroProgress.Value = 20 Then
+        '    lblTexto.Text = "Iniciando Busqueda"
+        'ElseIf metroProgress.Value = 50 Then
+        '    lblTexto.Text = "Buscando Direccion"
+        'ElseIf metroProgress.Value = 70 Then
+        '    lblTexto.Text = "Geolocalización"
+        'End If
 
-        If metroProgress.Value = 50 Then
-            lblTexto.Text = "Buscando Direccion"
-        ElseIf metroProgress.Value = 70 Then
-            lblTexto.Text = "Geolocalización"
-        End If
-
-        If metroProgress.Value = metroProgress.Maximum Then
-            TimerMapa.Stop()
-            lblTexto.Text = ""
-            metroProgress.Visible = False
-        End If
+        'If metroProgress.Value = metroProgress.Maximum Then
+        '    TimerMapa.Stop()
+        '    lblTexto.Text = ""
+        '    metroProgress.Visible = False
+        'End If
 
 
     End Sub

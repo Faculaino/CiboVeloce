@@ -47,4 +47,11 @@ Public Class PedidoBussines
         id = nuevoDatos.buscaUltimoID()
         Return id
     End Function
+
+    Public Function buscaPedidosCliente(telefono As String, fecha As DateTime) As List(Of PedidoEntity)
+        Dim nuevoDatos = New PedidoDAL
+        Dim lista = New List(Of PedidoEntity)
+        lista = nuevoDatos.buscarPedidoCliente(telefono, fecha)
+        Return lista
+    End Function
 End Class

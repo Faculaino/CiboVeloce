@@ -12,7 +12,7 @@ Public MustInherit Class Componente
 
     Public MustOverride Sub agregar(c As Componente)
     Public MustOverride Sub eliminar(c As Componente)
-    Public MustOverride Sub mostrar(depth As Integer)
+    Public MustOverride Sub mostrar(perfil As PerfilEntity, permiso As PermisoEntity)
 
     'Public MustOverride Function mostrar2() As List(Of Componente)
 

@@ -8,6 +8,7 @@ Public Class FormAdministracionCarta
         Dim nuevaCate = New FormNuevaCategoria
         nuevaCate.StartPosition = FormStartPosition.CenterScreen
         nuevaCate.ShowDialog()
+        cargarCombo()
     End Sub
 
     Private Sub FormAdministracionCarta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -60,10 +61,8 @@ Public Class FormAdministracionCarta
         bandera = False
     End Sub
 
-    Private Sub btnEditarComidas_Click(sender As Object, e As EventArgs) Handles btnEditarComidas.Click
+    Private Sub btnEditarComidas_Click(sender As Object, e As EventArgs)
         habilitaEdicion()
-
-
     End Sub
 
     Private Sub cmbCategorias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCategorias.SelectedIndexChanged
@@ -77,22 +76,25 @@ Public Class FormAdministracionCarta
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        'Dim listaComida = New List(Of ComidaEntity)
-        'Dim IDCategoria = cmbCategorias.SelectedValue
-        'Dim comidaBussines = New ComidaBussines
+        Dim listaComida = New List(Of ComidaEntity)
+        Dim IDCategoria = cmbCategorias.SelectedValue
+        Dim comidaBussines = New ComidaBussines
 
-        'For Each item As DataGridViewRow In dgvComidas.Rows
-        '    If item.Cells(1).Value = "" Then
-        '    Else
-        '        Dim comida = New ComidaEntity
-        '        comida.detalle = item.Cells(0).Value.ToString()
-        '        comida.precio = CDec(item.Cells(1).Value.ToString())
-        '        listaComida.Add(comida)
-        '    End If
 
-        'Next
+        For Each item As DataGridViewRow In dgvComidas.Rows
+            If item.Cells(1).Value Is Nothing Then
+            Else
+                Dim comida = New ComidaEntity
+                comida.detalle = item.Cells(0).Value.ToString()
+                comida.precio = CDec(item.Cells(1).Value.ToString())
+                comida.idcategoria = cmbCategorias.SelectedValue
+                listaComida.Add(comida)
+            End If
 
-        'comidaBussines.insertComida(listaComida)
+        Next
+
+        comidaBussines.borrarRegistros(cmbCategorias.SelectedValue)
+        comidaBussines.insertComidaLista(listaComida)
 
 
 
@@ -105,8 +107,19 @@ Public Class FormAdministracionCarta
         comida.precio = CDec(txtPrecio.Text.ToString())
         comida.idcategoria = cmbCategorias.SelectedValue
         comidaBussines.insertComida(comida)
+        dgvComidas.Rows.Add(txtComida.Text, txtPrecio.Text)
 
         cargarGrilla(cmbCategorias.SelectedValue)
 
+        txtComida.Text = ""
+        txtPrecio.Text = ""
+        txtComida.Select()
+
+    End Sub
+
+    Private Sub metroCheck_CheckedChanged(sender As Object, e As EventArgs) Handles metroCheck.CheckedChanged
+        If metroCheck.Checked = True Then
+            habilitaEdicion()
+        End If
     End Sub
 End Class

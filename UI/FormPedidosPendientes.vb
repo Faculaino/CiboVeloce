@@ -105,6 +105,13 @@ Public Class FormPedidosPendientes
         Dim nuevaLista = New List(Of PedidoEntity)
 
 
+        For Each item As DataGridViewRow In dgvPedidosCocina.Rows
+            If item.Cells("C5").Value = True Then
+
+            End If
+
+        Next
+
 
 
 

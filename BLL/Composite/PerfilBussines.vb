@@ -45,6 +45,11 @@ Public Class PerfilBussines
         Return lista
     End Function
 
+    Sub cambiarPerfil(idPerfil As Integer, idUsuario As Integer)
+        Dim nuevoDatos = New PerfilDAL
+        nuevoDatos.setearPerfil(idPerfil, idUsuario)
+    End Sub
+
     Public Overrides Sub agregar(c As Componente)
         'elementos.Add(c)
 
@@ -54,9 +59,7 @@ Public Class PerfilBussines
         'elementos.Remove(c)
     End Sub
 
-    Public Overrides Sub mostrar(depth As Integer)
+    Public Overrides Sub mostrar(perfil As PerfilEntity, permiso As PermisoEntity)
         Throw New NotImplementedException()
     End Sub
-
-
 End Class

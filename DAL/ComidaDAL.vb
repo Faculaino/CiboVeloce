@@ -39,6 +39,24 @@ Public Class ComidaDAL
 
     End Function
 
+    Public Sub borrarReg(id As Integer)
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "DELETE FROM Comidas WHERE IDCategoria=" & id
+            cmd.CommandType = CommandType.Text
+
+            cmd.ExecuteNonQuery()
+            CloseBD()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+
     Public Function buscaDVV() As Integer
         Try
             OpenBD()

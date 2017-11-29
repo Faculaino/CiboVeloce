@@ -59,4 +59,10 @@ Public Class FormCompras
         listaCompras.StartPosition = FormStartPosition.CenterParent
         listaCompras.Show()
     End Sub
+
+    Private Sub btnNuevoProveedor_Click(sender As Object, e As EventArgs) Handles btnNuevoProveedor.Click
+        Dim nuevoProveedor = New FormNuevoProveedor
+        nuevoProveedor.StartPosition = FormStartPosition.CenterScreen
+        nuevoProveedor.ShowDialog()
+    End Sub
 End Class

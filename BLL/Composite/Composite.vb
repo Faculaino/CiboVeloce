@@ -3,7 +3,8 @@ Imports EE
 Public Class Composite
     Inherits Componente
 
-    'Private elementos As New List(Of Componente)()
+
+    Private elementos As New List(Of Componente)()
 
 
     'Public Sub New(name As String)
@@ -12,14 +13,15 @@ Public Class Composite
 
 
     Public Overrides Sub agregar(c As Componente)
-        Throw New NotImplementedException()
+        elementos.Add(c)
     End Sub
 
     Public Overrides Sub eliminar(c As Componente)
-        Throw New NotImplementedException()
+        elementos.Remove(c)
     End Sub
 
-    Public Overrides Sub mostrar(depth As Integer)
-        Throw New NotImplementedException()
+    Public Overrides Sub mostrar(perfil As PerfilEntity, permiso As PermisoEntity)
+
+
     End Sub
 End Class
