@@ -206,7 +206,7 @@ Partial Class FormLogin
         Me.txtPassword.Location = New System.Drawing.Point(45, 152)
         Me.txtPassword.MaxLength = 32767
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.SelectionLength = 0
