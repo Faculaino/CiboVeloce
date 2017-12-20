@@ -15,6 +15,14 @@ Public Class FormPedidosPendientes
         cmbEstado.ValueMember = "ID"
         cmbEstado.SelectedIndex = -1
 
+
+        'cmbNuevoEstado.DataSource = Nothing
+        'cmbNuevoEstado.DataSource = nuevoEstado.listarEstados()
+
+        'cmbNuevoEstado.DisplayMember = "Estado"
+        'cmbNuevoEstado.ValueMember = "ID"
+        'cmbNuevoEstado.SelectedIndex = -1
+
     End Sub
 
     Sub cargarGrilla(id As Integer)
@@ -33,17 +41,17 @@ Public Class FormPedidosPendientes
         For Each item In lista
             Dim clientePedido = nuevoCliente.buscarClienteID(item.idCliente)
             Dim estadoPedido = listaPedidos.buscarEstadoID(item.idEstado)
-            dgvPedidosCocina.Rows.Add(item.fechahora, item.listaComida, clientePedido.apyn, estadoPedido.estado)
-            Try
-                Dim celda = New DataGridViewComboBoxColumn
-                celda = DirectCast(dgvPedidosCocina.Columns("C4"), DataGridViewComboBoxColumn)
-                celda.DataSource = listaPedidos.listarEstados()
-                celda.DisplayMember = "Estado"
-                celda.ValueMember = "ID"
+            dgvPedidosCocina.Rows.Add(item.fechahora, item.listaComida, clientePedido.apyn, estadoPedido.estado, False, item.ID, item.idCliente)
+            'Try
+            '    Dim celda = New DataGridViewComboBoxColumn
+            '    celda = DirectCast(dgvPedidosCocina.Columns("C4"), DataGridViewComboBoxColumn)
+            '    celda.DataSource = listaPedidos.listarEstados()
+            '    celda.DisplayMember = "Estado"
+            '    celda.ValueMember = "ID"
 
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+            'Catch ex As Exception
+            '    MsgBox(ex.Message)
+            'End Try
 
         Next
 
@@ -81,6 +89,18 @@ Public Class FormPedidosPendientes
         'comboboxColumn.DataSource = nuevoEstado.listarEstados()
         'comboboxColumn.DisplayMember = "Estado"
         'comboboxColumn.ValueMember = "ID"
+        Dim columna As New DataGridViewCheckBoxCell
+        columna = dgvPedidosCocina.CurrentRow.Cells("C5")
+        If columna.Value = True Then
+            columna.Value = False
+            dgvPedidosCocina.CurrentRow.DefaultCellStyle.BackColor = Color.White
+        ElseIf columna.Value = False Then
+            columna.Value = True
+            dgvPedidosCocina.CurrentRow.DefaultCellStyle.BackColor = Color.GreenYellow
+        End If
+
+
+
     End Sub
 
     Private Sub dgvPedidosCocina_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvPedidosCocina.DataError
@@ -103,17 +123,27 @@ Public Class FormPedidosPendientes
 
     Private Sub cmbCambiarEstado_Click(sender As Object, e As EventArgs) Handles cmbCambiarEstado.Click
         Dim nuevaLista = New List(Of PedidoEntity)
+        Dim columna As New DataGridViewCheckBoxCell
+        Dim pedidosBussines = New PedidoBussines
 
 
         For Each item As DataGridViewRow In dgvPedidosCocina.Rows
-            If item.Cells("C5").Value = True Then
-
+            columna = item.Cells("C5")
+            If columna.Value = True Then
+                Dim nuevoPedido = New PedidoEntity
+                nuevoPedido.listaComida = item.Cells("C2").Value.ToString()
+                nuevoPedido.ID = CInt(item.Cells("C6").Value.ToString())
+                nuevoPedido.idCliente = CInt(item.Cells("C7").Value.ToString())
+                nuevaLista.Add(nuevoPedido)
             End If
 
         Next
 
 
+        Dim nuevoEstado = New Terminado
+        nuevoEstado.setEstado(nuevaLista, 3)
 
+        dgvPedidosCocina.Rows.Clear()
 
     End Sub
 End Class

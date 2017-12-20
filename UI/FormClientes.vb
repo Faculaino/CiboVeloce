@@ -2,6 +2,7 @@
 Imports EE
 Imports Servicios
 Imports System.Xml.Serialization
+Imports System.IO
 Public Class FormClientes
 
 
@@ -44,6 +45,12 @@ Public Class FormClientes
     End Sub
 
     Private Sub btnGuardarXML_Click(sender As Object, e As EventArgs) Handles btnGuardarXML.Click
+
+
+        If Not Directory.Exists(Application.StartupPath & "\XML\") Then
+            Directory.CreateDirectory(Application.StartupPath & "\XML\")
+        End If
+
         Dim lista = New List(Of ClienteEntity)
         Dim serializador = New Serializador
 

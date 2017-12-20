@@ -10,6 +10,8 @@
     Private _DVH As Integer
     Private _Activo As Boolean
     Private _IDPerfil As Integer
+    Private _IDIdioma As Integer
+
 
 
 
@@ -51,7 +53,14 @@
     End Property
 
 
-
+    Public Property IDIdioma() As Integer
+        Get
+            Return _IDIdioma
+        End Get
+        Set(ByVal value As Integer)
+            _IDIdioma = value
+        End Set
+    End Property
 
 
     Public Property Password() As String

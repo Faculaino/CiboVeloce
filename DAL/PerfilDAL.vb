@@ -34,6 +34,37 @@ Public Class PerfilDAL
         End Try
     End Function
 
+    Public Function buscarIDPer(name As String) As Integer
+        Try
+            OpenBD()
+
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "SELECT * FROM Perfil WHERE Descripcion='" + name + "'"
+            cmd.CommandType = CommandType.Text
+
+
+            Dim nuevoPerfil = New PerfilEntity
+            Dim valor As Integer = 0
+            Dim reader = cmd.ExecuteReader
+            While reader.Read
+                nuevoPerfil.ID = reader(0)
+                nuevoPerfil.descripcion = reader(1)
+                valor = reader(0)
+
+            End While
+
+
+            reader.Close()
+            CloseBD()
+
+            Return valor
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function buscarPerfil(usuario As UsuarioEntity) As String
         OpenBD()
 
@@ -75,6 +106,23 @@ Public Class PerfilDAL
             MsgBox(ex.Message)
         End Try
 
+
+    End Sub
+
+    Public Sub insertPerfil(nombre As String)
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "INSERT INTO Perfil (Descripcion) VALUES ('" + nombre + "')"
+            cmd.CommandType = CommandType.Text
+            cmd.ExecuteNonQuery()
+
+            CloseBD()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

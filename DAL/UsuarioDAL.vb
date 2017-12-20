@@ -68,6 +68,27 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
+    Sub modificaIdioma(id As Integer, idUser As Integer)
+        OpenBD()
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "UPDATE Usuarios SET IDIdioma = " & id & " WHERE ID = " & idUser
+            cmd.CommandType = CommandType.Text
+
+            cmd.ExecuteNonQuery()
+
+            CloseBD()
+
+        Catch ex As SqlException
+
+            MsgBox(ex.Message)
+        Catch ex As Exception
+
+            MsgBox(ex)
+        End Try
+    End Sub
+
     Public Function buscarDVV() As Integer
 
         OpenBD()
@@ -126,7 +147,26 @@ Public Class UsuarioDAL
         End Try
     End Sub
 
+    Public Sub modificarPerfil(iDUser As Integer, id As Integer)
+        OpenBD()
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            cmd.CommandText = "UPDATE Usuarios SET IDPerfil = " & id & " WHERE ID = " & iDUser
+            cmd.CommandType = CommandType.Text
 
+            cmd.ExecuteNonQuery()
+
+            CloseBD()
+
+        Catch ex As SqlException
+
+            MsgBox(ex.Message)
+        Catch ex As Exception
+
+            MsgBox(ex)
+        End Try
+    End Sub
 
     Function buscarUsuario(ByVal hdatos As Hashtable) As UsuarioEntity
         Dim oUsuario As New UsuarioEntity
@@ -152,6 +192,7 @@ Public Class UsuarioDAL
                 oUsuario.User = reader(2)
                 oUsuario.Password = reader(3)
                 oUsuario.IDPerfil = reader(7)
+                oUsuario.IDIdioma = reader(8)
             End While
             reader.Close()
 
@@ -190,6 +231,7 @@ Public Class UsuarioDAL
                 oUsuario.ID = reader(0)
                 oUsuario.User = reader(1)
                 oUsuario.Nombre = reader(2)
+                oUsuario.IDPerfil = reader(7)
 
 
 
@@ -230,6 +272,7 @@ Public Class UsuarioDAL
                 oUsuario.DVV = reader(4)
                 oUsuario.DVH = reader(5)
                 oUsuario.IDPerfil = reader(6)
+                oUsuario.IDIdioma = reader(7)
 
                 nuevaLista.Add(oUsuario)
             End While

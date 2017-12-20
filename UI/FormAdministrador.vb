@@ -1,6 +1,9 @@
 ﻿Imports MetroFramework
 Imports BLL
 Imports Servicios
+Imports System.Globalization
+Imports EE
+
 Public Class FormAdministrador
 
 
@@ -39,8 +42,35 @@ Public Class FormAdministrador
     End Sub
 
     Private Sub FormAdministrador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cambiarIdioma()
+    End Sub
+
+    Sub cambiarIdioma()
+        Dim traducir As New TraduccionBussines
+        Dim idioma = New TraduccionEntity
+
+        Dim ht As New Hashtable
+        ht = traducir.palabrasTraducidas(SessionManager.Instance.Usuario.IDIdioma)
+
+        For Each control As Control In Me.Controls
+            If control.Tag Is Nothing Then
+            Else
+                For Each item As DictionaryEntry In ht
+                    If control.Tag.Equals(item.Key) Then
+                        control.Text = item.Value
+                        Exit For
+                    End If
+                Next
+            End If
+
+        Next
+
+        'Dim culturaObj As CultureInfo = New CultureInfo(SingletonIdioma.intance.getUsuario.getIdioma)
+        'Threading.Thread.CurrentThread.CurrentUICulture = culturaObj
+        'Threading.Thread.CurrentThread.CurrentCulture = culturaObj
 
     End Sub
+
 
     Sub administrador()
         btnUsuarios.Enabled = True

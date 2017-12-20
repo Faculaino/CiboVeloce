@@ -1,8 +1,8 @@
 ﻿Imports EE
 Imports DAL
+Imports System.Globalization
+
 Public Class IdiomaBussines
-
-
 
     Function listarIdiomas() As List(Of IdiomaEntity)
 

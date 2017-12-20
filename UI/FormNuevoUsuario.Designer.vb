@@ -82,6 +82,18 @@ Partial Class FormNuevoUsuario
         '
         'txtNombre
         '
+        '
+        '
+        '
+        Me.txtNombre.CustomButton.Image = Nothing
+        Me.txtNombre.CustomButton.Location = New System.Drawing.Point(200, 1)
+        Me.txtNombre.CustomButton.Name = ""
+        Me.txtNombre.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtNombre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtNombre.CustomButton.TabIndex = 1
+        Me.txtNombre.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtNombre.CustomButton.UseSelectable = True
+        Me.txtNombre.CustomButton.Visible = False
         Me.txtNombre.Lines = New String(-1) {}
         Me.txtNombre.Location = New System.Drawing.Point(24, 87)
         Me.txtNombre.MaxLength = 32767
@@ -89,12 +101,29 @@ Partial Class FormNuevoUsuario
         Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtNombre.SelectedText = ""
+        Me.txtNombre.SelectionLength = 0
+        Me.txtNombre.SelectionStart = 0
+        Me.txtNombre.ShortcutsEnabled = True
         Me.txtNombre.Size = New System.Drawing.Size(222, 23)
         Me.txtNombre.TabIndex = 11
         Me.txtNombre.UseSelectable = True
+        Me.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtNombre.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txtUserName
         '
+        '
+        '
+        '
+        Me.txtUserName.CustomButton.Image = Nothing
+        Me.txtUserName.CustomButton.Location = New System.Drawing.Point(200, 1)
+        Me.txtUserName.CustomButton.Name = ""
+        Me.txtUserName.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtUserName.CustomButton.TabIndex = 1
+        Me.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtUserName.CustomButton.UseSelectable = True
+        Me.txtUserName.CustomButton.Visible = False
         Me.txtUserName.Lines = New String(-1) {}
         Me.txtUserName.Location = New System.Drawing.Point(24, 150)
         Me.txtUserName.MaxLength = 32767
@@ -102,12 +131,29 @@ Partial Class FormNuevoUsuario
         Me.txtUserName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtUserName.SelectedText = ""
+        Me.txtUserName.SelectionLength = 0
+        Me.txtUserName.SelectionStart = 0
+        Me.txtUserName.ShortcutsEnabled = True
         Me.txtUserName.Size = New System.Drawing.Size(222, 23)
         Me.txtUserName.TabIndex = 12
         Me.txtUserName.UseSelectable = True
+        Me.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtUserName.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txtPassword
         '
+        '
+        '
+        '
+        Me.txtPassword.CustomButton.Image = Nothing
+        Me.txtPassword.CustomButton.Location = New System.Drawing.Point(200, 1)
+        Me.txtPassword.CustomButton.Name = ""
+        Me.txtPassword.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtPassword.CustomButton.TabIndex = 1
+        Me.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtPassword.CustomButton.UseSelectable = True
+        Me.txtPassword.CustomButton.Visible = False
         Me.txtPassword.Lines = New String(-1) {}
         Me.txtPassword.Location = New System.Drawing.Point(261, 150)
         Me.txtPassword.MaxLength = 32767
@@ -115,9 +161,14 @@ Partial Class FormNuevoUsuario
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtPassword.SelectedText = ""
+        Me.txtPassword.SelectionLength = 0
+        Me.txtPassword.SelectionStart = 0
+        Me.txtPassword.ShortcutsEnabled = True
         Me.txtPassword.Size = New System.Drawing.Size(222, 23)
         Me.txtPassword.TabIndex = 13
         Me.txtPassword.UseSelectable = True
+        Me.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtPassword.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'FormNuevoUsuario
         '
@@ -136,6 +187,7 @@ Partial Class FormNuevoUsuario
         Me.Name = "FormNuevoUsuario"
         Me.Resizable = False
         Me.Text = "Alta de Usuario"
+        Me.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -9,7 +9,7 @@ Public NotInheritable Class SessionManager
 
     Public Traductor As Dictionary(Of String, String)
 
-    Public Property NewProperty() As Dictionary(Of String, String)
+    Public Property _Traductor() As Dictionary(Of String, String)
         Get
             Return Traductor
         End Get
@@ -17,6 +17,8 @@ Public NotInheritable Class SessionManager
             Traductor = value
         End Set
     End Property
+
+
     Public Shared ReadOnly Property Instance() As SessionManager
         Get
             If _Instance Is Nothing Then

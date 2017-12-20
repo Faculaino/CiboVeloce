@@ -1,7 +1,7 @@
 ﻿Public Class PalabraEntity
     Inherits BaseEntity
 
-    Private _IDIdioma As Integer
+
     Private _Palabra As String
 
 
@@ -16,14 +16,6 @@
     End Property
 
 
-    Public Property IDIdioma() As Integer
-        Get
-            Return _IDIdioma
-        End Get
-        Set(ByVal value As Integer)
-            _IDIdioma = value
-        End Set
-    End Property
 
 
 End Class

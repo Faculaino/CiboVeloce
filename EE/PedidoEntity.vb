@@ -12,7 +12,6 @@
 
 
 
-
     Public Property dvh() As Integer
         Get
             Return _dvh

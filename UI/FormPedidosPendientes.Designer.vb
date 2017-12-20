@@ -26,21 +26,26 @@ Partial Class FormPedidosPendientes
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvPedidosCocina = New System.Windows.Forms.DataGridView()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.cmbEstado = New MetroFramework.Controls.MetroComboBox()
-        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
-        Me.cmbCambiarEstado = New MetroFramework.Controls.MetroButton()
         Me.C1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.C5 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.C6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.C7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.cmbEstado = New MetroFramework.Controls.MetroComboBox()
+        Me.btnBuscar = New MetroFramework.Controls.MetroButton()
+        Me.cmbCambiarEstado = New MetroFramework.Controls.MetroButton()
+        Me.cmbNuevoEstado = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         CType(Me.dgvPedidosCocina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvPedidosCocina
         '
         Me.dgvPedidosCocina.AllowUserToAddRows = False
+        Me.dgvPedidosCocina.AllowUserToDeleteRows = False
         Me.dgvPedidosCocina.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
@@ -51,7 +56,7 @@ Partial Class FormPedidosPendientes
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvPedidosCocina.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPedidosCocina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPedidosCocina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4, Me.C5})
+        Me.dgvPedidosCocina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.C1, Me.C2, Me.C3, Me.C4, Me.C5, Me.C6, Me.C7})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 10.0!)
@@ -66,43 +71,6 @@ Partial Class FormPedidosPendientes
         Me.dgvPedidosCocina.RowHeadersVisible = False
         Me.dgvPedidosCocina.Size = New System.Drawing.Size(806, 312)
         Me.dgvPedidosCocina.TabIndex = 21
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(24, 73)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(51, 19)
-        Me.MetroLabel1.TabIndex = 22
-        Me.MetroLabel1.Text = "Estado:"
-        '
-        'cmbEstado
-        '
-        Me.cmbEstado.FormattingEnabled = True
-        Me.cmbEstado.ItemHeight = 23
-        Me.cmbEstado.Location = New System.Drawing.Point(82, 70)
-        Me.cmbEstado.Name = "cmbEstado"
-        Me.cmbEstado.Size = New System.Drawing.Size(162, 29)
-        Me.cmbEstado.TabIndex = 23
-        Me.cmbEstado.UseSelectable = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(113, 108)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(88, 30)
-        Me.btnBuscar.TabIndex = 24
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseSelectable = True
-        '
-        'cmbCambiarEstado
-        '
-        Me.cmbCambiarEstado.Location = New System.Drawing.Point(687, 108)
-        Me.cmbCambiarEstado.Name = "cmbCambiarEstado"
-        Me.cmbCambiarEstado.Size = New System.Drawing.Size(123, 30)
-        Me.cmbCambiarEstado.TabIndex = 25
-        Me.cmbCambiarEstado.Text = "Cambiar Estados"
-        Me.cmbCambiarEstado.UseSelectable = True
         '
         'C1
         '
@@ -142,11 +110,84 @@ Partial Class FormPedidosPendientes
         Me.C5.Name = "C5"
         Me.C5.ReadOnly = True
         '
+        'C6
+        '
+        Me.C6.HeaderText = "IDPedido"
+        Me.C6.Name = "C6"
+        Me.C6.ReadOnly = True
+        Me.C6.Visible = False
+        '
+        'C7
+        '
+        Me.C7.HeaderText = "IDCliente"
+        Me.C7.Name = "C7"
+        Me.C7.ReadOnly = True
+        Me.C7.Visible = False
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(24, 73)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(51, 19)
+        Me.MetroLabel1.TabIndex = 22
+        Me.MetroLabel1.Text = "Estado:"
+        '
+        'cmbEstado
+        '
+        Me.cmbEstado.FormattingEnabled = True
+        Me.cmbEstado.ItemHeight = 23
+        Me.cmbEstado.Location = New System.Drawing.Point(82, 70)
+        Me.cmbEstado.Name = "cmbEstado"
+        Me.cmbEstado.Size = New System.Drawing.Size(162, 29)
+        Me.cmbEstado.TabIndex = 23
+        Me.cmbEstado.UseSelectable = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(113, 108)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(88, 30)
+        Me.btnBuscar.TabIndex = 24
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseSelectable = True
+        '
+        'cmbCambiarEstado
+        '
+        Me.cmbCambiarEstado.Location = New System.Drawing.Point(687, 73)
+        Me.cmbCambiarEstado.Name = "cmbCambiarEstado"
+        Me.cmbCambiarEstado.Size = New System.Drawing.Size(123, 30)
+        Me.cmbCambiarEstado.TabIndex = 25
+        Me.cmbCambiarEstado.Text = "Cambiar Estados"
+        Me.cmbCambiarEstado.UseSelectable = True
+        '
+        'cmbNuevoEstado
+        '
+        Me.cmbNuevoEstado.FormattingEnabled = True
+        Me.cmbNuevoEstado.ItemHeight = 23
+        Me.cmbNuevoEstado.Items.AddRange(New Object() {"Terminado"})
+        Me.cmbNuevoEstado.Location = New System.Drawing.Point(647, 111)
+        Me.cmbNuevoEstado.Name = "cmbNuevoEstado"
+        Me.cmbNuevoEstado.Size = New System.Drawing.Size(162, 29)
+        Me.cmbNuevoEstado.TabIndex = 27
+        Me.cmbNuevoEstado.UseSelectable = True
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(547, 115)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(93, 19)
+        Me.MetroLabel2.TabIndex = 26
+        Me.MetroLabel2.Text = "Nuevo Estado:"
+        '
         'FormPedidosPendientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(814, 462)
+        Me.Controls.Add(Me.cmbNuevoEstado)
+        Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.cmbCambiarEstado)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.cmbEstado)
@@ -166,9 +207,13 @@ Partial Class FormPedidosPendientes
     Friend WithEvents cmbEstado As MetroFramework.Controls.MetroComboBox
     Friend WithEvents btnBuscar As MetroFramework.Controls.MetroButton
     Friend WithEvents cmbCambiarEstado As MetroFramework.Controls.MetroButton
+    Friend WithEvents cmbNuevoEstado As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents C1 As DataGridViewTextBoxColumn
     Friend WithEvents C2 As DataGridViewTextBoxColumn
     Friend WithEvents C3 As DataGridViewTextBoxColumn
     Friend WithEvents C4 As DataGridViewTextBoxColumn
     Friend WithEvents C5 As DataGridViewCheckBoxColumn
+    Friend WithEvents C6 As DataGridViewTextBoxColumn
+    Friend WithEvents C7 As DataGridViewTextBoxColumn
 End Class

@@ -9,6 +9,8 @@ Public Class FormPrincipal
             administrador()
         ElseIf SessionManager.Instance.Usuario.IDPerfil = 2 Then
             cocina()
+        Else
+            administrador()
         End If
 
     End Sub

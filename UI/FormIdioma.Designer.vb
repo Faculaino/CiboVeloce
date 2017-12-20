@@ -37,7 +37,7 @@ Partial Class FormIdioma
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(50, 19)
         Me.MetroLabel1.TabIndex = 3
-        Me.MetroLabel1.Tag = "1"
+        Me.MetroLabel1.Tag = "41"
         Me.MetroLabel1.Text = "Idioma"
         Me.MetroLabel1.UseCustomBackColor = True
         '
@@ -57,6 +57,7 @@ Partial Class FormIdioma
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(244, 23)
         Me.btnSeleccionar.TabIndex = 5
+        Me.btnSeleccionar.Tag = "42"
         Me.btnSeleccionar.Text = "Seleccionar"
         Me.btnSeleccionar.UseSelectable = True
         '
@@ -73,6 +74,7 @@ Partial Class FormIdioma
         '
         Me.NuevoIdiomaToolStripMenuItem.Name = "NuevoIdiomaToolStripMenuItem"
         Me.NuevoIdiomaToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
+        Me.NuevoIdiomaToolStripMenuItem.Tag = "25"
         Me.NuevoIdiomaToolStripMenuItem.Text = "Nuevo Idioma"
         '
         'FormIdioma

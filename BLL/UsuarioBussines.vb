@@ -22,6 +22,7 @@ Public Class UsuarioBussines
         oHash.Add("@DVH", nuevoUsuario.DVH)
         oHash.Add("@Activo", nuevoUsuario.Activo)
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
+        oHash.Add("@IDIdioma", nuevoUsuario.IDIdioma)
 
         oDatos.insertUsuario(oHash)
         nuevoDVV.actualizarDVV("Usuarios", dvv)
@@ -38,9 +39,15 @@ Public Class UsuarioBussines
         oHash.Add("@DVH", nuevoUsuario.DVH)
         oHash.Add("@Activo", nuevoUsuario.Activo)
         oHash.Add("@IDPerfil", nuevoUsuario.IDPerfil)
+        oHash.Add("@IDIdioma", nuevoUsuario.IDIdioma)
 
         oDatos.deleteUsuario(oHash)
 
+    End Sub
+
+    Sub modificaIdioma(idIdioma As Integer, iduser As Integer)
+        Dim nuevoDatos = New UsuarioDAL
+        nuevoDatos.modificaIdioma(idIdioma, iduser)
     End Sub
 
     Function buscarUsuario(ByVal nuevoUsuario) As UsuarioEntity
@@ -80,7 +87,8 @@ Public Class UsuarioBussines
         Return nuevoUsuario
     End Function
 
-
-
-
+    Public Sub modificarPerfil(IDUser As Integer, id As Integer)
+        Dim nuevoDatos = New UsuarioDAL
+        nuevoDatos.modificarPerfil(IDUser, id)
+    End Sub
 End Class

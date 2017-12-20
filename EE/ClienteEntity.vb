@@ -1,4 +1,5 @@
-﻿Public Class ClienteEntity
+﻿<Serializable>
+Public Class ClienteEntity
     Inherits BaseEntity
 
     Private _apyn As String
@@ -9,7 +10,9 @@
     Private _telefonos As String
     Private _costo As Decimal
     'Private _idPedidos As Integer
+    <NonSerialized>
     Private _dvv As Integer
+    <NonSerialized>
     Private _dvh As Integer
 
 

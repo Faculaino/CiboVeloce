@@ -40,6 +40,38 @@ Public Class IdiomasDAL
 
 
 
+
+    'Public Function buscarPalabras(id As Integer, HT As has) As List(Of PalabraEntity)
+    '    Try
+
+    '        OpenBD()
+
+    '        cmd = New SqlCommand
+    '        cmd.Connection = cnn
+    '        cmd.CommandText = "SELECT * FROM Traduccion WHERE IDIdioma = " & id
+    '        cmd.CommandType = CommandType.StoredProcedure
+    '        For Each item As String In HT.Keys
+    '            cmd.Parameters.AddWithValue(item, HT(item))
+    '        Next
+    '        cmd.ExecuteNonQuery()
+    '        Dim da As New SqlDataAdapter(cmd)
+    '        Dim dt As New DataTable
+    '        da.Fill(dt)
+
+
+
+    '        Return Nothing
+
+    '    Catch ex As Exception
+
+    '        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
+    '        Return Nothing
+    '    End Try
+
+    'End Function
+
+
+
     Function listarPalabras(id As Integer) As List(Of TraduccionEntity)
 
 

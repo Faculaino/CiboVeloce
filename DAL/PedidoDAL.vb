@@ -40,6 +40,29 @@ Public Class PedidoDAL
         End Try
     End Sub
 
+
+    Sub modificarEstado(lista As List(Of PedidoEntity), idEstado As Integer)
+        OpenBD()
+
+        Try
+            cmd = New SqlCommand
+            cmd.Connection = cnn
+            For Each item As PedidoEntity In lista
+                cmd.CommandText = "UPDATE Pedidos SET IDEstado = " & idEstado & "WHERE ID= " & item.ID
+                cmd.CommandType = CommandType.Text
+                cmd.ExecuteNonQuery()
+            Next
+
+
+            CloseBD()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            CloseBD()
+        End Try
+    End Sub
+
+
     Function listarPedidosEstado(id As Integer) As List(Of PedidoEntity)
 
         Dim nuevaLista = New List(Of PedidoEntity)

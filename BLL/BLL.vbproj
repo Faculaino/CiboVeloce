@@ -98,6 +98,10 @@
     <Compile Include="DVVBussines.vb" />
     <Compile Include="EstadoBussines.vb" />
     <Compile Include="IdiomaBussines.vb" />
+    <Compile Include="Multidioma\Idioma.vb" />
+    <Compile Include="Multidioma\Palabra.vb" />
+    <Compile Include="Multidioma\SingletonIdioma.vb" />
+    <Compile Include="Multidioma\Traduccion.vb" />
     <Compile Include="Observer\IObserver.vb" />
     <Compile Include="Observer\Sujeto.vb" />
     <Compile Include="PedidoBussines.vb" />

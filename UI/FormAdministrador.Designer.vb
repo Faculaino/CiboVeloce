@@ -78,6 +78,7 @@ Partial Class FormAdministrador
         Me.btnPedidosHistorial.Name = "btnPedidosHistorial"
         Me.btnPedidosHistorial.Size = New System.Drawing.Size(149, 119)
         Me.btnPedidosHistorial.TabIndex = 23
+        Me.btnPedidosHistorial.Tag = "Adm Pedido"
         Me.btnPedidosHistorial.Text = "Adm. de Pedidos"
         Me.btnPedidosHistorial.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnPedidosHistorial.UseSelectable = True
@@ -90,6 +91,7 @@ Partial Class FormAdministrador
         Me.btnCaja.Name = "btnCaja"
         Me.btnCaja.Size = New System.Drawing.Size(149, 119)
         Me.btnCaja.TabIndex = 21
+        Me.btnCaja.Tag = "Caja"
         Me.btnCaja.Text = "Caja"
         Me.btnCaja.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCaja.UseSelectable = True
@@ -102,6 +104,7 @@ Partial Class FormAdministrador
         Me.btnAdminComida.Name = "btnAdminComida"
         Me.btnAdminComida.Size = New System.Drawing.Size(149, 119)
         Me.btnAdminComida.TabIndex = 19
+        Me.btnAdminComida.Tag = "Adm Carta"
         Me.btnAdminComida.Text = "Administración de Carta"
         Me.btnAdminComida.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnAdminComida.UseSelectable = True
@@ -127,6 +130,7 @@ Partial Class FormAdministrador
         Me.btnPedidos.Name = "btnPedidos"
         Me.btnPedidos.Size = New System.Drawing.Size(149, 119)
         Me.btnPedidos.TabIndex = 7
+        Me.btnPedidos.Tag = "Nuevo Pedido"
         Me.btnPedidos.Text = "Nuevo Pedido"
         Me.btnPedidos.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnPedidos.UseSelectable = True
@@ -139,6 +143,7 @@ Partial Class FormAdministrador
         Me.btnCompras.Name = "btnCompras"
         Me.btnCompras.Size = New System.Drawing.Size(149, 119)
         Me.btnCompras.TabIndex = 6
+        Me.btnCompras.Tag = "Compras"
         Me.btnCompras.Text = "Compras"
         Me.btnCompras.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCompras.UseSelectable = True
@@ -152,6 +157,7 @@ Partial Class FormAdministrador
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(149, 119)
         Me.btnCerrarSesion.TabIndex = 5
+        Me.btnCerrarSesion.Tag = ""
         Me.btnCerrarSesion.Text = "Cerrar Sesión"
         Me.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCerrarSesion.UseSelectable = True
@@ -164,6 +170,7 @@ Partial Class FormAdministrador
         Me.btnBitacora.Name = "btnBitacora"
         Me.btnBitacora.Size = New System.Drawing.Size(149, 119)
         Me.btnBitacora.TabIndex = 4
+        Me.btnBitacora.Tag = "Bitacora"
         Me.btnBitacora.Text = "Bitacora"
         Me.btnBitacora.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnBitacora.UseSelectable = True
@@ -176,6 +183,7 @@ Partial Class FormAdministrador
         Me.btnIdioma.Name = "btnIdioma"
         Me.btnIdioma.Size = New System.Drawing.Size(149, 119)
         Me.btnIdioma.TabIndex = 3
+        Me.btnIdioma.Tag = ""
         Me.btnIdioma.Text = "Idioma"
         Me.btnIdioma.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnIdioma.UseSelectable = True
@@ -188,6 +196,7 @@ Partial Class FormAdministrador
         Me.btnBackup.Name = "btnBackup"
         Me.btnBackup.Size = New System.Drawing.Size(149, 119)
         Me.btnBackup.TabIndex = 2
+        Me.btnBackup.Tag = "37"
         Me.btnBackup.Text = "Base de Datos"
         Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnBackup.UseSelectable = True
@@ -200,6 +209,7 @@ Partial Class FormAdministrador
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(149, 119)
         Me.btnClientes.TabIndex = 1
+        Me.btnClientes.Tag = "Clientes"
         Me.btnClientes.Text = "Clientes"
         Me.btnClientes.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnClientes.UseSelectable = True
@@ -212,6 +222,7 @@ Partial Class FormAdministrador
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(149, 119)
         Me.btnUsuarios.TabIndex = 0
+        Me.btnUsuarios.Tag = "40"
         Me.btnUsuarios.Text = "Usuarios"
         Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnUsuarios.UseSelectable = True
@@ -224,6 +235,7 @@ Partial Class FormAdministrador
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(149, 119)
         Me.btnReportes.TabIndex = 25
+        Me.btnReportes.Tag = "Reporte"
         Me.btnReportes.Text = "Reportes"
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnReportes.UseSelectable = True
@@ -251,6 +263,7 @@ Partial Class FormAdministrador
         Me.Controls.Add(Me.btnUsuarios)
         Me.Name = "FormAdministrador"
         Me.Resizable = False
+        Me.Tag = "39"
         Me.Text = "Menu Principal"
         Me.ResumeLayout(False)
         Me.PerformLayout()

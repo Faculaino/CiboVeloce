@@ -20,9 +20,8 @@ Public Class FileStreamManager
     Public Function CreateFile(ext As String) As FileStream
 
         Dim file As String
-        file = String.Format("{0}.{1}", Guid.NewGuid.ToString, ext)
-        If Not Directory.Exists("Archivos XML") Then Directory.CreateDirectory("Archivos XML")
-        Return New FileStream("Archivos XML\" + file, FileMode.Create)
+        file = "Clientes"
+        Return New FileStream("\XML\" + file, FileMode.Create)
     End Function
 
 End Class

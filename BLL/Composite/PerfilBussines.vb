@@ -13,6 +13,13 @@ Public Class PerfilBussines
     '    MyBase.New(name)
     'End Sub
 
+    Function buscarIDPerfil(name As String) As Integer
+        Dim nuevoDatos = New PerfilDAL
+        Dim valor As Integer = 0
+        valor = nuevoDatos.buscarIDPer(name)
+        Return valor
+    End Function
+
 
     Function perfilUsuario(id As Integer) As PerfilEntity
 
@@ -61,5 +68,10 @@ Public Class PerfilBussines
 
     Public Overrides Sub mostrar(perfil As PerfilEntity, permiso As PermisoEntity)
         Throw New NotImplementedException()
+    End Sub
+
+    Public Sub nuevo(nombre As String)
+        Dim nuevoDatos = New PerfilDAL
+        nuevoDatos.insertPerfil(nombre)
     End Sub
 End Class

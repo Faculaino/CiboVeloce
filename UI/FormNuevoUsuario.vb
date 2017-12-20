@@ -26,6 +26,7 @@ Public Class FormNuevoUsuario
             oUsuario.User = txtUserName.Text
             oUsuario.Activo = 1
             oUsuario.DVV = txtNombre.Text.Length + txtUserName.Text.Length
+            oUsuario.IDIdioma = 1
 
             Dim nuevoUsuario = New UsuarioBussines
             Dim lista As New List(Of UsuarioEntity)
